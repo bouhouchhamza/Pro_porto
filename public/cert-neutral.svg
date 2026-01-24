@@ -1,0 +1,8 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
+  <text x="200" y="130" text-anchor="middle" fill="#f39c12" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Certificate</text>
+  <rect x="80" y="70" width="240" height="80" fill="#0f3460" rx="4"/>
+  <circle cx="200" cy="110" r="20" fill="#f39c12"/>
+  <path d="M200 100 L205 110 L215 110 L207 117 L210 127 L200 120 L190 127 L193 117 L185 110 L195 110 Z" fill="#fff"/>
+</svg>

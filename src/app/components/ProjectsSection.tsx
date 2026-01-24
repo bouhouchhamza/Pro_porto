@@ -143,7 +143,7 @@ export default function ProjectsSection() {
     {
       title: "E-Commerce Platform",
       description: "Modern online shopping experience with real-time inventory management and secure payment processing.",
-      image: "/byby.png",
+      image: "/project-ecommerce.svg",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
     {
       title: "Task Management Dashboard",
       description: "Collaborative project management tool with real-time updates and team collaboration features.",
-      image: "/byby.png",
+      image: "/project-dashboard.svg",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -159,7 +159,7 @@ export default function ProjectsSection() {
     {
       title: "Weather Analytics App",
       description: "Interactive weather dashboard with advanced forecasting and data visualization capabilities.",
-      image: "/byby.png",
+      image: "/project-weather.svg",
       techStack: ["Vue.js", "Chart.js", "OpenWeather API", "Tailwind"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
     {
       title: "Social Media Dashboard",
       description: "Comprehensive analytics platform for social media management and performance tracking.",
-      image: "/byby.png",
+      image: "/project-social.svg",
       techStack: ["React", "GraphQL", "Redis", "Docker"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -175,7 +175,7 @@ export default function ProjectsSection() {
     {
       title: "AI Content Generator",
       description: "Machine learning powered content creation tool with natural language processing capabilities.",
-      image: "/byby.png",
+      image: "/project-ai.svg",
       techStack: ["Python", "TensorFlow", "FastAPI", "React"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -183,7 +183,7 @@ export default function ProjectsSection() {
     {
       title: "Real Estate Platform",
       description: "Property listing and management system with virtual tours and advanced search filters.",
-      image: "/byby.png",
+      image: "/project-realestate.svg",
       techStack: ["Next.js", "Prisma", "MySQL", "Mapbox"],
       liveUrl: "#",
       sourceUrl: "#"

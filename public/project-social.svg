@@ -1,0 +1,13 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
+  <text x="200" y="130" text-anchor="middle" fill="#9b59b6" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Social Media</text>
+  <rect x="80" y="70" width="40" height="40" fill="#e74c3c" rx="8"/>
+  <rect x="140" y="70" width="40" height="40" fill="#3498db" rx="8"/>
+  <rect x="200" y="70" width="40" height="40" fill="#2ecc71" rx="8"/>
+  <rect x="260" y="70" width="40" height="40" fill="#f39c12" rx="8"/>
+  <rect x="80" y="130" width="40" height="40" fill="#9b59b6" rx="8"/>
+  <rect x="140" y="130" width="40" height="40" fill="#1abc9c" rx="8"/>
+  <rect x="200" y="130" width="40" height="40" fill="#34495e" rx="8"/>
+  <rect x="260" y="130" width="40" height="40" fill="#e67e22" rx="8"/>
+</svg>

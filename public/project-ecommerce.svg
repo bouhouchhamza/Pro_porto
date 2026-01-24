@@ -1,0 +1,9 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
+  <text x="200" y="130" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="24" font-weight="bold">E-Commerce</text>
+  <circle cx="80" cy="80" r="15" fill="#0f3460"/>
+  <circle cx="320" cy="80" r="15" fill="#0f3460"/>
+  <circle cx="80" cy="170" r="15" fill="#0f3460"/>
+  <circle cx="320" cy="170" r="15" fill="#0f3460"/>
+</svg>

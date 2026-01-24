@@ -1,0 +1,11 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#1a1a2e"/>
+  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
+  <text x="200" y="130" text-anchor="middle" fill="#533483" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Task Dashboard</text>
+  <rect x="80" y="70" width="60" height="8" fill="#0f3460" rx="4"/>
+  <rect x="80" y="90" width="100" height="8" fill="#0f3460" rx="4"/>
+  <rect x="80" y="110" width="80" height="8" fill="#0f3460" rx="4"/>
+  <rect x="260" y="70" width="60" height="8" fill="#0f3460" rx="4"/>
+  <rect x="260" y="90" width="100" height="8" fill="#0f3460" rx="4"/>
+  <rect x="260" y="110" width="80" height="8" fill="#0f3460" rx="4"/>
+</svg>
