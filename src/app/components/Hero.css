@@ -24,7 +24,7 @@
 
 .hero-container {
   max-width: 75rem;
-  margin: 0 auto;
+  margin:2rem !important;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
