@@ -65,9 +65,20 @@ function TypingCodeEditor({ code }: TypingCodeEditorProps) {
     requestIdleCallback(typeNextCharacter);
   };
 
-  // Start typing when component mounts
+  // Start typing when component mounts with mobile optimization
   useEffect(() => {
-    startTyping();
+    // Detect mobile and delay typing animation for better performance
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, delay typing animation using requestIdleCallback
+      requestIdleCallback(() => {
+        setTimeout(startTyping, 1000); // Additional delay for mobile
+      }, { timeout: 2000 });
+    } else {
+      // On desktop, start immediately
+      startTyping();
+    }
 
     return () => {
       if (typingTimeoutRef.current) {
@@ -153,6 +164,11 @@ export default function AboutSection() {
 
           {/* Right: Code editor */}
           <div className="editor-wrapper visible">
+            {/* SEO-friendly hidden content */}
+            <div className="sr-only" aria-hidden="true">
+              <pre>{developerCode}</pre>
+            </div>
+            {/* Visual typing animation */}
             <TypingCodeEditor code={developerCode} />
           </div>
         </div>

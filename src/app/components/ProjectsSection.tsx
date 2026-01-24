@@ -60,13 +60,16 @@ function ProjectCard({ project, delay }: ProjectCardProps) {
         <div className="project-image-wrapper">
           <Image
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} - ${project.description}`}
             width={400}
             height={250}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="project-image"
             style={{
+              width: '400px',
+              height: '250px',
+              objectFit: 'cover',
               filter: isHovered ? 'brightness(1.1)' : 'brightness(0.8)',
               transform: isHovered ? 'scale(1.02)' : 'scale(1)'
             }}

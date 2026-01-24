@@ -9,13 +9,18 @@ export default function StarBackground() {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const starsRef = useRef<THREE.Points[]>([]);
-  const shootingStarsRef = useRef<THREE.Line[]>([]);
+  const frameRef = useRef<number | null>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
-  const frameRef = useRef<number>(0);
+  const shootingStarsRef = useRef<THREE.Points[]>([]);
+  const isMobileRef = useRef(false);
   const lastShootingStarRef = useRef<number>(0);
 
   useEffect(() => {
     if (!mountRef.current) return;
+
+    // Detect mobile device
+    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    isMobileRef.current = isMobile;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -41,13 +46,17 @@ export default function StarBackground() {
     rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
-    // Cinematic depth layers for forward flight
-    const starLayers = [
-      { count: 6000, depth: -500, speed: 0.000001, size: 0.015, brightness: 0.2 },  // Very distant - barely move
-      { count: 4000, depth: -300, speed: 0.000003, size: 0.025, brightness: 0.4 },  // Distant - slow drift
-      { count: 2500, depth: -150, speed: 0.000008, size: 0.04, brightness: 0.6 },   // Mid-distance - moderate drift
-      { count: 800, depth: -50, speed: 0.000015, size: 0.06, brightness: 0.8 },    // Closer - faster drift
-      { count: 200, depth: -20, speed: 0.000025, size: 0.08, brightness: 1.0 },    // Very close - fastest drift
+    // Optimized star layers - reduced for mobile
+    const starLayers = isMobile ? [
+      { count: 800, depth: -200, speed: 0.000001, size: 0.02, brightness: 0.3 },  // Mobile: Much fewer stars
+      { count: 400, depth: -100, speed: 0.000002, size: 0.03, brightness: 0.5 },  // Mobile: Simplified layers
+      { count: 200, depth: -50, speed: 0.000003, size: 0.04, brightness: 0.7 },   // Mobile: Minimal animation
+    ] : [
+      { count: 6000, depth: -500, speed: 0.000001, size: 0.015, brightness: 0.2 },  // Desktop: Full experience
+      { count: 4000, depth: -300, speed: 0.000003, size: 0.025, brightness: 0.4 },  // Desktop: Full experience
+      { count: 2500, depth: -150, speed: 0.000008, size: 0.04, brightness: 0.6 },   // Desktop: Full experience
+      { count: 800, depth: -50, speed: 0.000015, size: 0.06, brightness: 0.8 },    // Desktop: Full experience
+      { count: 200, depth: -20, speed: 0.000025, size: 0.08, brightness: 1.0 },    // Desktop: Full experience
     ];
 
     // Astronomically accurate colors - mostly white with rare tints
@@ -151,10 +160,12 @@ export default function StarBackground() {
       starsRef.current.push(stars);
     });
 
-    // Mouse movement for subtle camera orientation
+    // Mouse movement for subtle camera orientation (desktop only)
     const handleMouseMove = (event: MouseEvent) => {
-      mouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      if (!isMobileRef.current) {
+        mouseRef.current.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseRef.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      }
     };
 
     // Window resize handler
@@ -166,22 +177,31 @@ export default function StarBackground() {
       rendererRef.current.setSize(window.innerWidth, window.innerHeight);
     };
 
-    // Animation loop
+    // Animation loop with mobile optimization
+    let frameCount = 0;
     const animate = () => {
       frameRef.current = requestAnimationFrame(animate);
+
+      // Reduce frame rate on mobile for performance
+      frameCount++;
+      if (isMobileRef.current && frameCount % 2 !== 0) return; // Skip every other frame on mobile
 
       const time = Date.now() * 0.001;
       const currentTime = Date.now();
 
-      // Cinematic forward motion through space
-      const forwardSpeed = 0.05; // Calm, controlled forward speed
-      camera.position.z -= forwardSpeed;
-      
-      // Subtle camera orientation based on mouse (head movement)
-      const lookX = mouseRef.current.x * 0.02;
-      const lookY = mouseRef.current.y * 0.02;
-      camera.rotation.x = lookY;
-      camera.rotation.y = lookX;
+      // Optimized forward motion - slower on mobile
+      const forwardSpeed = isMobileRef.current ? 0.01 : 0.05;
+      if (cameraRef.current) {
+        cameraRef.current.position.z -= forwardSpeed;
+        
+        // Subtle camera orientation based on mouse (desktop only)
+        if (!isMobileRef.current) {
+          const lookX = mouseRef.current.x * 0.02;
+          const lookY = mouseRef.current.y * 0.02;
+          cameraRef.current.rotation.x = lookY;
+          cameraRef.current.rotation.y = lookX;
+        }
+      }
       
       // Depth-based parallax and star recycling
       starsRef.current.forEach((stars, index) => {

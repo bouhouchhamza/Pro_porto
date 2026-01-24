@@ -47,6 +47,11 @@ export default function Hero() {
                 height={288}
                 loading="eager"
                 priority
+                style={{
+                  width: '384px',
+                  height: '288px',
+                  objectFit: 'cover'
+                }}
               />
             </div>
           </div>
