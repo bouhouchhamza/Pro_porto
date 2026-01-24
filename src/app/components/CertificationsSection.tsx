@@ -136,7 +136,7 @@ export default function CertificationsSection() {
       issuerIcon: "☁️",
       issueDate: "March 2024",
       skills: ["Cloud Architecture", "GCP", "Infrastructure", "Security"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     },
     {
@@ -145,7 +145,7 @@ export default function CertificationsSection() {
       issuerIcon: "🔷",
       issueDate: "January 2024",
       skills: ["Data Science", "Python", "Machine Learning", "Statistics"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     },
     {
@@ -154,7 +154,7 @@ export default function CertificationsSection() {
       issuerIcon: "💼",
       issueDate: "December 2023",
       skills: ["React", "Node.js", "MongoDB", "REST APIs"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     },
     {
@@ -163,7 +163,7 @@ export default function CertificationsSection() {
       issuerIcon: "🟠",
       issueDate: "November 2023",
       skills: ["AWS", "Cloud Computing", "Architecture", "DevOps"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     },
     {
@@ -172,7 +172,7 @@ export default function CertificationsSection() {
       issuerIcon: "🔵",
       issueDate: "October 2023",
       skills: ["React", "JavaScript", "CSS", "HTML5"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     },
     {
@@ -181,7 +181,7 @@ export default function CertificationsSection() {
       issuerIcon: "🪟",
       issueDate: "September 2023",
       skills: ["Azure", "Cloud Services", "Networking", "Storage"],
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       certificateUrl: "#"
     }
   ];

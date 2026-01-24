@@ -1,23 +1,23 @@
 export default function Reviews() {
-  const reviews = [
+  const testimonials = [
     {
       name: 'Alice Johnson',
       role: 'Product Manager',
-      avatar: '/avatar-1.png',
+      avatar: '/byby.png',
       rating: 5,
       text: 'Exceptional work! Delivered the project on time with outstanding quality.',
     },
     {
       name: 'Bob Smith',
       role: 'CEO',
-      avatar: '/avatar-2.png',
+      avatar: '/byby.png',
       rating: 5,
       text: 'Highly professional and skilled developer. Would recommend to anyone.',
     },
     {
       name: 'Carol Davis',
       role: 'Designer',
-      avatar: '/avatar-3.png',
+      avatar: '/byby.png',
       rating: 5,
       text: 'Great collaboration and amazing attention to detail.',
     },
@@ -30,7 +30,7 @@ export default function Reviews() {
           Reviews
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
+          {testimonials.map((review: any, index: number) => (
             <div key={index} className="glass review-card p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-600 rounded-full mr-4 flex items-center justify-center">

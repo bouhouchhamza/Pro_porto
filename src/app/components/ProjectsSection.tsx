@@ -63,13 +63,13 @@ function ProjectCard({ project, delay }: ProjectCardProps) {
             alt={project.title}
             width={400}
             height={250}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="project-image"
             style={{
               filter: isHovered ? 'brightness(1.1)' : 'brightness(0.8)',
               transform: isHovered ? 'scale(1.02)' : 'scale(1)'
             }}
-            loading="lazy"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function ProjectsSection() {
     {
       title: "E-Commerce Platform",
       description: "Modern online shopping experience with real-time inventory management and secure payment processing.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
     {
       title: "Task Management Dashboard",
       description: "Collaborative project management tool with real-time updates and team collaboration features.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -159,7 +159,7 @@ export default function ProjectsSection() {
     {
       title: "Weather Analytics App",
       description: "Interactive weather dashboard with advanced forecasting and data visualization capabilities.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["Vue.js", "Chart.js", "OpenWeather API", "Tailwind"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
     {
       title: "Social Media Dashboard",
       description: "Comprehensive analytics platform for social media management and performance tracking.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["React", "GraphQL", "Redis", "Docker"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -175,7 +175,7 @@ export default function ProjectsSection() {
     {
       title: "AI Content Generator",
       description: "Machine learning powered content creation tool with natural language processing capabilities.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["Python", "TensorFlow", "FastAPI", "React"],
       liveUrl: "#",
       sourceUrl: "#"
@@ -183,7 +183,7 @@ export default function ProjectsSection() {
     {
       title: "Real Estate Platform",
       description: "Property listing and management system with virtual tours and advanced search filters.",
-      image: "/api/placeholder/400/250",
+      image: "/byby.png",
       techStack: ["Next.js", "Prisma", "MySQL", "Mapbox"],
       liveUrl: "#",
       sourceUrl: "#"

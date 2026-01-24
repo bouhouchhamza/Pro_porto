@@ -9,7 +9,7 @@ interface TypingCodeEditorProps {
 function TypingCodeEditor({ code }: TypingCodeEditorProps) {
   const [displayedCode, setDisplayedCode] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const typingTimeoutRef = useRef<any>();
+  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Simple syntax highlighting
   const highlightSyntax = (text: string) => {
@@ -24,7 +24,6 @@ function TypingCodeEditor({ code }: TypingCodeEditorProps) {
 
   // Direct typing function
   const startTyping = () => {
-    console.log('Starting typing animation...');
     setDisplayedCode('');
     setIsTyping(true);
 
@@ -52,22 +51,22 @@ function TypingCodeEditor({ code }: TypingCodeEditorProps) {
         setDisplayedCode(highlightSyntax(nextChars));
         currentIndex++;
         
-        typingTimeoutRef.current = setTimeout(typeNextCharacter, delay);
+        // Use requestIdleCallback for better performance
+        requestIdleCallback(() => {
+          setTimeout(typeNextCharacter, delay);
+        });
       } else {
-        // Animation complete
         setDisplayedCode(highlightSyntax(fullCode));
         setIsTyping(false);
-        console.log('Typing animation completed');
       }
     };
 
-    // Start typing immediately
-    typingTimeoutRef.current = setTimeout(typeNextCharacter, 1000);
+    // Start typing in next idle period
+    requestIdleCallback(typeNextCharacter);
   };
 
   // Start typing when component mounts
   useEffect(() => {
-    console.log('TypingCodeEditor mounted, starting typing in 1 second');
     startTyping();
 
     return () => {

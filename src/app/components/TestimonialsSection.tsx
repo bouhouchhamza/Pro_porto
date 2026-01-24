@@ -115,37 +115,37 @@ export default function TestimonialsSection() {
       quote: "Exceptional developer who delivers high-quality work on time. Very professional and skilled in modern web technologies.",
       name: "Sarah Johnson",
       role: "Product Manager",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     },
     {
       quote: "Outstanding problem-solving skills and attention to detail. Built our entire platform from scratch with excellent results.",
       name: "Michael Chen",
       role: "CEO & Founder",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     },
     {
       quote: "Great communicator and technical expert. Transformed our ideas into a beautiful, functional application.",
       name: "Emily Rodriguez",
       role: "Marketing Director",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     },
     {
       quote: "Highly recommended! Delivered complex features ahead of schedule with clean, maintainable code.",
       name: "David Kim",
       role: "Tech Lead",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     },
     {
       quote: "Professional, reliable, and technically brilliant. Exceeded all our expectations with the final product.",
       name: "Jessica Taylor",
       role: "Client Relations",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     },
     {
       quote: "Excellent full-stack developer with deep understanding of both frontend and backend technologies.",
       name: "Robert Martinez",
       role: "Senior Developer",
-      avatar: "/api/placeholder/60/60"
+      avatar: "/byby.png"
     }
   ];
 

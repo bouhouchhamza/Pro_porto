@@ -17,7 +17,7 @@ const StarBackground = dynamic(() => import('./StarBackground'), {
 export default function LazyAnimations() {
   const [isScrollAnimationsLoaded, setIsScrollAnimationsLoaded] = useState(false);
   const [isStarBackgroundLoaded, setIsStarBackgroundLoaded] = useState(false);
-  const starObserverRef = useRef<IntersectionObserver>();
+  const starObserverRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     // Lazy load ScrollAnimations when user starts scrolling or after delay

@@ -4,19 +4,19 @@ export default function Certifications() {
       title: 'AWS Certified Solutions Architect',
       provider: 'Amazon Web Services',
       date: '2023',
-      image: '/cert-1.png',
+      image: '/byby.png',
     },
     {
       title: 'Google Cloud Professional Developer',
       provider: 'Google Cloud',
       date: '2022',
-      image: '/cert-2.png',
+      image: '/byby.png',
     },
     {
       title: 'Certified Scrum Master',
       provider: 'Scrum Alliance',
       date: '2021',
-      image: '/cert-3.png',
+      image: '/byby.png',
     },
   ];
 
