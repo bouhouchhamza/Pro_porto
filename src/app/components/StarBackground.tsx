@@ -291,7 +291,8 @@ export default function StarBackground() {
         width: '100vw',
         height: '100vh',
         zIndex: 0,
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        isolation: 'isolate'
       }}
     />
   );

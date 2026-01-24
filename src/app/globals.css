@@ -892,6 +892,31 @@ textarea:focus {
   z-index: 10;
 }
 
+/* Contact Section - Enhanced stacking context */
+.contact-section {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  isolation: isolate;
+}
+
+.contact-form-container {
+  position: relative;
+  z-index: 15;
+  isolation: isolate;
+  background: rgba(20, 20, 35, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.contact-form input,
+.contact-form textarea {
+  position: relative;
+  z-index: 20;
+  background: rgba(30, 30, 46, 0.8) !important;
+  isolation: isolate;
+}
+
 .testimonials-title {
   font-size: 3rem;
   font-weight: bold;
