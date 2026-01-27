@@ -144,48 +144,48 @@ export default function ProjectsSection() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Modern online shopping experience with real-time inventory management and secure payment processing.",
+      title: "E-Commerce Growth Platform",
+      description: "Scalable online marketplace with advanced inventory management, real-time analytics, and conversion-optimized checkout system designed to boost sales.",
       image: "/project-ecommerce.svg",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
+      techStack: ["Next.js", "Stripe", "MongoDB", "Redis"],
       liveUrl: "#",
       sourceUrl: "#"
     },
     {
-      title: "Task Management Dashboard",
-      description: "Collaborative project management tool with real-time updates and team collaboration features.",
+      title: "Business Analytics Dashboard",
+      description: "Real-time data visualization platform with custom KPI tracking, automated reporting, and predictive analytics for business decision-making.",
       image: "/project-dashboard.svg",
-      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
+      techStack: ["React", "D3.js", "Node.js", "PostgreSQL"],
       liveUrl: "#",
       sourceUrl: "#"
     },
     {
-      title: "Weather Analytics App",
-      description: "Interactive weather dashboard with advanced forecasting and data visualization capabilities.",
+      title: "Performance Optimization Suite",
+      description: "Web performance monitoring tool with automated SEO audits, Core Web Vitals tracking, and actionable optimization recommendations.",
       image: "/project-weather.svg",
-      techStack: ["Vue.js", "Chart.js", "OpenWeather API", "Tailwind"],
+      techStack: ["TypeScript", "Lighthouse", "Next.js", "GraphQL"],
       liveUrl: "#",
       sourceUrl: "#"
     },
     {
-      title: "Social Media Dashboard",
-      description: "Comprehensive analytics platform for social media management and performance tracking.",
+      title: "Social Media Management Hub",
+      description: "Multi-platform social media scheduler with content analytics, engagement tracking, and automated posting for digital marketing teams.",
       image: "/project-social.svg",
-      techStack: ["React", "GraphQL", "Redis", "Docker"],
+      techStack: ["React", "Express", "MongoDB", "Socket.io"],
       liveUrl: "#",
       sourceUrl: "#"
     },
     {
-      title: "AI Content Generator",
-      description: "Machine learning powered content creation tool with natural language processing capabilities.",
+      title: "AI-Powered Content Generator",
+      description: "Machine learning content creation platform with SEO optimization, multi-language support, and brand voice customization.",
       image: "/project-ai.svg",
       techStack: ["Python", "TensorFlow", "FastAPI", "React"],
       liveUrl: "#",
       sourceUrl: "#"
     },
     {
-      title: "Real Estate Platform",
-      description: "Property listing and management system with virtual tours and advanced search filters.",
+      title: "Real Estate Management System",
+      description: "Property management platform with virtual tours, lead generation, CRM integration, and automated marketing workflows.",
       image: "/project-realestate.svg",
       techStack: ["Next.js", "Prisma", "MySQL", "Mapbox"],
       liveUrl: "#",
@@ -195,6 +195,7 @@ export default function ProjectsSection() {
 
   return (
     <section 
+      id="projects"
       ref={sectionRef}
       className="projects-section py-20 px-4 sm:px-6 lg:px-8"
     >

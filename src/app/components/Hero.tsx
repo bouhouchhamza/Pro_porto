@@ -12,12 +12,12 @@ export default function Hero() {
           <span className="hero-badge">✨ Welcome to My Portfolio</span>
           <h1 id="hero-title" className="hero-title">
             <span>Hamza Bouhouch:</span><br />
-            <span>Full Stack Developer &</span><br />
-            <span>Creative Builder</span>
+            <span>Full Stack Web Developer</span><br />
+            <span>Building Digital Solutions for Your Business</span>
           </h1>
           <p className="hero-description">
-            Passionate Full Stack Developer specializing in React, Node.js, and modern web technologies.
-            Crafting innovative web solutions with 5+ years of experience in user-centric design.
+            Full Stack Web Developer specializing in React, Node.js, and modern web technologies.
+            Helping businesses and e-commerce grow with custom web solutions focused on performance, SEO, and scalability.
           </p>
           <div className="hero-buttons">
             <button
@@ -32,7 +32,7 @@ export default function Hero() {
               className="hero-button-secondary"
               aria-label="Get in touch with me"
             >
-              Contact Me
+              Get a Quote
             </button>
           </div>
         </div>
@@ -47,11 +47,6 @@ export default function Hero() {
                 height={288}
                 loading="eager"
                 priority
-                style={{
-                  width: '384px',
-                  height: '288px',
-                  objectFit: 'cover'
-                }}
               />
             </div>
           </div>

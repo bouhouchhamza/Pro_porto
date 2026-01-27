@@ -74,7 +74,6 @@ export default function RootLayout({
         <meta name="keywords" content="Hamza Bouhouch, Full Stack Developer, React, Node.js, TypeScript, Next.js, Web Developer, Portfolio, Frontend, Backend, JavaScript, Morocco" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="preload" href="/byby.png" as="image" type="image/png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

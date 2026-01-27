@@ -113,29 +113,31 @@ export default function AboutSection() {
   const developerCode = `const aboutMe = () => {
   return {
     name: "Hamza Bouhouch",
-    role: "Web Developer",
+    role: "Full Stack Web Developer",
     location: "Morocco",
-    focus: "Building modern, clean and interactive web experiences",
+    focus: "Building business-oriented web solutions with focus on performance and scalability",
     skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "MySQL",
-      "MVC Architecture"
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "TailwindCSS",
+      "MongoDB",
+      "PostgreSQL"
     ],
     interests: [
-      "Creative UI",
-      "Performance",
-      "Clean code"
+      "E-commerce solutions",
+      "Performance optimization",
+      "SEO best practices",
+      "Clean architecture"
     ],
-    mindset: "Learn by building real projects",
-    goal: "Become a strong full stack developer"
+    mindset: "Building scalable solutions that drive business growth",
+    goal: "Help businesses and startups succeed with modern web technology"
   };
 };`;
 
   return (
-    <section className="about-section py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="about-section py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Centered title with gradient */}
         <h2 className="about-title">
@@ -147,18 +149,13 @@ export default function AboutSection() {
           {/* Left: Text content */}
           <div className="about-text visible">
             <p className="text-lg leading-relaxed">
-              I'm a passionate Full Stack Developer with over 5 years of experience in creating
-              innovative web applications. My journey started with a curiosity about technology
-              and has evolved into a career dedicated to building solutions that make a difference.
+              I'm a Full Stack Web Developer focused on creating business-oriented web solutions that drive growth and success. My expertise spans from responsive front-end designs to scalable back-end architectures, with special attention to e-commerce platforms and startup needs.
             </p>
             <p className="text-lg leading-relaxed">
-              I specialize in modern web technologies, from responsive front-end designs to
-              scalable back-end architectures. When I'm not coding, you can find me exploring
-              new technologies, contributing to open-source projects, or sharing knowledge
-              with the developer community.
+              I specialize in modern web technologies including React, Next.js, and Node.js, building applications that prioritize performance, SEO optimization, and user experience. Every project is an opportunity to create solutions that make a real impact on business objectives.
             </p>
             <p className="text-lg leading-relaxed">
-              Let's collaborate and bring your ideas to life!
+              Let's build something amazing together that takes your business to the next level!
             </p>
           </div>
 
