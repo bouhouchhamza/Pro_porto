@@ -81,8 +81,15 @@ export default function Contact() {
       setSubmitStatus('error');
       
       // Try to get more specific error information
-      const errorMessage = (error as any)?.text || (error as any)?.message || error instanceof Error ? error.message : 'Unknown error';
-      const errorStatus = (error as any)?.status || '';
+      let errorMessage = 'Unknown error';
+      let errorStatus = '';
+      
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (error && typeof error === 'object') {
+        errorMessage = (error as any)?.text || (error as any)?.message || 'Unknown error';
+        errorStatus = (error as any)?.status || '';
+      }
       
       if (error instanceof Error && error.message.includes('not fully configured')) {
         setStatusMessage(
