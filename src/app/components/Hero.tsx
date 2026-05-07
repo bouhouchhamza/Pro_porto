@@ -41,7 +41,7 @@ export default function Hero() {
             <div className="hero-image-glow"></div>
             <div className="hero-image">
               <Image
-                src="/byby.jng"
+                src="/byby.jpg"
                 alt="Hamza Bouhouch - Full Stack Developer"
                 width={384}
                 height={288}
