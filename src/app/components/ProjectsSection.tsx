@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  techStack: string[];
+  liveUrl?: string;
+  sourceUrl: string;
+}
 
 interface ProjectCardProps {
-  project: {
-    title: string;
-    description: string;
-    image: string;
-    techStack: string[];
-    liveUrl: string;
-    sourceUrl: string;
-  };
+  project: Project;
   delay: number;
 }
 
@@ -21,6 +23,8 @@ function ProjectCard({ project, delay }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentCard = cardRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,16 +33,16 @@ function ProjectCard({ project, delay }: ProjectCardProps) {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (currentCard) {
+      observer.observe(currentCard);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.disconnect();
+      if (currentCard) {
+        observer.unobserve(currentCard);
       }
     };
   }, []);
@@ -49,58 +53,59 @@ function ProjectCard({ project, delay }: ProjectCardProps) {
       className="project-card"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-        transition: `all 0.8s ease-out ${delay}ms`
+        transform: isVisible ? "translateY(0)" : "translateY(30px)",
+        transition: `all 0.8s ease-out ${delay}ms`,
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Project preview image */}
       <div className="project-image-container">
         <div className="project-image-wrapper">
           <Image
             src={project.image}
-            alt={`${project.title} - ${project.description}`}
+            alt={`${project.title} preview`}
             width={400}
             height={250}
             loading="lazy"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="project-image"
             style={{
-              width: '400px',
-              height: '250px',
-              objectFit: 'cover',
-              filter: isHovered ? 'brightness(1.1)' : 'brightness(0.8)',
-              transform: isHovered ? 'scale(1.02)' : 'scale(1)'
+              width: "100%",
+              height: "250px",
+              objectFit: "cover",
+              filter: isHovered ? "brightness(1.1)" : "brightness(0.8)",
+              transform: isHovered ? "scale(1.02)" : "scale(1)",
             }}
           />
         </div>
       </div>
 
-      {/* Project content */}
       <div className="project-content">
         <h3 className="project-title">{project.title}</h3>
         <p className="project-description">{project.description}</p>
-        
+
         <div className="project-tech-stack">
-          {project.techStack.map((tech, index) => (
-            <span key={index} className="tech-tag">
+          {project.techStack.map((tech) => (
+            <span key={tech} className="tech-tag">
               {tech}
             </span>
           ))}
         </div>
 
         <div className="project-actions">
-          <a 
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="action-btn primary"
-            aria-label={`View live demo of ${project.title}`}
-          >
-            Live Demo
-          </a>
-          <a 
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn primary"
+              aria-label={`View live demo of ${project.title}`}
+            >
+              Live Demo
+            </a>
+          )}
+
+          <a
             href={project.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -120,6 +125,8 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -128,91 +135,130 @@ export default function ProjectsSection() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.disconnect();
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);
 
-  const projects = [
+  const projects: Project[] = [
     {
-      title: "E-Commerce Growth Platform",
-      description: "Scalable online marketplace with advanced inventory management, real-time analytics, and conversion-optimized checkout system designed to boost sales.",
-      image: "/project-ecommerce.svg",
-      techStack: ["Next.js", "Stripe", "MongoDB", "Redis"],
-      liveUrl: "#",
-      sourceUrl: "#"
-    },
-    {
-      title: "Business Analytics Dashboard",
-      description: "Real-time data visualization platform with custom KPI tracking, automated reporting, and predictive analytics for business decision-making.",
+      title: "Financial Risk Simulation Platform",
+      description:
+        "Fintech web application built with Laravel that simulates financial transactions, analyzes suspicious behavior, assigns risk scores, and generates fraud alerts for admin review.",
       image: "/project-dashboard.svg",
-      techStack: ["React", "D3.js", "Node.js", "PostgreSQL"],
-      liveUrl: "#",
-      sourceUrl: "#"
+      techStack: ["Laravel", "PHP", "Blade", "JavaScript", "MySQL", "Chart.js"],
+      liveUrl: "https://yourstartup.live",
+      sourceUrl:
+        "https://github.com/bouhouchhamza/Financial_Risk_Simulation_Platform",
     },
     {
-      title: "Performance Optimization Suite",
-      description: "Web performance monitoring tool with automated SEO audits, Core Web Vitals tracking, and actionable optimization recommendations.",
-      image: "/project-weather.svg",
-      techStack: ["TypeScript", "Lighthouse", "Next.js", "GraphQL"],
-      liveUrl: "#",
-      sourceUrl: "#"
+      title: "Bimik_Cafe POS System",
+      description:
+        "Professional café POS system with local Windows installer, worker/patron roles, stock management, commandes, reports, customizable tickets, and direct thermal printing.",
+      image: "/project-bimik-cafe.svg",
+      techStack: [
+        "Laravel",
+        "React",
+        "TypeScript",
+        "SQLite",
+        "Vite",
+        "Inno Setup",
+      ],
+      sourceUrl: "https://github.com/bouhouchhamza/bimik-cafe-pos",
     },
     {
-      title: "Social Media Management Hub",
-      description: "Multi-platform social media scheduler with content analytics, engagement tracking, and automated posting for digital marketing teams.",
+      title: "Pet Journey",
+      description:
+        "Full-stack pet care web application with separated frontend and backend, designed to help users manage pet-related services and journeys through a clean web interface.",
       image: "/project-social.svg",
-      techStack: ["React", "Express", "MongoDB", "Socket.io"],
-      liveUrl: "#",
-      sourceUrl: "#"
+      techStack: ["JavaScript", "Frontend", "Backend", "Vercel"],
+      sourceUrl: "https://github.com/bouhouchhamza/petJourney",
     },
     {
-      title: "AI-Powered Content Generator",
-      description: "Machine learning content creation platform with SEO optimization, multi-language support, and brand voice customization.",
-      image: "/project-ai.svg",
-      techStack: ["Python", "TensorFlow", "FastAPI", "React"],
-      liveUrl: "#",
-      sourceUrl: "#"
+      title: "Atelya Full-Stack Shop",
+      description:
+        "Full-stack shop platform with a controlled backend for managing products, categories, and store content. Includes a responsive storefront, product browsing, category-based navigation, and an admin-controlled structure for updating shop data.",
+      image: "/project-atelya.svg",
+      techStack: ["Next.js", "TypeScript", "React", "Backend", "CSS"],
+      sourceUrl: "https://github.com/bouhouchhamza/atelya",
     },
     {
-      title: "Real Estate Management System",
-      description: "Property management platform with virtual tours, lead generation, CRM integration, and automated marketing workflows.",
+      title: "ShopHub E-Commerce Website",
+      description:
+        "Responsive e-commerce website featuring product browsing, search, filtering, sorting, wishlist, cart persistence with localStorage, and a checkout flow.",
+      image: "/project-ecommerce.svg",
+      techStack: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+      sourceUrl: "https://github.com/bouhouchhamza/ecommerce_exemple",
+    },
+    {
+      title: "EasyColoc",
+      description:
+        "Laravel colocation management application focused on roommate and housing workflows, including owner-side features and email invitation testing.",
       image: "/project-realestate.svg",
-      techStack: ["Next.js", "Prisma", "MySQL", "Mapbox"],
-      liveUrl: "#",
-      sourceUrl: "#"
-    }
+      techStack: ["Laravel", "PHP", "Blade", "MySQL", "Mailpit"],
+      sourceUrl: "https://github.com/bouhouchhamza/easycoloc",
+    },
+    {
+      title: "Habit Tracker",
+      description:
+        "Productivity web application for tracking habits and routines, helping users monitor consistency and organize personal goals.",
+      image: "/project-weather.svg",
+      techStack: ["Laravel", "PHP", "Blade", "MySQL"],
+      sourceUrl: "https://github.com/bouhouchhamza/habit_tracker",
+    },
+    {
+      title: "EAU Tracker",
+      description:
+        "IoT water monitoring system built to track water status using an Arduino-based device, with a web interface/backend structure for collecting and displaying water-related data.",
+      image: "/project-eau-tracker.svg",
+      techStack: ["Arduino", "JavaScript", "PHP", "CSS", "Shell"],
+      sourceUrl: "https://github.com/bouhouchhamza/EAU_TRACKER",
+    },
+    {
+      title: "Shop Project",
+      description:
+        "Simple shop website example for a commercial store, built as an early web project with a basic storefront structure and product presentation.",
+      image: "/project-shop.svg",
+      techStack: ["HTML5"],
+      sourceUrl: "https://github.com/bouhouchhamza/shop_project",
+    },
+    {
+      title: "Three.js Starter Projects",
+      description:
+        "First experimental projects with Three.js, focused on learning 3D scenes, objects, camera controls, animations, and interactive web graphics.",
+      image: "/project-threejs.svg",
+      techStack: ["Three.js", "JavaScript", "HTML5", "CSS3"],
+      sourceUrl: "https://github.com/bouhouchhamza",
+    },
   ];
 
   return (
-    <section 
+    <section
       id="projects"
       ref={sectionRef}
       className="projects-section py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section title */}
-        <h2 
+        <h2
           className="projects-title"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-            transition: 'all 0.8s ease-out'
+            transform: isVisible ? "translateY(0)" : "translateY(30px)",
+            transition: "all 0.8s ease-out",
           }}
         >
           Featured Projects
         </h2>
 
-        {/* Projects grid */}
         <div className="projects-grid">
           {projects.map((project, index) => (
             <ProjectCard
