@@ -45,23 +45,69 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": "https://bouhouch.site/#service",
-      "name": "Hamza Bouhouch - Full Stack Developer & AI Automation Engineer",
+      "name": "Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco",
       "url": "https://bouhouch.site",
       "image": "https://bouhouch.site/logo.png",
       "telephone": "+212772247633",
       "priceRange": "$$",
+      "email": "bouhouchhamza075@gmail.com",
+      "areaServed": "Morocco",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Morocco"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://bouhouch.site/#project-financial-risk",
+      "name": "Financial Risk Simulation Platform",
+      "description": "Laravel fintech platform for transaction simulation, risk scoring, fraud signals, and admin review workflows.",
+      "url": "https://github.com/bouhouchhamza/Financial_Risk_Simulation_Platform",
+      "creator": {
+        "@id": "https://bouhouch.site/#person"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://bouhouch.site/#project-ai-automation",
+      "name": "AI Automation Systems",
+      "description": "Workflow automations that connect business tools, process data, and reduce repetitive manual work using n8n and OpenAI.",
+      "url": "https://github.com/bouhouchhamza",
+      "creator": {
+        "@id": "https://bouhouch.site/#person"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://bouhouch.site/#project-pet-journey",
+      "name": "Pet Journey",
+      "description": "Full-stack pet care web application with separated frontend and backend for service and journey management.",
+      "url": "https://github.com/bouhouchhamza/petJourney",
+      "creator": {
+        "@id": "https://bouhouch.site/#person"
       }
     }
   ]
 };
 
 export const metadata: Metadata = {
-  title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
-  description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
-  keywords: ["Hamza Bouhouch", "Full Stack Developer Morocco", "AI Automation Engineer", "React Developer", "Next.js Developer", "Laravel Developer", "n8n automation", "SaaS developer", "web applications", "business automation"],
+  title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer in Morocco",
+  description: "Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer in Morocco building websites, web applications, SaaS dashboards, AI workflows, n8n automations, Laravel systems, React and Next.js projects for businesses.",
+  keywords: [
+    "Hamza Bouhouch",
+    "bouhouch",
+    "bouhouch.site",
+    "Full Stack Developer Morocco",
+    "Website Developer Morocco",
+    "Web Developer Morocco",
+    "AI Automation Engineer Morocco",
+    "Laravel Developer Morocco",
+    "React Developer Morocco",
+    "Next.js Developer Morocco",
+    "n8n Automation Developer",
+    "SaaS Developer Morocco",
+    "business automation"
+  ],
   authors: [{ name: "Hamza Bouhouch" }],
   creator: "Hamza Bouhouch",
   metadataBase: new URL('https://bouhouch.site'),
@@ -69,8 +115,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
-    description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
+    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer in Morocco",
+    description: "Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer in Morocco building websites, web applications, SaaS dashboards, AI workflows, n8n automations, Laravel systems, React and Next.js projects for businesses.",
     url: 'https://bouhouch.site',
     siteName: "Hamza Bouhouch Portfolio",
     images: [
@@ -78,7 +124,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Hamza Bouhouch - Full Stack Developer & AI Automation Engineer',
+        alt: 'Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco',
       },
     ],
     locale: 'en_US',
@@ -86,8 +132,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
-    description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
+    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer in Morocco",
+    description: "Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer in Morocco building websites, web applications, SaaS dashboards, AI workflows, n8n automations, Laravel systems, React and Next.js projects for businesses.",
     images: ['/og-image.png'],
   },
   robots: {

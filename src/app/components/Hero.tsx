@@ -11,12 +11,10 @@ export default function Hero() {
           <span className="hero-badge">Premium developer portfolio</span>
           <h1 id="hero-title" className="hero-title">
             <span>Hamza Bouhouch</span>
-            <span>Full Stack Developer / AI Automation Engineer</span>
+            <span>Full Stack Developer &amp; AI Automation Engineer in Morocco</span>
           </h1>
           <p className="hero-description">
-            I build premium web applications, AI automation workflows, SaaS
-            products, and business systems that are fast, maintainable, and
-            designed around real operational needs.
+            I am a professional Full Stack Developer and AI Automation Engineer in Morocco. I build premium websites, web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, and n8n.
           </p>
           <div className="hero-buttons">
             <button
@@ -42,7 +40,7 @@ export default function Hero() {
             <div className="hero-image">
               <Image
                 src="/byby.jpg"
-                alt="Hamza Bouhouch - Full Stack Developer"
+                alt="Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco"
                 width={520}
                 height={650}
                 loading="eager"

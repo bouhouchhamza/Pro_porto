@@ -40,13 +40,10 @@ export default function SkillsSection() {
         <div className="skills-copy">
           <h2>Skills &amp; Expertise</h2>
           <p>
-            Specializing in React, Node.js, and modern web technologies.
-            Helping businesses and e-commerce grow with custom web solutions
-            focused on performance, SEO, and scalability.
+            Specializing in React, Next.js, and Laravel development in Morocco. Helping businesses and SaaS platforms grow with custom web applications and AI workflow automations focused on speed, search engine optimization (SEO), and high-security architectures.
           </p>
           <p>
-            Technologies. Helping businesses and e-commerce grow with custom
-            web solutions focused on performance, SEO, and scalability.
+            Providing expert services as a Web Developer Morocco to build high-performance storefronts, interactive dashboards, and business systems tailored to client operations.
           </p>
         </div>
 

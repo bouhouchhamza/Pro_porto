@@ -112,10 +112,10 @@ function AboutTerminalCard({
         <div className="about-terminal-cursor" aria-hidden="true" />
 
         {/* Portrait image overlay */}
-        <div className="about-terminal-portrait-wrap" aria-hidden="true">
+        <div className="about-terminal-portrait-wrap">
           <Image
             src="/byby.jpg"
-            alt=""
+            alt="Hamza Bouhouch - Website Developer Morocco"
             width={505}
             height={343}
             className="about-terminal-portrait"
@@ -162,14 +162,10 @@ export default function AboutSection() {
         >
           <h2>About Me</h2>
           <p>
-            Specializing in React, Node.js, and modern web
-            technologies. Helping businesses and e-commerce grow with custom web solutions
-            focused on performance, SEO, and scalability. Specializing in
+            I am Hamza Bouhouch, an experienced Full Stack Developer Morocco and AI Automation Engineer Morocco. I build high-converting websites, web applications, and automated workflows that streamline operations and drive growth.
           </p>
           <p>
-            technologies. Helping businesses and e-commerce
-            grow with custom web solutions focused on
-            performance, SEO, and scalability.
+            With deep expertise in React, Next.js, Laravel, and n8n, I partner with companies to create custom SaaS dashboards and intelligent business automation systems tailored to their workflows.
           </p>
         </div>
 

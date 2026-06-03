@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="nav-shell">
         <div className="nav-row">
           <Link href="/" className="nav-logo" aria-label="Hamza Bouhouch home">
-            <img src="/logo.png" alt="Hamza Bouhouch Logo" className="nav-logo-image" />
+            <img src="/logo.png" alt="Hamza Bouhouch - Web Developer Morocco logo" className="nav-logo-image" />
           </Link>
 
           <div className="nav-links">
@@ -47,11 +47,12 @@ export default function Navbar() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="nav-link"
+                aria-label={`Scroll to ${item.label} section`}
               >
                 {item.label}
               </button>
             ))}
-            <button onClick={openResume} className="nav-link nav-resume">
+            <button onClick={openResume} className="nav-link nav-resume" aria-label="Open Resume PDF in new tab">
               Resume
             </button>
           </div>
@@ -75,11 +76,12 @@ export default function Navbar() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="mobile-nav-link"
+                aria-label={`Scroll to ${item.label} section`}
               >
                 {item.label}
               </button>
             ))}
-            <button onClick={openResume} className="mobile-nav-link mobile-resume">
+            <button onClick={openResume} className="mobile-nav-link mobile-resume" aria-label="Open Resume PDF in new tab">
               Resume
             </button>
           </div>

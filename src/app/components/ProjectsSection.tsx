@@ -160,9 +160,7 @@ export default function ProjectsSection() {
         <div className="projects-heading-row">
           <h2>Featured Projects</h2>
           <p>
-            Specialized in React, Node.js, and modern web technologies.
-            Helping businesses and e-commerce grow with custom web solutions
-            focused on performance.
+            Specializing in Full Stack Development and AI Automation. I design and build SaaS dashboards, web applications, and automated workflows using Laravel, React, and Next.js.
           </p>
         </div>
 

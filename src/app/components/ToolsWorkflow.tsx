@@ -75,13 +75,10 @@ export default function ToolsWorkflow() {
         >
           <h2>Technologies &amp; Tools</h2>
           <p>
-            Specializing in React, Node.js, and modern web technologies.
-            Helping businesses and e-commerce grow with custom web solutions
-            focused on performance, SEO, and scalability.
+            Employing a modern stack to deliver robust solutions as an AI Automation Engineer Morocco and Full Stack Developer Morocco. Utilizing version control, containerization, and modern APIs to connect business systems.
           </p>
           <p>
-            Technologies. Helping businesses and e-commerce grow with custom web
-            solutions focused on performance, SEO, and scalability.
+            From custom React and Next.js frontend designs to robust Laravel backends and automated n8n workflows, ensuring a seamless user experience and maximum conversion rates for local and global clients.
           </p>
         </div>
       </div>
