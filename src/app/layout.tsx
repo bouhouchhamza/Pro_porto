@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Hamza Bouhouch Portfolio",
     images: [
       {
-        url: '/logo.webp',
+        url: '/logo.png',
         width: 400,
         height: 400,
         alt: 'Hamza Bouhouch - Full Stack Developer Logo',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Full Stack Developer Portfolio – Hamza Bouhouch",
     description: "Passionate Full Stack Developer specializing in React, Node.js, TypeScript. Building modern web applications.",
-    images: ['/logo.webp'],
+    images: ['/logo.png'],
   },
   robots: {
     index: true,

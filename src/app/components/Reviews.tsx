@@ -1,5 +1,11 @@
 export default function Reviews() {
-  const testimonials = [
+  const testimonials: Array<{
+    name: string;
+    role: string;
+    avatar: string;
+    rating: number;
+    text: string;
+  }> = [
     {
       name: 'Alice Johnson',
       role: 'Product Manager',
@@ -30,7 +36,7 @@ export default function Reviews() {
           Reviews
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((review: any, index: number) => (
+          {testimonials.map((review, index) => (
             <div key={index} className="glass review-card p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-gray-600 rounded-full mr-4 flex items-center justify-center">

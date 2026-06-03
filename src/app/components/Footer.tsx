@@ -1,20 +1,44 @@
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <p className="text-gray-400 text-sm">
-          2024 Hamza Bouhouch. All rights reserved.
-        </p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
-            <span className="text-xl">🐙</span>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
-            <span className="text-xl">💼</span>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
-            <span className="text-xl">📧</span>
-          </a>
+    <footer className="portfolio-footer">
+      <div className="footer-shell">
+        {/* Main row */}
+        <div className="footer-main-row">
+          {/* Left Column: Full logo.png */}
+          <div className="footer-brand">
+            <img src="/logo.png" alt="Hamza Bouhouch Logo" className="footer-logo-image" />
+          </div>
+
+          {/* Right Column: Two columns of nav links & contact info */}
+          <div className="footer-right-cols">
+            {/* Column 1: Links */}
+            <div className="footer-links-col">
+              <a href="#about">About</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </div>
+
+            {/* Column 2: Contact Info */}
+            <div className="footer-info-col">
+              <a href="mailto:bouhouchhamza075@gmail.com">
+                bouhouchhamza075@gmail.com
+              </a>
+              <a href="tel:+212772247633">
+                +212 772 247 633
+              </a>
+              <span>Morocco</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider Line */}
+        <hr className="footer-divider" />
+
+        {/* Bottom Sub-bar */}
+        <div className="footer-bottom-bar">
+          <span className="footer-designer">Designed by BP-Studios</span>
+          <span className="footer-copyright">2026 All Rights Reserved</span>
         </div>
       </div>
     </footer>

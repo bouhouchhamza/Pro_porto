@@ -1,10 +1,9 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
-import CertificationsSection from "./components/CertificationsSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+import ToolsWorkflow from "./components/ToolsWorkflow";
+import AboutSection from "./components/AboutSection";
 import Quote from "./components/Quote";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -14,11 +13,10 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <AboutSection />
-      <SkillsSection />
       <ProjectsSection />
-      <CertificationsSection />
-      <TestimonialsSection />
+      <SkillsSection />
+      <ToolsWorkflow />
+      <AboutSection />
       <Quote />
       <Contact />
       <Footer />

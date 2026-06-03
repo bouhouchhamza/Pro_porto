@@ -1,174 +1,180 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
-interface TypingCodeEditorProps {
-  code: string;
+interface Token {
+  text: string;
+  className: string;
 }
 
-function TypingCodeEditor({ code }: TypingCodeEditorProps) {
-  const [displayedCode, setDisplayedCode] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+const codeTokens: Token[] = [
+  { text: "const ", className: "syntax-keyword" },
+  { text: "aboutMe ", className: "syntax-property" },
+  { text: "= ", className: "" },
+  { text: "{\n", className: "syntax-bracket" },
+  
+  { text: "  role", className: "syntax-property" },
+  { text: ': "', className: "" },
+  { text: "Full Stack & AI Automation", className: "syntax-string" },
+  { text: '",\n', className: "" },
+  
+  { text: "  builds", className: "syntax-property" },
+  { text: ': [', className: "" },
+  { text: '"SaaS"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"AI Workflows"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"n8n"', className: "syntax-string" },
+  { text: '],\n', className: "" },
+  
+  { text: "  stack", className: "syntax-property" },
+  { text: ': [', className: "" },
+  { text: '"Laravel"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"React"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"Next.js"', className: "syntax-string" },
+  { text: '],\n', className: "" },
+  
+  { text: "  service", className: "syntax-property" },
+  { text: ': "', className: "" },
+  { text: "Business Systems for Clients", className: "syntax-string" },
+  { text: '"\n', className: "" },
+  
+  { text: "};", className: "syntax-bracket" }
+];
 
-  // Simple syntax highlighting
-  const highlightSyntax = (text: string) => {
-    return text
-      .replace(/\b(const|let|var|function|return)\b/g, '<span class="syntax-keyword">$1</span>')
-      .replace(/\b(name|role|location|focus|skills|interests|mindset|goal)\b/g, '<span class="syntax-property">$1</span>')
-      .replace(/\b(Hamza Bouhouch|Web Developer|Morocco|HTML|CSS|JavaScript|PHP|MySQL|MVC Architecture|Creative UI|Performance|Clean code)\b/g, '<span class="syntax-string">$1</span>')
-      .replace(/\b(Building modern, clean and interactive web experiences|Learn by building real projects|Become a strong full stack developer)\b/g, '<span class="syntax-string">$1</span>')
-      .replace(/(["'])([^"']*?)\1/g, '<span class="syntax-string">$1$2$1</span>')
-      .replace(/[{}[\];()]/g, '<span class="syntax-bracket">$&</span>');
-  };
+function AboutTerminalCard({
+  isVisible,
+}: {
+  isVisible: boolean;
+}) {
+  const [visibleChars, setVisibleChars] = useState(0);
 
-  // Direct typing function
-  const startTyping = () => {
-    setDisplayedCode('');
-    setIsTyping(true);
-
-    const fullCode = code;
-    let currentIndex = 0;
-    
-    const typeNextCharacter = () => {
-      if (currentIndex < fullCode.length) {
-        const nextChars = fullCode.substring(0, currentIndex + 1);
-        const currentChar = fullCode[currentIndex];
-        
-        // Natural typing speed with pauses
-        let delay = 60 + Math.random() * 40;
-        
-        if (currentChar === '{' || currentChar === '}') {
-          delay = 200 + Math.random() * 100;
-        } else if (currentChar === ',') {
-          delay = 100 + Math.random() * 50;
-        } else if (currentChar === '\n') {
-          delay = 150 + Math.random() * 50;
-        } else if (currentChar === ';') {
-          delay = 120 + Math.random() * 60;
-        }
-        
-        setDisplayedCode(highlightSyntax(nextChars));
-        currentIndex++;
-        
-        // Use requestIdleCallback for better performance
-        requestIdleCallback(() => {
-          setTimeout(typeNextCharacter, delay);
-        });
-      } else {
-        setDisplayedCode(highlightSyntax(fullCode));
-        setIsTyping(false);
-      }
-    };
-
-    // Start typing in next idle period
-    requestIdleCallback(typeNextCharacter);
-  };
-
-  // Start typing when component mounts with mobile optimization
   useEffect(() => {
-    // Detect mobile and delay typing animation for better performance
-    const isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      // On mobile, delay typing animation using requestIdleCallback
-      requestIdleCallback(() => {
-        setTimeout(startTyping, 1000); // Additional delay for mobile
-      }, { timeout: 2000 });
-    } else {
-      // On desktop, start immediately
-      startTyping();
-    }
+    if (!isVisible) return;
 
-    return () => {
-      if (typingTimeoutRef.current) {
-        clearTimeout(typingTimeoutRef.current);
+    const totalChars = codeTokens.reduce((sum, token) => sum + token.text.length, 0);
+    let current = 0;
+
+    const interval = setInterval(() => {
+      current += 1;
+      setVisibleChars(current);
+      if (current >= totalChars) {
+        clearInterval(interval);
       }
-    };
-  }, []);
+    }, 25);
+
+    return () => clearInterval(interval);
+  }, [isVisible]);
+
+  let charsRendered = 0;
+  const renderedElements = codeTokens.map((token, index) => {
+    if (charsRendered >= visibleChars) return null;
+    const remaining = visibleChars - charsRendered;
+    const textToShow = token.text.slice(0, remaining);
+    charsRendered += token.text.length;
+
+    return (
+      <span key={index} className={token.className}>
+        {textToShow}
+      </span>
+    );
+  });
 
   return (
-    <div className="code-editor">
-      {/* Mac-style window controls */}
-      <div className="editor-header">
-        <div className="editor-dot red"></div>
-        <div className="editor-dot yellow"></div>
-        <div className="editor-dot green"></div>
-        <div className="editor-label">JavaScript</div>
+    <div
+      className="about-terminal-card"
+      aria-label="About Me JavaScript terminal card"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(24px)",
+      }}
+    >
+      {/* Header bar with mac dots and JavaScript label */}
+      <div className="about-terminal-header">
+        <div className="about-terminal-dots" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <span className="about-terminal-lang">JavaScript</span>
       </div>
 
-      {/* Code content */}
-      <div className="editor-content">
-        <div 
-          className="code-text"
-          dangerouslySetInnerHTML={{ __html: displayedCode }}
-        />
-        {isTyping && <div className="cursor"></div>}
+      {/* Terminal body */}
+      <div className="about-terminal-body">
+        <pre className="about-terminal-code">
+          <code>{renderedElements}</code>
+        </pre>
+
+        {/* Blinking cursor at bottom left */}
+        <div className="about-terminal-cursor" aria-hidden="true" />
+
+        {/* Portrait image overlay */}
+        <div className="about-terminal-portrait-wrap" aria-hidden="true">
+          <Image
+            src="/byby.jpg"
+            alt=""
+            width={505}
+            height={343}
+            className="about-terminal-portrait"
+          />
+        </div>
       </div>
     </div>
   );
 }
 
 export default function AboutSection() {
-  const developerCode = `const aboutMe = () => {
-  return {
-    name: "Hamza Bouhouch",
-    role: "Full Stack Web Developer",
-    location: "Morocco",
-    focus: "Building business-oriented web solutions with focus on performance and scalability",
-    skills: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "TypeScript",
-      "TailwindCSS",
-      "MongoDB",
-      "PostgreSQL"
-    ],
-    interests: [
-      "E-commerce solutions",
-      "Performance optimization",
-      "SEO best practices",
-      "Clean architecture"
-    ],
-    mindset: "Building scalable solutions that drive business growth",
-    goal: "Help businesses and startups succeed with modern web technology"
-  };
-};`;
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="about" className="about-section py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Centered title with gradient */}
-        <h2 className="about-title">
-          About Me
-        </h2>
-
-        {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text content */}
-          <div className="about-text visible">
-            <p className="text-lg leading-relaxed">
-              I'm a Full Stack Web Developer focused on creating business-oriented web solutions that drive growth and success. My expertise spans from responsive front-end designs to scalable back-end architectures, with special attention to e-commerce platforms and startup needs.
-            </p>
-            <p className="text-lg leading-relaxed">
-              I specialize in modern web technologies including React, Next.js, and Node.js, building applications that prioritize performance, SEO optimization, and user experience. Every project is an opportunity to create solutions that make a real impact on business objectives.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Let's build something amazing together that takes your business to the next level!
-            </p>
-          </div>
-
-          {/* Right: Code editor */}
-          <div className="editor-wrapper visible">
-            {/* SEO-friendly hidden content */}
-            <div className="sr-only" aria-hidden="true">
-              <pre>{developerCode}</pre>
-            </div>
-            {/* Visual typing animation */}
-            <TypingCodeEditor code={developerCode} />
-          </div>
+    <section
+      id="about"
+      ref={sectionRef}
+      className={`portfolio-section about-section ${isVisible ? "is-visible" : ""}`}
+    >
+      <div className="about-frame-inner">
+        {/* Left column: About Me title + description */}
+        <div
+          className="about-copy"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(24px)",
+          }}
+        >
+          <h2>About Me</h2>
+          <p>
+            Specializing in React, Node.js, and modern web
+            technologies. Helping businesses and e-commerce grow with custom web solutions
+            focused on performance, SEO, and scalability. Specializing in
+          </p>
+          <p>
+            technologies. Helping businesses and e-commerce
+            grow with custom web solutions focused on
+            performance, SEO, and scalability.
+          </p>
         </div>
+
+        {/* Right column: Terminal card */}
+        <AboutTerminalCard isVisible={isVisible} />
       </div>
     </section>
   );
