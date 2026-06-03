@@ -15,24 +15,70 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://bouhouch.site/#person",
+      "name": "Hamza Bouhouch",
+      "url": "https://bouhouch.site",
+      "jobTitle": "Full Stack Developer & AI Automation Engineer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Morocco"
+      },
+      "sameAs": [
+        "https://github.com/bouhouchhamza",
+        "https://www.linkedin.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://bouhouch.site/#website",
+      "url": "https://bouhouch.site",
+      "name": "Hamza Bouhouch Portfolio",
+      "publisher": {
+        "@id": "https://bouhouch.site/#person"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://bouhouch.site/#service",
+      "name": "Hamza Bouhouch - Full Stack Developer & AI Automation Engineer",
+      "url": "https://bouhouch.site",
+      "image": "https://bouhouch.site/logo.png",
+      "telephone": "+212772247633",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Morocco"
+      }
+    }
+  ]
+};
+
 export const metadata: Metadata = {
-  title: "Full Stack Developer Portfolio – Hamza Bouhouch | React, Node.js, TypeScript",
-  description: "Hamza Bouhouch - Full Stack Developer building modern web applications with React, Node.js, TypeScript, and Next.js. Expert in frontend & backend development, responsive design, and performance optimization.",
-  metadataBase: new URL('https://hamzabouhouch.vercel.app'),
+  title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
+  description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
+  keywords: ["Hamza Bouhouch", "Full Stack Developer Morocco", "AI Automation Engineer", "React Developer", "Next.js Developer", "Laravel Developer", "n8n automation", "SaaS developer", "web applications", "business automation"],
+  authors: [{ name: "Hamza Bouhouch" }],
+  creator: "Hamza Bouhouch",
+  metadataBase: new URL('https://bouhouch.site'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Full Stack Developer Portfolio – Hamza Bouhouch",
-    description: "Passionate Full Stack Developer specializing in React, Node.js, TypeScript. Building modern, scalable web applications with exceptional user experiences.",
-    url: 'https://hamzabouhouch.vercel.app',
+    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
+    description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
+    url: 'https://bouhouch.site',
     siteName: "Hamza Bouhouch Portfolio",
     images: [
       {
-        url: '/logo.png',
-        width: 400,
-        height: 400,
-        alt: 'Hamza Bouhouch - Full Stack Developer Logo',
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Hamza Bouhouch - Full Stack Developer & AI Automation Engineer',
       },
     ],
     locale: 'en_US',
@@ -40,9 +86,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Full Stack Developer Portfolio – Hamza Bouhouch",
-    description: "Passionate Full Stack Developer specializing in React, Node.js, TypeScript. Building modern web applications.",
-    images: ['/logo.png'],
+    title: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
+    description: "Hamza Bouhouch builds premium web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, n8n, and modern technologies.",
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -70,10 +116,12 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#1a1a2e" />
-        <meta name="author" content="Hamza Bouhouch" />
-        <meta name="keywords" content="Hamza Bouhouch, Full Stack Developer, React, Node.js, TypeScript, Next.js, Web Developer, Portfolio, Frontend, Backend, JavaScript, Morocco" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

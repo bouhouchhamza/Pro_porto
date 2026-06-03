@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hamzabouhouch.vercel.app/sitemap.xml
+Sitemap: https://bouhouch.site/sitemap.xml
