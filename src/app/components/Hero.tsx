@@ -1,35 +1,46 @@
 "use client";
 
 import Image from "next/image";
+import { Questrial } from "next/font/google";
 import "./Hero.css";
+
+const questrial = Questrial({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Hero() {
   return (
-    <section className="hero-section" aria-labelledby="hero-title">
+    <section className={`${questrial.className} hero-section`} aria-labelledby="hero-title">
       <div className="hero-container">
         <div className="hero-text">
-          <span className="hero-badge">Premium developer portfolio</span>
-          <h1 id="hero-title" className="hero-title">
-            <span>Hamza Bouhouch</span>
-            <span>Full Stack Developer &amp; AI Automation Engineer in Morocco</span>
-          </h1>
-          <p className="hero-description">
-            I am a professional Full Stack Developer and AI Automation Engineer in Morocco. I build premium websites, web applications, SaaS dashboards, AI automation workflows, and business systems using React, Next.js, Laravel, and n8n.
-          </p>
+          <div className="hero-top-content">
+            <h1 id="hero-title" className="hero-title">
+              <span>Hamza Bouhouch:</span>
+              <span>Full Stack Web Developer</span>
+              <span>Building Digital Solutions</span>
+              <span>for Your Business</span>
+            </h1>
+            <p className="hero-description">
+              Specializing in React, Node.js, and modern web technologies.
+              Helping businesses and e-commerce grow with custom web solutions
+              focused on performance, SEO, and scalability.
+            </p>
+          </div>
           <div className="hero-buttons">
             <button
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className="hero-button-primary"
               aria-label="View my portfolio projects"
             >
-              View Projects
+              View My Work
             </button>
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="hero-button-secondary"
               aria-label="Contact Hamza Bouhouch"
             >
-              Contact Me
+              Contact us &gt;
             </button>
           </div>
         </div>
@@ -37,15 +48,47 @@ export default function Hero() {
         <div className="hero-image-container">
           <div className="hero-image-wrapper glass-panel">
             <div className="hero-image-glow" />
-            <div className="hero-image">
-              <Image
-                src="/byby.jpg"
-                alt="Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco"
-                width={520}
-                height={650}
-                loading="eager"
-                priority
-              />
+            <div className="hero-flip-inner">
+              <div className="hero-card-face hero-card-front">
+                <div className="hero-image">
+                  <Image
+                    src="/byby.jpg"
+                    alt="Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco"
+                    width={520}
+                    height={650}
+                    loading="eager"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="hero-card-face hero-card-back" aria-hidden="true">
+                <div className="hero-profile-card">
+                  <div className="hero-profile-top">
+                    <span className="hero-profile-status" />
+                    <span>Hamza Bouhouch</span>
+                  </div>
+                  <div className="hero-profile-middle">
+                    <p>Full Stack Developer</p>
+                    <dl>
+                      <div>
+                        <dt>Location</dt>
+                        <dd>Morocco</dd>
+                      </div>
+                      <div>
+                        <dt>Availability</dt>
+                        <dd>Open for select projects</dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <div className="hero-profile-stack">
+                    <span>Laravel</span>
+                    <span>React</span>
+                    <span>Next.js</span>
+                    <span>n8n</span>
+                    <span>AI Automation</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

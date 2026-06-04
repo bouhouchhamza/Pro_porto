@@ -117,12 +117,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="project-actions">
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="action-btn primary">
-              Live
+              Live Demo
             </a>
           )}
           {project.sourceUrl && (
             <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="action-btn secondary">
-              Code
+              Source Code
             </a>
           )}
         </div>

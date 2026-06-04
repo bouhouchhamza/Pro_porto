@@ -89,7 +89,6 @@ function AboutTerminalCard({
       aria-label="About Me JavaScript terminal card"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translateY(0)" : "translateY(24px)",
       }}
     >
       {/* Header bar with mac dots and JavaScript label */}
@@ -157,15 +156,14 @@ export default function AboutSection() {
           className="about-copy"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(24px)",
           }}
         >
           <h2>About Me</h2>
           <p>
-            I am Hamza Bouhouch, an experienced Full Stack Developer Morocco and AI Automation Engineer Morocco. I build high-converting websites, web applications, and automated workflows that streamline operations and drive growth.
+            Specializing in React, Node.js, and modern web technologies. Helping businesses and e-commerce grow with custom web solutions focused on performance, SEO, and scalability.
           </p>
           <p>
-            With deep expertise in React, Next.js, Laravel, and n8n, I partner with companies to create custom SaaS dashboards and intelligent business automation systems tailored to their workflows.
+            Helping businesses and e-commerce grow with custom web solutions focused on performance, SEO, and scalability.
           </p>
         </div>
 

@@ -1743,11 +1743,11 @@ textarea:focus {
   overflow: hidden;
   opacity: 0;
   transform: translateY(18px);
-  background: rgba(20, 20, 35, 0.75);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(18, 18, 31, 0.82);
+  border: 1px solid rgba(139, 92, 246, 0.18);
   backdrop-filter: blur(8px);
-  border-radius: 8px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
   transition: opacity 0.65s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1757,13 +1757,13 @@ textarea:focus {
 }
 
 .projects-section .project-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: rgba(139, 92, 246, 0.72);
-  box-shadow: 0 18px 42px rgba(139, 92, 246, 0.22);
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(139, 92, 246, 0.58);
+  box-shadow: 0 15px 36px rgba(139, 92, 246, 0.2);
 }
 
 .projects-section .project-image-container {
-  height: 132px;
+  height: 112px;
   background: rgba(8, 8, 18, 0.72);
   overflow: hidden;
 }
@@ -1781,43 +1781,50 @@ textarea:focus {
 }
 
 .projects-section .project-content {
-  padding: 0.95rem;
+  min-height: 178px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
 }
 
 .projects-section .project-title {
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   line-height: 1.25;
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.38rem;
 }
 
 .projects-section .project-description {
   color: #a1a1aa;
-  font-size: 0.78rem !important;
+  font-size: 0.66rem !important;
   line-height: 1.45 !important;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.64rem;
 }
 
 .projects-section .project-tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.85rem;
+  gap: 0.3rem;
+  margin-bottom: 0.72rem;
 }
 
 .projects-section .tech-tag {
-  padding: 0.2rem 0.5rem;
-  font-size: 0.66rem;
+  padding: 0.17rem 0.43rem;
+  border-radius: 999px;
+  font-size: 0.56rem;
 }
 
 .projects-section .project-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.42rem;
+  margin-top: auto;
 }
 
 .projects-section .action-btn {
-  min-height: 34px;
-  font-size: 0.72rem;
+  min-height: 29px;
+  border-radius: 6px;
+  font-size: 0.61rem;
+  font-weight: 650;
 }
 
 @media (max-width: 1919px) {
@@ -2011,62 +2018,66 @@ main > .workflow-section + .about-section {
 }
 
 .about-frame-inner {
-  width: min(990px, calc(100% - 2rem));
+  --about-frame-height: 245px;
+  width: min(982px, calc(100% - 280px));
   display: grid;
-  grid-template-columns: 380px 520px;
-  gap: 90px;
-  align-items: start;
-  justify-content: center;
+  grid-template-columns: minmax(0, 1fr) 560px;
+  column-gap: 80px;
+  align-items: center;
+  justify-content: start;
   margin: 0 auto;
 }
 
 .about-section .about-copy {
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
+  height: var(--about-frame-height);
   padding: 0;
   min-width: 0;
+  overflow: hidden;
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .about-section .about-copy h2 {
   color: #ffffff;
-  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+  font-size: 32px;
   line-height: 1.15;
   letter-spacing: 0;
-  margin: 0 0 1.15rem;
+  margin: 0 0 1.7rem;
 }
 
 .about-section .about-copy p {
   color: #a1a1aa;
-  font-size: 0.75rem !important;
+  font-size: 12px !important;
   line-height: 1.45 !important;
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.05rem;
 }
 
 /* Terminal Card — matches Figma exactly */
 .about-terminal-card {
   position: relative;
-  width: 520px;
+  width: 560px;
   max-width: 100%;
-  height: 180px;
-  background: #141423;
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  border-radius: 16px;
-  backdrop-filter: blur(5.93px);
-  box-shadow: 0 9.5px 38px rgba(0, 0, 0, 0.3);
+  height: var(--about-frame-height);
+  box-sizing: border-box;
+  background: rgba(20, 20, 35, 0.9);
+  border: 1.18536px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9.48286px;
+  backdrop-filter: blur(5.92679px);
+  box-shadow: 0 9.48286px 37.9315px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   justify-self: end;
-  transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.7s ease 0.1s, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-terminal-card:hover {
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 12px 42px rgba(0, 0, 0, 0.38);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 9.48286px 37.9315px rgba(0, 0, 0, 0.3);
 }
 
 /* Header bar with mac dots */
 .about-terminal-header {
-  height: 36px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2078,38 +2089,40 @@ main > .workflow-section + .about-section {
 /* Mac-style dots */
 .about-terminal-dots {
   display: flex;
-  gap: 0.4rem;
+  gap: 9.48px;
 }
 
 .about-terminal-dots span {
-  width: 10px;
-  height: 10px;
+  width: 14.22px;
+  height: 14.22px;
   border-radius: 50%;
-  background: #ff5f57;
+  background: #FF5F57;
 }
 
 .about-terminal-dots span:nth-child(2) {
-  background: #ffbd2e;
+  background: #FFBD2E;
 }
 
 .about-terminal-dots span:nth-child(3) {
-  background: #28ca42;
+  background: #28CA42;
 }
 
 /* JavaScript label top-right */
-.about-terminal-lang {
-  color: #6b737c;
-  font-size: 0.68rem;
+.about-terminal-lang,
+.about-terminal-header > span {
+  color: #6B737C;
+  font-size: 14px;
   font-family: "JetBrains Mono", var(--font-geist-mono), monospace;
   line-height: 1;
   letter-spacing: 0.02em;
+  opacity: 1;
 }
 
 /* Terminal body */
 .about-terminal-body {
   position: relative;
-  height: calc(100% - 36px);
-  padding: 1rem 1.2rem;
+  height: calc(100% - 42px);
+  padding: 52px 28px 24px;
   overflow: hidden;
   background: rgba(20, 20, 35, 0.9);
 }
@@ -2117,9 +2130,10 @@ main > .workflow-section + .about-section {
 /* Code block */
 .about-terminal-code {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   display: block;
   max-width: 62%;
+  max-height: 100%;
   margin: 0;
   overflow: hidden;
   white-space: pre-wrap;
@@ -2128,67 +2142,75 @@ main > .workflow-section + .about-section {
 
 .about-terminal-code code {
   display: block;
-  color: #bfc7d5;
+  color: #BFC7D5;
   font-family: "JetBrains Mono", var(--font-geist-mono), monospace;
-  font-size: 0.68rem;
-  line-height: 1.45;
+  font-size: 12px;
+  line-height: 1.4;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 /* Syntax highlighting — matching Figma exactly */
 .about-terminal-code .syntax-keyword {
-  color: #c792ea;
+  color: #C792EA;
 }
 
 .about-terminal-code .syntax-variable {
-  color: #bfc7d5;
+  color: #82AAFF;
 }
 
 .about-terminal-code .syntax-property {
-  color: #82aaff;
+  color: #82AAFF;
 }
 
 .about-terminal-code .syntax-string {
-  color: #c3e88d;
+  color: #C3E88D;
 }
 
 .about-terminal-code .syntax-bracket {
-  color: #89ddff;
+  color: #89DDFF;
+}
+
+.about-terminal-code .syntax-operator {
+  color: #BFC7D5;
 }
 
 /* Blinking cursor — bottom left of terminal */
 .about-terminal-cursor {
   position: absolute;
-  left: 1.2rem;
-  bottom: 1rem;
+  left: 32px;
+  bottom: 28px;
   z-index: 3;
   width: 2.4px;
   height: 1.15rem;
-  background: #82aaff;
+  background: #82AAFF;
   animation: terminalCursorBlink 1s steps(2, start) infinite;
 }
 
 /* Portrait image — embedded inside terminal card */
 .about-terminal-portrait-wrap {
   position: absolute;
-  right: 0;
-  top: 36px;
-  bottom: 0;
+  right: -55px;
+  top: auto;
+  bottom: -45px;
   left: auto;
-  width: 195px;
-  overflow: hidden;
+  z-index: 1;
+  width: 330px;
+  height: auto;
+  overflow: visible;
+  mix-blend-mode: lighten;
+  opacity: 1;
   pointer-events: none;
 }
 
 .about-terminal-portrait {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
   mix-blend-mode: lighten;
-  opacity: 0.75;
+  opacity: 1;
   filter: grayscale(1) contrast(1.35) brightness(0.85);
+  pointer-events: none;
 }
 
 @keyframes terminalCursorBlink {
@@ -2204,10 +2226,17 @@ main > .workflow-section + .about-section {
 }
 
 /* About Me — responsive */
+@media (max-width: 1919px) {
+  .about-frame-inner {
+    width: min(982px, calc(100% - 2rem));
+  }
+}
+
 @media (max-width: 1023px) {
   .about-frame-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: start;
   }
 
   .about-section .about-copy {
@@ -2216,7 +2245,7 @@ main > .workflow-section + .about-section {
   }
 
   .about-terminal-card {
-    width: min(100%, 520px);
+    width: min(100%, 560px);
     max-width: 100%;
     justify-self: start;
   }
@@ -2365,5 +2394,487 @@ main > .workflow-section + .about-section {
 @media (max-width: 480px) {
   :root {
     --section-rhythm: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body,
+  main {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .nav-shell,
+  .section-shell,
+  .footer-shell,
+  .projects-frame-inner,
+  .skills-frame-inner,
+  .workflow-section .workflow-layout,
+  .about-section .about-layout {
+    width: calc(100% - 32px) !important;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-row {
+    height: 54px;
+    gap: 0.75rem;
+  }
+
+  .nav-logo,
+  .nav-logo-image {
+    overflow: visible;
+  }
+
+  .nav-logo-image {
+    width: auto;
+    height: 38px;
+    max-width: 150px;
+    object-fit: contain;
+  }
+
+  .mobile-menu-button {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    margin-left: auto;
+  }
+
+  .mobile-nav {
+    padding: 0.6rem 0 0.8rem;
+  }
+
+  .portfolio-section {
+    max-width: 100%;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .projects-section,
+  .skills-section,
+  .workflow-section,
+  .about-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .projects-heading-row,
+  .projects-section .projects-grid,
+  .skills-frame-inner,
+  .skills-card-grid,
+  .workflow-section .workflow-layout,
+  .workflow-section .tools-grid,
+  .about-section .about-layout,
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .projects-heading-row,
+  .skills-frame-inner,
+  .workflow-section .workflow-layout,
+  .about-section .about-layout,
+  .contact-layout {
+    gap: 1.5rem !important;
+  }
+
+  .projects-section .projects-grid,
+  .skills-card-grid,
+  .workflow-section .tools-grid {
+    gap: 1rem;
+  }
+
+  .projects-heading-row p {
+    text-align: left;
+  }
+
+  .project-card,
+  .skill-expertise-card,
+  .tool-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .workflow-section .tools-grid,
+  .workflow-section .workflow-copy,
+  .about-section .about-copy {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .about-section {
+    min-height: auto;
+  }
+
+  .about-section .about-copy {
+    padding-top: 0;
+  }
+
+  .about-terminal-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 520 / 180;
+    justify-self: start;
+  }
+
+  .about-terminal-code code {
+    font-size: 0.48rem;
+  }
+
+  .contact-form-container,
+  .contact-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-shell {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-shell nav {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .projects-section {
+    overflow-x: hidden;
+  }
+
+  .projects-frame-inner {
+    gap: 0;
+  }
+
+  .projects-heading-row {
+    display: block;
+  }
+
+  .projects-heading-row h2 {
+    margin: 0 0 16px;
+    font-size: min(36px, 10vw);
+    line-height: 1.1;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .projects-heading-row p {
+    max-width: 320px;
+    margin: 0 auto 32px;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center;
+  }
+
+  .projects-section .projects-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    justify-items: center;
+  }
+
+  .projects-section .project-card {
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+  }
+
+  .projects-section .project-image-container {
+    height: 119px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .projects-section .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  nextjs-portal,
+  .floating-nav,
+  .navigation-indicator,
+  .nav-indicator {
+    display: none !important;
+  }
+}
+
+/* Global natural scrolling and document flow */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  overflow: visible;
+  transform: none;
+}
+
+main > section,
+.hero-section,
+.projects-section,
+.skills-section,
+.workflow-section,
+.about-section,
+.quote-section,
+.contact-section {
+  position: relative !important;
+  inset: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: auto;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: visible;
+  scroll-margin-top: 90px;
+}
+
+main > section + section {
+  margin-top: var(--section-rhythm) !important;
+}
+
+main > .hero-section {
+  margin-top: 0 !important;
+}
+
+.hero-container,
+.projects-frame-inner,
+.skills-frame-inner,
+.workflow-section .workflow-layout,
+.about-section .about-layout,
+.contact-layout,
+.section-shell {
+  position: relative;
+  height: auto;
+  min-height: auto;
+}
+
+.starfield-canvas,
+nextjs-portal {
+  pointer-events: none !important;
+}
+
+@media (max-width: 767px) {
+  .skills-section {
+    overflow-x: hidden;
+  }
+
+  .skills-copy {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .skills-copy h2 {
+    margin: 0 0 20px;
+    font-size: min(34px, 9vw);
+    line-height: 1.1;
+  }
+
+  .skills-copy p {
+    max-width: 340px;
+    margin: 0 0 28px;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .skills-card-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .skill-expertise-card {
+    width: 100%;
+    max-width: 340px;
+    min-height: 96px;
+    height: 96px;
+    padding: 18px;
+    gap: 0;
+    border-radius: 16px;
+  }
+
+  .skill-expertise-icon {
+    margin-bottom: 8px;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .skill-expertise-card strong {
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.15;
+  }
+
+  .skill-expertise-card small {
+    font-size: 12px;
+    line-height: 1.2;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 767px) {
+  main > .skills-section + .workflow-section {
+    margin-top: 80px !important;
+  }
+
+  .workflow-section {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: auto;
+    margin-bottom: 0 !important;
+    padding-top: 64px !important;
+    overflow: visible;
+  }
+
+  .workflow-section .workflow-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    align-items: start;
+  }
+
+  .workflow-section .workflow-copy {
+    order: 1;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .workflow-section .tools-grid {
+    order: 2;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    padding: 64px 16px !important;
+    overflow: visible;
+  }
+
+  .about-section .about-layout {
+    width: 100% !important;
+    max-width: 340px;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+    justify-items: center;
+  }
+
+  .about-section .about-copy {
+    max-width: 340px;
+    padding-top: 0 !important;
+    transform: none !important;
+  }
+
+  .about-section .about-copy h2 {
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  .about-section .about-copy p {
+    max-width: 340px;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .about-terminal-card {
+    width: 100%;
+    max-width: 340px;
+    height: 190px;
+    min-height: 190px;
+    overflow: hidden;
+    border-radius: 12px;
+    justify-self: center;
+    transform: none !important;
+  }
+
+  .about-terminal-header {
+    height: 34px;
+  }
+
+  .about-terminal-dots span {
+    width: 9px;
+    height: 9px;
+  }
+
+  .about-terminal-lang,
+  .about-terminal-header > span {
+    font-size: 10px;
+  }
+
+  .about-terminal-body {
+    height: calc(100% - 34px);
+    padding: 14px 16px 16px;
+  }
+
+  .about-terminal-code {
+    position: relative;
+    z-index: 2;
+    max-width: 62%;
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .about-terminal-code code {
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .about-terminal-cursor {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .about-terminal-portrait-wrap {
+    position: absolute;
+    right: 12px;
+    top: 62px;
+    bottom: auto;
+    z-index: 1;
+    width: 135px;
+    height: auto;
+    overflow: visible;
+    opacity: 0.6;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+  }
+
+  .about-terminal-portrait {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: lighten;
+    opacity: 1;
+    pointer-events: none;
   }
 }

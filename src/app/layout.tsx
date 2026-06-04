@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StarBackground from "./components/StarBackground";
-import SmoothScroll from "./components/SmoothScroll";
 import ScrollAnimations from "./components/ScrollAnimations";
 
 const geistSans = Geist({
@@ -176,7 +175,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StarBackground />
-        <SmoothScroll />
         <ScrollAnimations />
         {children}
       </body>
