@@ -1,25 +1,40 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { IconCloud } from "@/registry/magicui/icon-cloud";
 
-const tools = [
-  { name: "HTML", icon: "🌐" },
-  { name: "CSS", icon: "🎨" },
-  { name: "Tailwind", icon: "💨" },
-  { name: "Bootstrap", icon: "🅱️" },
-  { name: "JavaScript", icon: "⚡" },
-  { name: "TypeScript", icon: "📘" },
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "▲" },
-  { name: "Node.js", icon: "🟢" },
-  { name: "PHP", icon: "🐘" },
-  { name: "MySQL", icon: "🐬" },
-  { name: "MongoDB", icon: "🍃" },
-  { name: "Git", icon: "📦" },
-  { name: "Docker", icon: "🐳" },
-  { name: "Figma", icon: "🎨" },
-  { name: "VS Code", icon: "💻" },
+const slugs = [
+  "typescript",
+  "javascript",
+  "react",
+  "nextdotjs",
+  "laravel",
+  "php",
+  "python",
+  "fastapi",
+  "nodedotjs",
+  "express",
+  "html5",
+  "css3",
+  "tailwindcss",
+  "bootstrap",
+  "mysql",
+  "postgresql",
+  "mongodb",
+  "supabase",
+  "firebase",
+  "docker",
+  "git",
+  "github",
+  "vercel",
+  "figma",
+  "visualstudiocode",
+  "android",
+  "flutter",
+  "n8n",
 ];
+
+const images = slugs.map((slug) => `https://cdn.simpleicons.org/${slug}`);
 
 export default function ToolsWorkflow() {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,26 +63,6 @@ export default function ToolsWorkflow() {
     >
       <div className="section-shell workflow-layout">
         <div
-          className="tools-grid"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(24px)",
-          }}
-        >
-          {tools.map((tool, index) => (
-            <div
-              className="tool-card"
-              key={tool.name}
-              style={{ transitionDelay: `${index * 25}ms` }}
-              aria-label={`${tool.name} development technology`}
-            >
-              <span aria-hidden="true">{tool.icon}</span>
-              <strong>{tool.name}</strong>
-            </div>
-          ))}
-        </div>
-
-        <div
           className="workflow-copy"
           style={{
             opacity: isVisible ? 1 : 0,
@@ -84,6 +79,17 @@ export default function ToolsWorkflow() {
             backends, Python and FastAPI services, Supabase, MySQL, PostgreSQL,
             APIs, mobile applications, and automated n8n workflows.
           </p>
+        </div>
+
+        <div
+          className="workflow-icon-cloud"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(24px)",
+          }}
+          aria-label="Technology stack icon cloud"
+        >
+          <IconCloud images={images} />
         </div>
       </div>
     </section>

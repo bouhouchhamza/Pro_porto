@@ -3426,3 +3426,185 @@ nextjs-portal {
     align-items: center;
   }
 }
+
+/* Technologies & Tools IconCloud */
+.workflow-section .workflow-layout {
+  grid-template-columns: minmax(0, 25rem) minmax(18rem, 25rem) !important;
+  gap: clamp(3rem, 8vw, 5rem) !important;
+  align-items: center !important;
+}
+
+.workflow-section .workflow-copy {
+  order: 2;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
+}
+
+.workflow-icon-cloud {
+  order: 1;
+  width: min(100%, 25rem);
+  min-width: 0;
+  justify-self: start;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.magic-icon-cloud {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  perspective: 900px;
+  isolation: isolate;
+  background: transparent;
+}
+
+.magic-icon-cloud::before {
+  content: none;
+}
+
+.magic-icon-cloud-orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: icon-cloud-spin 32s linear infinite;
+  z-index: 1;
+}
+
+.magic-icon-cloud:hover .magic-icon-cloud-orbit {
+  animation-play-state: paused;
+}
+
+.magic-icon-cloud-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  opacity: var(--cloud-opacity);
+  transform:
+    translate3d(
+      calc(var(--cloud-x) * 168px),
+      calc(var(--cloud-y) * 168px),
+      calc(var(--cloud-z) * 168px)
+    )
+    translate(-50%, -50%)
+    scale(var(--cloud-scale));
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+.magic-icon-cloud-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: saturate(0.95) brightness(1.18);
+}
+
+@keyframes icon-cloud-spin {
+  from {
+    transform: rotateX(-12deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(-12deg) rotateY(360deg);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .workflow-section .workflow-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2.5rem !important;
+    align-items: start !important;
+  }
+
+  .workflow-section .workflow-copy {
+    order: 1 !important;
+    width: min(100%, 38rem) !important;
+    max-width: 38rem !important;
+    justify-self: center !important;
+    text-align: center;
+  }
+
+  .workflow-icon-cloud {
+    order: 2 !important;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .magic-icon-cloud {
+    width: 340px;
+    height: 340px;
+  }
+
+  .magic-icon-cloud-item {
+    width: 30px;
+    height: 30px;
+    transform:
+      translate3d(
+        calc(var(--cloud-x) * 136px),
+        calc(var(--cloud-y) * 136px),
+        calc(var(--cloud-z) * 136px)
+      )
+      translate(-50%, -50%)
+      scale(var(--cloud-scale));
+  }
+}
+
+@media (max-width: 767px) {
+  .workflow-section .workflow-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+    align-items: start !important;
+  }
+
+  .workflow-section .workflow-copy {
+    order: 1 !important;
+    width: min(100%, 340px) !important;
+    max-width: 340px !important;
+    justify-self: center !important;
+    text-align: left;
+  }
+
+  .workflow-icon-cloud {
+    order: 2 !important;
+    width: 100%;
+    max-width: 340px;
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  .magic-icon-cloud {
+    width: 280px;
+    height: 280px;
+  }
+
+  .magic-icon-cloud-item {
+    width: 25px;
+    height: 25px;
+    transform:
+      translate3d(
+        calc(var(--cloud-x) * 112px),
+        calc(var(--cloud-y) * 112px),
+        calc(var(--cloud-z) * 112px)
+      )
+      translate(-50%, -50%)
+      scale(var(--cloud-scale));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magic-icon-cloud-orbit {
+    animation-duration: 90s;
+  }
+}
