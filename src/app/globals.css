@@ -2203,6 +2203,8 @@ main > .workflow-section + .about-section {
   overflow: visible;
   mix-blend-mode: lighten;
   opacity: 1;
+  box-shadow: none;
+  filter: none;
   pointer-events: none;
 }
 
@@ -2210,9 +2212,12 @@ main > .workflow-section + .about-section {
   width: 100%;
   height: auto;
   object-fit: contain;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
   opacity: 1;
-  filter: grayscale(1) contrast(1.35) brightness(0.85);
+  filter: none;
+  box-shadow: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   pointer-events: none;
 }
 

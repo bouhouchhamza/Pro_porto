@@ -116,7 +116,7 @@ function AboutTerminalCard({
         {/* Portrait image overlay */}
         <div className="about-terminal-portrait-wrap">
           <Image
-            src="/byby.jpg"
+            src="/terminal_image.jpeg"
             alt="Hamza Bouhouch, Full Stack Developer and AI Automation Engineer in Morocco"
             width={505}
             height={343}
