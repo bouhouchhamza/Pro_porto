@@ -5,7 +5,40 @@ export const SITE_NAME = "Hamza Bouhouch";
 
 const title = "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer Morocco";
 const description =
-  "Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer in Morocco specializing in Laravel, React, Next.js, n8n, SaaS products, and custom business automation.";
+  "Hamza Bouhouch is a Full Stack Developer in Morocco building Laravel, React, Next.js, SaaS, API, e-commerce, dashboard, and AI automation solutions.";
+
+const moroccoServiceAreas = [
+  "Morocco",
+  "Agadir",
+  "Casablanca",
+  "Rabat",
+  "Marrakech",
+  "Tangier",
+  "Nador",
+];
+
+const technologyExpertise = [
+  "Laravel",
+  "PHP",
+  "React",
+  "Next.js",
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "FastAPI",
+  "Node.js",
+  "Supabase",
+  "MySQL",
+  "PostgreSQL",
+  "n8n",
+  "AI automation",
+  "Mobile applications",
+  "Android applications",
+  "API integration",
+  "Dashboards",
+  "SaaS development",
+  "E-commerce development",
+];
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -30,6 +63,22 @@ export const siteMetadata: Metadata = {
     "Business Automation Morocco",
     "Custom Web Application Developer",
     "Freelance Full Stack Developer Morocco",
+    "Hamza developer",
+    "Hamza web developer",
+    "Bouhouch developer",
+    "bouhouch.site",
+    "Mobile application developer Morocco",
+    "Python developer Morocco",
+    "E-commerce developer Morocco",
+    "Dashboard developer Morocco",
+    "API developer Morocco",
+    "Developer Agadir",
+    "Web developer Agadir",
+    "Developer Casablanca",
+    "Developer Rabat",
+    "Developer Marrakech",
+    "Developer Tangier",
+    "Developer Nador",
   ],
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
@@ -113,6 +162,7 @@ export const structuredData = {
         "SaaS development",
         "Custom web applications",
         "Business automation",
+        ...technologyExpertise,
       ],
       sameAs: ["https://github.com/bouhouchhamza"],
       mainEntityOfPage: { "@id": `${SITE_URL}/#website` },
@@ -139,6 +189,11 @@ export const structuredData = {
       priceRange: "$$",
       areaServed: [
         { "@type": "Country", name: "Morocco" },
+        ...moroccoServiceAreas.slice(1).map((name) => ({
+          "@type": "City",
+          name,
+          containedInPlace: { "@type": "Country", name: "Morocco" },
+        })),
         { "@type": "AdministrativeArea", name: "Worldwide" },
       ],
       address: {
@@ -146,15 +201,40 @@ export const structuredData = {
         addressCountry: "MA",
       },
       founder: { "@id": `${SITE_URL}/#person` },
-      knowsAbout: [
+      serviceType: [
         "Full stack development",
+        "Website development",
+        "Mobile application development",
         "AI automation",
-        "Laravel",
-        "React",
-        "Next.js",
-        "n8n",
-        "SaaS",
+        "Business automation",
+        "SaaS development",
+        "E-commerce development",
+        "Dashboard development",
+        "API development and integration",
       ],
+      knowsAbout: technologyExpertise,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Web Development and Automation Services",
+        itemListElement: [
+          "Custom web applications",
+          "Laravel development",
+          "React and Next.js development",
+          "Mobile application development",
+          "SaaS product development",
+          "E-commerce development",
+          "Dashboard development",
+          "API development and integration",
+          "n8n and AI automation",
+        ].map((name) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name,
+            provider: { "@id": `${SITE_URL}/#professional-service` },
+          },
+        })),
+      },
     },
     {
       "@type": "Organization",

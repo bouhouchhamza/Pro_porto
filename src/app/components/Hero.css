@@ -485,3 +485,73 @@
     padding: 0;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-section {
+    padding: 64px 32px 64px !important;
+    overflow-x: hidden;
+  }
+
+  .hero-container {
+    width: 100%;
+    max-width: 720px;
+    padding-top: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.25rem;
+    justify-items: center;
+    overflow: visible;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    min-height: 0;
+    display: block;
+    text-align: center;
+  }
+
+  .hero-title {
+    max-width: 560px;
+    margin: 0 auto 18px;
+    font-size: 42px;
+    line-height: 1.08;
+  }
+
+  .hero-title span:nth-child(2) {
+    white-space: normal;
+  }
+
+  .hero-description {
+    max-width: 430px;
+    margin: 0 auto 26px;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .hero-button-primary,
+  .hero-button-secondary {
+    min-height: 44px;
+    height: 44px;
+    padding: 0 24px;
+    font-size: 14px;
+    border-radius: 22px;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    width: min(46vw, 320px);
+    height: calc(min(46vw, 320px) * 1.24);
+    margin-top: 8px;
+  }
+}

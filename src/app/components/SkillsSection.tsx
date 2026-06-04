@@ -45,7 +45,8 @@ export default function SkillsSection() {
           </p>
           <p>
             AI automation expertise includes n8n workflows, API integrations,
-            OpenAI solutions, dashboards, and practical business automation systems.
+            OpenAI solutions, Python and FastAPI services, dashboards, and practical
+            business automation systems.
           </p>
         </div>
 

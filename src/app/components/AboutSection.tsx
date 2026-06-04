@@ -117,7 +117,7 @@ function AboutTerminalCard({
         <div className="about-terminal-portrait-wrap">
           <Image
             src="/byby.jpg"
-            alt="Hamza Bouhouch - Website Developer Morocco"
+            alt="Hamza Bouhouch, Full Stack Developer and AI Automation Engineer in Morocco"
             width={505}
             height={343}
             className="about-terminal-portrait"

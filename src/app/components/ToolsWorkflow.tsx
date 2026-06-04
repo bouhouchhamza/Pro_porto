@@ -59,8 +59,9 @@ export default function ToolsWorkflow() {
               className="tool-card"
               key={tool.name}
               style={{ transitionDelay: `${index * 25}ms` }}
+              aria-label={`${tool.name} development technology`}
             >
-              <span>{tool.icon}</span>
+              <span aria-hidden="true">{tool.icon}</span>
               <strong>{tool.name}</strong>
             </div>
           ))}
@@ -80,7 +81,8 @@ export default function ToolsWorkflow() {
           </p>
           <p>
             The stack combines React and Next.js interfaces, Laravel and Node.js
-            backends, Docker, databases, APIs, and automated n8n workflows.
+            backends, Python and FastAPI services, Supabase, MySQL, PostgreSQL,
+            APIs, mobile applications, and automated n8n workflows.
           </p>
         </div>
       </div>

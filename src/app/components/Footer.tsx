@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="portfolio-footer">
@@ -6,7 +8,13 @@ export default function Footer() {
         <div className="footer-main-row">
           {/* Left Column: Full logo.png */}
           <div className="footer-brand">
-            <img src="/logo.png" alt="Hamza Bouhouch Logo" className="footer-logo-image" />
+            <Image
+              src="/logo.png"
+              alt="Hamza Bouhouch full stack developer portfolio logo"
+              width={180}
+              height={56}
+              className="footer-logo-image"
+            />
           </div>
 
           {/* Right Column: Two columns of nav links & contact info */}

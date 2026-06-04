@@ -9,7 +9,7 @@ Audit date: June 4, 2026
 No technical implementation can guarantee a first-place Google ranking. The strongest path is to combine a technically clean, entity-focused portfolio with consistent external profiles, locally relevant citations, useful technical content, and genuine backlinks.
 
 Estimated technical/on-page score before this implementation: **64/100**.  
-Estimated score after the implemented changes: **90/100**.
+Estimated score after the implemented changes: **92/100**.
 
 Strong existing signals included a canonical URL, one descriptive H1, useful project content, responsive layouts, and some JSON-LD. The largest weaknesses were a placeholder Search Console verification token, a missing social preview image and manifest, static sitemap entries for non-indexable URL fragments, JavaScript-only navigation buttons, incomplete entity relationships, and limited external authority signals.
 
@@ -97,6 +97,43 @@ Create genuinely useful pages instead of adding more keywords to the homepage:
 
 Each page should contain unique proof, process, FAQs, project examples, and a clear contact path. Avoid creating thin near-duplicate location pages.
 
+### Expanded Service Keyword Map
+
+| Search intent | Primary target | Recommended destination |
+| --- | --- | --- |
+| Personal/brand | Hamza Bouhouch, Bouhouch, Hamza developer, Bouhouch developer, bouhouch.site | Homepage |
+| Broad developer | Web developer Morocco, Website developer Morocco, Full Stack Developer Morocco, Freelance developer Morocco | Homepage initially; later `/full-stack-developer-morocco` |
+| Framework specialist | Laravel developer Morocco, React developer Morocco, Next.js developer Morocco, Python developer Morocco | Dedicated technology service pages |
+| Automation | n8n automation developer Morocco, AI automation Morocco, Business automation Morocco | `/ai-automation-engineer-morocco` and `/n8n-automation-morocco` |
+| Product development | SaaS developer Morocco, Dashboard developer Morocco, API developer Morocco | Dedicated service/case-study pages |
+| Commerce | E-commerce developer Morocco | Ecommerce service page plus relevant case studies |
+| Applications | Mobile application developer Morocco | Mobile development service page only when supported by real portfolio proof |
+
+The homepage should remain focused on Hamza Bouhouch plus broad full stack and AI automation intent. It should not try to rank equally for every technology and city.
+
+### Local Morocco Keyword Map
+
+The current site truthfully states that remote development services are available across Morocco. It does **not** claim physical offices in these cities.
+
+| City | Priority keyword cluster | Recommended content asset |
+| --- | --- | --- |
+| Agadir | Developer Agadir, Web developer Agadir, Freelance developer Agadir, Laravel developer Agadir | Original case study or guide focused on Agadir SMEs, tourism, ecommerce, or operations |
+| Casablanca | Developer Casablanca, Web developer Casablanca, React developer Casablanca | SaaS, startup, dashboard, and enterprise workflow case studies |
+| Rabat | Developer Rabat, Web developer Rabat | Secure web applications, institutional workflows, and API integration guides |
+| Marrakech | Developer Marrakech, Web developer Marrakech | Tourism, booking, hospitality, ecommerce, and multilingual website content |
+| Tangier | Developer Tangier, Web developer Tangier | Logistics, industrial dashboards, APIs, and business automation content |
+| Nador | Developer Nador, Web developer Nador | Local SME websites, ecommerce, and process automation content |
+
+Do not publish six near-identical city pages with the city name swapped. Create a city page only when it includes unique local examples, proof, testimonials, or a genuinely city-specific guide.
+
+### Natural Content Rewrite Applied
+
+- Hero establishes Hamza Bouhouch as a Full Stack Developer and AI Automation Engineer in Morocco.
+- Projects connects visible proof to Laravel, React, Next.js, SaaS, and n8n automation.
+- Skills now includes Python and FastAPI services naturally.
+- Technologies describes Supabase, MySQL, PostgreSQL, APIs, mobile applications, and n8n workflows.
+- Contact explains remote service coverage across Agadir, Casablanca, Rabat, Marrakech, Tangier, and Nador once, without repeated city keyword blocks.
+
 ## 5. Internal Linking Strategy
 
 Current single-page anchors:
@@ -158,6 +195,25 @@ Priority profiles:
 - Earn testimonials and project references from real Moroccan clients.
 - Build French and Arabic content only when it can be maintained at high quality; use separate localized URLs and hreflang.
 - Avoid low-quality bulk directory submissions and paid link schemes.
+
+### Local Citation and Backlink Targets
+
+- Moroccan startup incubators, accelerators, coworking spaces, and technology event websites.
+- Relevant alumni, school, bootcamp, or certification profile pages.
+- Moroccan business directories that manually review listings and allow a website URL.
+- Chambers, professional networks, and local ecommerce or entrepreneur communities.
+- Client case studies and partner pages that describe the actual project and link to the portfolio.
+- Conference talks, workshop pages, podcasts, and community interviews.
+
+Avoid listings that publish thousands of unrelated links, require reciprocal links, or sell guaranteed ranking packages.
+
+### Profile Backlink Plan
+
+1. **GitHub:** complete the profile README; link `bouhouch.site`; pin repositories; add project descriptions, screenshots, topics, and live links.
+2. **LinkedIn:** use a consistent headline, Morocco location, website, featured case studies, and project descriptions.
+3. **Dev.to and Medium:** publish original articles first, then use canonical URLs when republishing content hosted on the portfolio.
+4. **Local listings:** keep name, phone, email, URL, and service description consistent.
+5. **Client/partner links:** request a contextual credit only when it accurately reflects delivered work.
 
 ## 9. Thirty Organic Content Ideas
 
@@ -223,6 +279,22 @@ Every article should answer a real question, include original examples/screensho
 | Refine titles/descriptions based on Search Console CTR | Incremental organic click improvement |
 | Add more relevant image captions and descriptive filenames | Small image-search/context benefit |
 | Maintain sitemap timestamps only when content changes | Cleaner crawler signals |
+
+## Exact Next.js SEO Files
+
+- `src/app/metadata.ts`: homepage metadata, social cards, optional Search Console verification, advanced JSON-LD, Morocco service areas, technologies, and service catalog.
+- `src/app/layout.tsx`: metadata export, viewport configuration, and JSON-LD output.
+- `src/app/sitemap.ts`: generated XML sitemap.
+- `src/app/robots.ts`: generated robots rules and sitemap reference.
+- `src/app/manifest.ts`: web app manifest.
+- `src/app/opengraph-image.tsx`: generated Open Graph image.
+- `src/app/components/Hero.tsx`: entity-focused H1, descriptive hero copy, optimized image attributes, crawlable anchors.
+- `src/app/components/ProjectsSection.tsx`: project alt text and descriptive outbound link labels.
+- `src/app/components/SkillsSection.tsx`: natural technology/service relevance.
+- `src/app/components/ToolsWorkflow.tsx`: broader development stack semantics.
+- `src/app/components/AboutSection.tsx`: personal entity content and descriptive portrait alt text.
+- `src/app/components/Contact.tsx`: natural Morocco-wide remote service coverage.
+- `src/app/components/Navbar.tsx` and `Footer.tsx`: crawlable internal anchors and descriptive logo alt text.
 
 ## Core Web Vitals and Mobile Notes
 

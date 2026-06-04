@@ -85,6 +85,54 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "UI"],
     sourceUrl: "https://github.com/bouhouchhamza/shop_project",
   },
+  {
+    title: "Workflows",
+    description:
+      "Collection of automation workflows for connecting tools, reducing manual tasks, and improving business operations.",
+    image: "/project-ai.svg",
+    techStack: ["n8n", "Automation", "APIs", "Workflows"],
+    sourceUrl: "https://github.com/bouhouchhamza/workflows",
+  },
+  {
+    title: "Sahrwi Travaux",
+    description:
+      "Modern service website built to present construction and travaux offerings with a clean conversion-focused interface.",
+    image: "/project-realestate.svg",
+    techStack: ["Next.js", "React", "Vercel", "UI"],
+    liveUrl: "https://sahrwi-traveux-o06p5kumz-bouhouchhamzas-projects.vercel.app/",
+  },
+  {
+    title: "Serv Booking",
+    description:
+      "Booking experience for service businesses, focused on clear scheduling, customer flow, and practical operations.",
+    image: "/project-dashboard.svg",
+    techStack: ["Next.js", "Booking", "SaaS", "Vercel"],
+    liveUrl: "https://serv-eta.vercel.app/booking",
+  },
+  {
+    title: "AI Video Automation",
+    description:
+      "AI-powered automation project for generating and processing video content through repeatable workflow systems.",
+    image: "/project-ai.svg",
+    techStack: ["AI", "Automation", "Python", "APIs"],
+    sourceUrl: "https://github.com/bouhouchhamza/ai_video_automation",
+  },
+  {
+    title: "Content Writer Automation",
+    description:
+      "Automation tool for writing and structuring content faster with practical AI-assisted generation workflows.",
+    image: "/project-social.svg",
+    techStack: ["AI", "Content", "Automation", "Node.js"],
+    sourceUrl: "https://github.com/bouhouchhamza/content_writer",
+  },
+  {
+    title: "Arjdal Portfolio",
+    description:
+      "Premium personal portfolio website designed for clear presentation, responsive browsing, and professional branding.",
+    image: "/project-ecommerce.svg",
+    techStack: ["React", "Portfolio", "Vercel", "Design"],
+    liveUrl: "https://arjdal-portfolio-l3ecbptj5-bouhouchhamzas-projects.vercel.app/",
+  },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -116,12 +164,24 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         <div className="project-actions">
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="action-btn primary">
-              Live Demo
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn primary"
+              aria-label={`View live demo of ${project.title}`}
+            >
+              View Project
             </a>
           )}
           {project.sourceUrl && (
-            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="action-btn secondary">
+            <a
+              href={project.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="action-btn secondary"
+              aria-label={`View source code for ${project.title} by Hamza Bouhouch`}
+            >
               Source Code
             </a>
           )}
@@ -165,7 +225,12 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        <div className="projects-grid">
+        <div
+          className="projects-grid"
+          role="region"
+          aria-label="Featured projects. Swipe horizontally on mobile to browse."
+          tabIndex={0}
+        >
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}

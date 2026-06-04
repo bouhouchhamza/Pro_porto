@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,7 +19,14 @@ export default function Navbar() {
       <div className="nav-shell">
         <div className="nav-row">
           <Link href="/" className="nav-logo" aria-label="Hamza Bouhouch home">
-            <img src="/logo.png" alt="Hamza Bouhouch - Web Developer Morocco logo" className="nav-logo-image" />
+            <Image
+              src="/logo.png"
+              alt="Hamza Bouhouch developer portfolio logo"
+              width={180}
+              height={42}
+              className="nav-logo-image"
+              priority
+            />
           </Link>
 
           <div className="nav-links">
