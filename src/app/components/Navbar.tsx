@@ -13,26 +13,6 @@ const navItems = [
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const navbarHeight = 58;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-
-      window.scrollTo({
-        top: elementPosition - navbarHeight,
-        behavior: "smooth",
-      });
-    }
-
-    setIsMobileMenuOpen(false);
-  };
-
-  const openResume = () => {
-    window.open("/resume.pdf", "_blank", "noopener,noreferrer");
-    setIsMobileMenuOpen(false);
-  };
-
   return (
     <nav className="portfolio-nav">
       <div className="nav-shell">
@@ -43,18 +23,24 @@ export default function Navbar() {
 
           <div className="nav-links">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                href={`#${item.id}`}
                 className="nav-link"
-                aria-label={`Scroll to ${item.label} section`}
+                aria-label={`${item.label} Hamza Bouhouch`}
               >
                 {item.label}
-              </button>
+              </a>
             ))}
-            <button onClick={openResume} className="nav-link nav-resume" aria-label="Open Resume PDF in new tab">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link nav-resume"
+              aria-label="Open Hamza Bouhouch Full Stack Developer resume"
+            >
               Resume
-            </button>
+            </a>
           </div>
 
           <button
@@ -72,18 +58,26 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="mobile-nav">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                href={`#${item.id}`}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="mobile-nav-link"
-                aria-label={`Scroll to ${item.label} section`}
+                aria-label={`${item.label} Hamza Bouhouch`}
               >
                 {item.label}
-              </button>
+              </a>
             ))}
-            <button onClick={openResume} className="mobile-nav-link mobile-resume" aria-label="Open Resume PDF in new tab">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mobile-nav-link mobile-resume"
+              aria-label="Open Hamza Bouhouch Full Stack Developer resume"
+            >
               Resume
-            </button>
+            </a>
           </div>
         )}
       </div>

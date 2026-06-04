@@ -18,30 +18,29 @@ export default function Hero() {
             <h1 id="hero-title" className="hero-title">
               <span>Hamza Bouhouch:</span>
               <span>Full Stack Web Developer</span>
-              <span>Building Digital Solutions</span>
-              <span>for Your Business</span>
+              <span>AI Automation Engineer</span>
+              <span>in Morocco</span>
             </h1>
             <p className="hero-description">
-              Specializing in React, Node.js, and modern web technologies.
-              Helping businesses and e-commerce grow with custom web solutions
-              focused on performance, SEO, and scalability.
+              Hamza Bouhouch builds custom web applications, SaaS products, and
+              business automation using Laravel, React, Next.js, Node.js, and n8n.
             </p>
           </div>
           <div className="hero-buttons">
-            <button
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            <a
+              href="#projects"
               className="hero-button-primary"
-              aria-label="View my portfolio projects"
+              aria-label="View Hamza Bouhouch full stack and AI automation projects"
             >
               View My Work
-            </button>
-            <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            </a>
+            <a
+              href="#contact"
               className="hero-button-secondary"
-              aria-label="Contact Hamza Bouhouch"
+              aria-label="Contact Hamza Bouhouch for web development and AI automation"
             >
               Contact us &gt;
-            </button>
+            </a>
           </div>
         </div>
 
@@ -58,6 +57,8 @@ export default function Hero() {
                     height={650}
                     loading="eager"
                     priority
+                    quality={85}
+                    sizes="(max-width: 767px) 78vw, 290px"
                   />
                 </div>
               </div>

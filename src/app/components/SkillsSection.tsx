@@ -38,12 +38,14 @@ export default function SkillsSection() {
     >
       <div className="skills-frame-inner">
         <div className="skills-copy">
-          <h2>Skills &amp; Expertise</h2>
+          <h2>Full Stack &amp; AI Automation Skills</h2>
           <p>
-            Specializing in React, Next.js, and Laravel development in Morocco. Helping businesses and SaaS platforms grow with custom web applications and AI workflow automations focused on speed, search engine optimization (SEO), and high-security architectures.
+            As a Laravel, React, and Next.js Developer in Morocco, Hamza builds
+            secure custom web applications and SaaS platforms designed for performance and growth.
           </p>
           <p>
-            Providing expert services as a Web Developer Morocco to build high-performance storefronts, interactive dashboards, and business systems tailored to client operations.
+            AI automation expertise includes n8n workflows, API integrations,
+            OpenAI solutions, dashboards, and practical business automation systems.
           </p>
         </div>
 

@@ -80,10 +80,10 @@ export default function Contact() {
       <div className="section-shell contact-layout">
         <div className="contact-copy">
           <span className="section-kicker">Contact</span>
-          <h2>Ready to build something useful?</h2>
+          <h2>Hire a Full Stack Developer in Morocco</h2>
           <p>
-            Send a message about your web app, automation workflow, SaaS idea,
-            or business system. I will reply with a practical next step.
+            Contact Hamza Bouhouch about a custom web application, SaaS product,
+            Laravel or Next.js project, n8n workflow, or AI automation system.
           </p>
           <div className="contact-links">
             <a href="mailto:bouhouchhamza075@gmail.com">bouhouchhamza075@gmail.com</a>

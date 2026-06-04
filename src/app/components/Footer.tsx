@@ -13,10 +13,10 @@ export default function Footer() {
           <div className="footer-right-cols">
             {/* Column 1: Links */}
             <div className="footer-links-col">
-              <a href="#about">About</a>
-              <a href="#skills">Skills</a>
-              <a href="#projects">Projects</a>
-              <a href="#contact">Contact</a>
+              <a href="#about">About Hamza</a>
+              <a href="#skills">Developer Skills</a>
+              <a href="#projects">Portfolio Projects</a>
+              <a href="#contact">Contact Hamza</a>
             </div>
 
             {/* Column 2: Contact Info */}

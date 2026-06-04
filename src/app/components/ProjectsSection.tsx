@@ -93,7 +93,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <div className="project-image-container">
         <Image
           src={project.image}
-          alt={`${project.title} preview`}
+          alt={`${project.title} by Hamza Bouhouch, Full Stack Developer Morocco`}
           width={520}
           height={320}
           loading="lazy"
@@ -158,9 +158,10 @@ export default function ProjectsSection() {
     >
       <div className="projects-frame-inner">
         <div className="projects-heading-row">
-          <h2>Featured Projects</h2>
+          <h2>Full Stack &amp; AI Automation Projects</h2>
           <p>
-            Specializing in Full Stack Development and AI Automation. I design and build SaaS dashboards, web applications, and automated workflows using Laravel, React, and Next.js.
+            Selected Laravel, React, Next.js, SaaS, and n8n automation work by
+            Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco.
           </p>
         </div>
 

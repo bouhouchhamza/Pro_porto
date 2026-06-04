@@ -73,12 +73,14 @@ export default function ToolsWorkflow() {
             transform: isVisible ? "translateY(0)" : "translateY(24px)",
           }}
         >
-          <h2>Technologies &amp; Tools</h2>
+          <h2>Web Development &amp; Automation Technologies</h2>
           <p>
-            Employing a modern stack to deliver robust solutions as an AI Automation Engineer Morocco and Full Stack Developer Morocco. Utilizing version control, containerization, and modern APIs to connect business systems.
+            Hamza Bouhouch uses a modern full stack toolkit to deliver reliable
+            web applications and AI automation systems for businesses in Morocco and worldwide.
           </p>
           <p>
-            From custom React and Next.js frontend designs to robust Laravel backends and automated n8n workflows, ensuring a seamless user experience and maximum conversion rates for local and global clients.
+            The stack combines React and Next.js interfaces, Laravel and Node.js
+            backends, Docker, databases, APIs, and automated n8n workflows.
           </p>
         </div>
       </div>

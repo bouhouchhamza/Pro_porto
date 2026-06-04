@@ -69,12 +69,15 @@ function AboutTerminalCard({
     return () => clearInterval(interval);
   }, [isVisible]);
 
-  let charsRendered = 0;
   const renderedElements = codeTokens.map((token, index) => {
-    if (charsRendered >= visibleChars) return null;
-    const remaining = visibleChars - charsRendered;
+    const charsBeforeToken = codeTokens
+      .slice(0, index)
+      .reduce((total, previousToken) => total + previousToken.text.length, 0);
+
+    if (charsBeforeToken >= visibleChars) return null;
+
+    const remaining = visibleChars - charsBeforeToken;
     const textToShow = token.text.slice(0, remaining);
-    charsRendered += token.text.length;
 
     return (
       <span key={index} className={token.className}>
@@ -158,12 +161,14 @@ export default function AboutSection() {
             opacity: isVisible ? 1 : 0,
           }}
         >
-          <h2>About Me</h2>
+          <h2>About Hamza Bouhouch</h2>
           <p>
-            Specializing in React, Node.js, and modern web technologies. Helping businesses and e-commerce grow with custom web solutions focused on performance, SEO, and scalability.
+            Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer
+            in Morocco focused on useful, maintainable digital products.
           </p>
           <p>
-            Helping businesses and e-commerce grow with custom web solutions focused on performance, SEO, and scalability.
+            He develops Laravel backends, React and Next.js experiences, SaaS
+            platforms, and n8n automation that improve real business workflows.
           </p>
         </div>
 
