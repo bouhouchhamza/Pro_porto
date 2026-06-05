@@ -141,7 +141,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <div className="project-image-container">
         <Image
           src={project.image}
-          alt={`${project.title} by Hamza Bouhouch, Full Stack Developer Morocco`}
+          alt={`${project.title} from my portfolio as Hamza Bouhouch, Full Stack Developer Morocco`}
           width={520}
           height={320}
           loading="lazy"
@@ -180,7 +180,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               target="_blank"
               rel="noopener noreferrer"
               className="action-btn secondary"
-              aria-label={`View source code for ${project.title} by Hamza Bouhouch`}
+              aria-label={`View source code for ${project.title} from my portfolio`}
             >
               Source Code
             </a>
@@ -220,8 +220,9 @@ export default function ProjectsSection() {
         <div className="projects-heading-row">
           <h2>Full Stack &amp; AI Automation Projects</h2>
           <p>
-            Selected Laravel, React, Next.js, SaaS, and n8n automation work by
-            Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco.
+            A selection of Laravel, React, Next.js, SaaS, and n8n automation
+            projects I&apos;ve built as a Full Stack Developer and AI Automation
+            Engineer in Morocco.
           </p>
         </div>
 

@@ -94,7 +94,7 @@ export default function TypingCodeCard({ code, className = '' }: TypingCodeCardP
         border: '1px solid rgba(255, 255, 255, 0.08)',
         borderRadius: '8px',
         padding: '24px',
-        fontFamily: '"Fira Code", "JetBrains Mono", Monaco, Menlo, "Courier New", monospace',
+        fontFamily: 'var(--font-questrial), "Questrial", sans-serif',
         fontSize: '14px',
         color: '#abb2bf',
         boxShadow: '0 16px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05)',
@@ -139,7 +139,7 @@ export default function TypingCodeCard({ code, className = '' }: TypingCodeCardP
           marginLeft: 'auto',
           fontSize: '11px',
           color: '#8b92a7',
-          fontFamily: 'system-ui, sans-serif'
+          fontFamily: 'var(--font-questrial), "Questrial", sans-serif'
         }}>
           JavaScript
         </div>
@@ -148,7 +148,7 @@ export default function TypingCodeCard({ code, className = '' }: TypingCodeCardP
       {/* Code content with proper spacing */}
       <div style={{
         marginTop: '40px',
-        fontFamily: '"Fira Code", "JetBrains Mono", Monaco, Menlo, "Courier New", monospace',
+        fontFamily: 'var(--font-questrial), "Questrial", sans-serif',
         fontSize: '14px',
         lineHeight: '1.6',
         whiteSpace: 'pre',

@@ -82,10 +82,11 @@ export default function Contact() {
           <span className="section-kicker">Contact</span>
           <h2>Hire a Full Stack Developer in Morocco</h2>
           <p>
-            Contact Hamza Bouhouch about a custom web application, SaaS product,
-            Laravel or Next.js project, mobile application, n8n workflow, or AI
-            automation system. Remote development services are available across
-            Morocco, including Agadir, Casablanca, Rabat, Marrakech, Tangier, and Nador.
+            Looking for a Laravel Developer, React Developer, Next.js Developer,
+            or AI Automation Engineer in Morocco? Let&apos;s discuss your custom web
+            application, SaaS product, mobile app, n8n workflow, or AI automation
+            system. I work remotely with clients across Morocco, including Agadir,
+            Casablanca, Rabat, Marrakech, Tangier, and Nador.
           </p>
           <div className="contact-links">
             <a href="mailto:bouhouchhamza075@gmail.com">bouhouchhamza075@gmail.com</a>

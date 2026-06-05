@@ -3,21 +3,20 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --font-geist-sans: 'Geist', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
   --section-rhythm: 96px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-questrial), "Questrial", sans-serif;
+  --font-mono: var(--font-questrial), "Questrial", sans-serif;
 }
 
+html,
 body {
   color: var(--foreground);
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-questrial), "Questrial", sans-serif !important;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -30,6 +29,14 @@ html {
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-questrial), "Questrial", sans-serif !important;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit !important;
 }
 
 .glass {
@@ -283,7 +290,7 @@ textarea:focus {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  font-family: "Fira Code", "JetBrains Mono", Monaco, Menlo, monospace;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
   font-size: 14px;
   color: #bfc7d5;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -322,12 +329,12 @@ textarea:focus {
   margin-left: auto;
   font-size: 11px;
   color: #6b737c;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
 }
 
 .editor-content {
   padding: 20px;
-  font-family: "Fira Code", "JetBrains Mono", Monaco, Menlo, monospace;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
   font-size: 14px;
   line-height: 1.6;
   white-space: pre;
@@ -1625,7 +1632,7 @@ textarea:focus {
   letter-spacing: 0.01em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .footer-main-row {
     flex-direction: column;
     align-items: center;
@@ -2152,7 +2159,7 @@ main > .workflow-section + .about-section {
 .about-terminal-header > span {
   color: #6B737C;
   font-size: 14px;
-  font-family: "JetBrains Mono", var(--font-geist-mono), monospace;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
   line-height: 1;
   letter-spacing: 0.02em;
   opacity: 1;
@@ -2183,7 +2190,7 @@ main > .workflow-section + .about-section {
 .about-terminal-code code {
   display: block;
   color: #BFC7D5;
-  font-family: "JetBrains Mono", var(--font-geist-mono), monospace;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
   font-size: 12px;
   line-height: 1.4;
   white-space: pre-wrap;
@@ -3235,14 +3242,24 @@ nextjs-portal {
   .footer-right-cols,
   .footer-bottom-bar {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
+  }
+
+  .footer-main-row,
+  .footer-bottom-bar {
+    justify-content: space-between;
+  }
+
+  .footer-right-cols {
+    align-items: flex-start;
+    gap: clamp(2rem, 6vw, 4rem);
   }
 
   .footer-links-col,
   .footer-info-col {
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
@@ -3362,20 +3379,30 @@ nextjs-portal {
   }
 
   .footer-main-row,
-  .footer-right-cols,
   .footer-bottom-bar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
+  }
+
+  .footer-main-row {
+    justify-content: space-between;
+    gap: 2rem;
   }
 
   .footer-right-cols {
-    gap: 1.25rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(2rem, 6vw, 4rem);
+  }
+
+  .footer-bottom-bar {
+    justify-content: space-between;
   }
 
   .footer-links-col,
   .footer-info-col {
-    align-items: center;
+    align-items: flex-start;
   }
 
   .footer-links-col a,
@@ -3385,7 +3412,7 @@ nextjs-portal {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .contact-section {
     padding: 48px 16px !important;
   }

@@ -19,7 +19,7 @@ const codeTokens: Token[] = [
   { text: "Full Stack & AI Automation", className: "syntax-string" },
   { text: '",\n', className: "" },
   
-  { text: "  builds", className: "syntax-property" },
+  { text: "  iBuild", className: "syntax-property" },
   { text: ': [', className: "" },
   { text: '"SaaS"', className: "syntax-string" },
   { text: ", ", className: "" },
@@ -161,14 +161,15 @@ export default function AboutSection() {
             opacity: isVisible ? 1 : 0,
           }}
         >
-          <h2>About Hamza Bouhouch</h2>
+          <h2>About Me: Hamza Bouhouch</h2>
           <p>
-            Hamza Bouhouch is a Full Stack Developer and AI Automation Engineer
-            in Morocco focused on useful, maintainable digital products.
+            I&apos;m Hamza Bouhouch, a Full Stack Developer and AI Automation
+            Engineer in Morocco focused on useful, maintainable digital products.
           </p>
           <p>
-            He develops Laravel backends, React and Next.js experiences, SaaS
-            platforms, and n8n automation that improve real business workflows.
+            I help businesses turn ideas into scalable digital products using
+            Laravel, React, Next.js, Node.js, Python, FastAPI, Supabase, MySQL,
+            PostgreSQL, and n8n automation.
           </p>
         </div>
 

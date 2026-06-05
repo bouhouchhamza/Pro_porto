@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="footer-right-cols">
             {/* Column 1: Links */}
             <div className="footer-links-col">
-              <a href="#about">About Hamza</a>
-              <a href="#skills">Developer Skills</a>
-              <a href="#projects">Portfolio Projects</a>
-              <a href="#contact">Contact Hamza</a>
+              <a href="#about">About Me</a>
+              <a href="#skills">My Skills</a>
+              <a href="#projects">My Projects</a>
+              <a href="#contact">Contact Me</a>
             </div>
 
             {/* Column 2: Contact Info */}

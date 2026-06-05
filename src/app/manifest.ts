@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer",
     short_name: "Hamza Bouhouch",
     description:
-      "Portfolio of Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco.",
+      "My portfolio as Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco.",
     start_url: "/",
     display: "standalone",
     background_color: "#050509",

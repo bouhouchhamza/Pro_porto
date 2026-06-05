@@ -1,17 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Questrial } from "next/font/google";
 import "./Hero.css";
-
-const questrial = Questrial({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export default function Hero() {
   return (
-    <section className={`${questrial.className} hero-section`} aria-labelledby="hero-title">
+    <section className="hero-section" aria-labelledby="hero-title">
       <div className="hero-container">
         <div className="hero-text">
           <div className="hero-top-content">
@@ -22,22 +16,23 @@ export default function Hero() {
               <span>in Morocco</span>
             </h1>
             <p className="hero-description">
-              Hamza Bouhouch builds custom web applications, SaaS products, and
-              business automation using Laravel, React, Next.js, Node.js, and n8n.
+              I&apos;m Hamza Bouhouch, a Full Stack Developer and AI Automation
+              Engineer based in Morocco. I build custom web applications, SaaS
+              dashboards, mobile apps, APIs, and automation workflows for businesses.
             </p>
           </div>
           <div className="hero-buttons">
             <a
               href="#projects"
               className="hero-button-primary"
-              aria-label="View Hamza Bouhouch full stack and AI automation projects"
+              aria-label="View my full stack and AI automation projects"
             >
               View My Work
             </a>
             <a
               href="#contact"
               className="hero-button-secondary"
-              aria-label="Contact Hamza Bouhouch for web development and AI automation"
+              aria-label="Contact me for web development and AI automation"
             >
               Contact us &gt;
             </a>

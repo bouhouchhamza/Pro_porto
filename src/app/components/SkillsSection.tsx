@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const skillCards = [
-  { title: "Frontend", icon: "🎨", count: "5 Technologies" },
-  { title: "Database", icon: "🗄️", count: "5 Technologies" },
-  { title: "Backend", icon: "⚙️", count: "5 Technologies" },
-  { title: "Full Stack", icon: "🚀", count: "5 Technologies" },
-  { title: "Management", icon: "📊", count: "5 Technologies" },
-  { title: "CMS", icon: "📝", count: "5 Technologies" },
+  { title: "Frontend", icon: "🎨", count: "7 Technologies" },
+  { title: "Database", icon: "🗄️", count: "4 Technologies" },
+  { title: "Backend", icon: "⚙️", count: "3 Technologies" },
+  { title: "Full Stack", icon: "🚀", count: "7 Technologies" },
+  { title: "Management", icon: "📊", count: "3 Technologies" },
+  { title: "CMS", icon: "📝", count: "2 Technologies" },
 ];
 
 export default function SkillsSection() {
@@ -40,13 +40,14 @@ export default function SkillsSection() {
         <div className="skills-copy">
           <h2>Full Stack &amp; AI Automation Skills</h2>
           <p>
-            As a Laravel, React, and Next.js Developer in Morocco, Hamza builds
-            secure custom web applications and SaaS platforms designed for performance and growth.
+            As a Laravel Developer, React Developer, and Next.js Developer in
+            Morocco, I build secure custom web applications and SaaS platforms
+            designed for performance and growth.
           </p>
           <p>
-            AI automation expertise includes n8n workflows, API integrations,
-            OpenAI solutions, Python and FastAPI services, dashboards, and practical
-            business automation systems.
+            I specialize in n8n workflows, API integrations, OpenAI solutions,
+            Python and FastAPI services, dashboards, and practical business
+            automation systems.
           </p>
         </div>
 

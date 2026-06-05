@@ -5,7 +5,7 @@ export const SITE_NAME = "Hamza Bouhouch";
 
 const title = "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer Morocco";
 const description =
-  "Hamza Bouhouch is a Full Stack Developer in Morocco building Laravel, React, Next.js, SaaS, API, e-commerce, dashboard, and AI automation solutions.";
+  "I am Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco building Laravel, React, Next.js, SaaS, API, e-commerce, dashboard, and AI automation solutions.";
 
 const moroccoServiceAreas = [
   "Morocco",

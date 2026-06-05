@@ -71,11 +71,12 @@ export default function ToolsWorkflow() {
         >
           <h2>Web Development &amp; Automation Technologies</h2>
           <p>
-            Hamza Bouhouch uses a modern full stack toolkit to deliver reliable
-            web applications and AI automation systems for businesses in Morocco and worldwide.
+            I use a modern full-stack toolkit to build reliable web applications,
+            SaaS platforms, mobile apps, and AI automation systems for businesses
+            in Morocco and worldwide.
           </p>
           <p>
-            The stack combines React and Next.js interfaces, Laravel and Node.js
+            I work with React and Next.js interfaces, Laravel and Node.js
             backends, Python and FastAPI services, Supabase, MySQL, PostgreSQL,
             APIs, mobile applications, and automated n8n workflows.
           </p>

@@ -1,19 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Questrial } from "next/font/google";
 import "./globals.css";
 import StarBackground from "./components/StarBackground";
 import ScrollAnimations from "./components/ScrollAnimations";
 import { siteMetadata, structuredData } from "./metadata";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const questrial = Questrial({
   subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-questrial",
   display: "swap",
 });
 
@@ -34,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-MA">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${questrial.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
