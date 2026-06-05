@@ -33,7 +33,7 @@ export default function Footer() {
                 bouhouchhamza075@gmail.com
               </a>
               <a href="tel:+212680413783">
-                +212 772 247 633
+                +212 680413783
               </a>
               <span>Morocco</span>
             </div>
