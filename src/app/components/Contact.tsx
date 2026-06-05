@@ -145,7 +145,7 @@ export default function Contact() {
             </div>
 
             <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Sending..." : "Get in Touch"}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
 
             {submitStatus !== "idle" && (
