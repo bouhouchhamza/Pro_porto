@@ -222,11 +222,11 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
   }, []);
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center min-h-[60vh]">
+    <div className="quote-stage">
       {/* Physics Threads - Transparent Background */}
       <div 
         ref={mountRef} 
-        className="absolute inset-0 z-0"
+        className="quote-thread-canvas"
         style={{
           position: 'absolute',
           top: 0,
@@ -239,13 +239,11 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
       />
       
       {/* Quote Card - Center of Physics System */}
-      <div className="relative z-10 px-8 py-12 max-w-4xl mx-auto">
-        <div className="backdrop-blur-xl bg-black/40 border border-white/20 rounded-2xl p-8 md:p-12 shadow-2xl shadow-white/5">
-          <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-6 leading-relaxed">
-            "{quote}"
-          </blockquote>
+      <div className="quote-card-wrap">
+        <div className="quote-card">
+          <blockquote className="quote-text">&quot;{quote}&quot;</blockquote>
           {author && (
-            <cite className="text-lg md:text-xl text-gray-200 font-medium text-right block mt-4">
+            <cite className="quote-author">
               — {author}
             </cite>
           )}

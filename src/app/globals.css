@@ -2704,6 +2704,125 @@ main > .hero-section {
   margin-top: 0 !important;
 }
 
+.quote-section {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  min-height: clamp(540px, 68vh, 760px) !important;
+  padding: 120px 0 !important;
+  overflow: hidden !important;
+  text-align: center;
+}
+
+.quote-stage {
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-thread-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(42px);
+  pointer-events: none;
+}
+
+.quote-card-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(600px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.quote-card {
+  width: 100%;
+  padding: 42px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.quote-text {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
+  font-size: clamp(2rem, 2.6vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: left;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.72);
+}
+
+.quote-author {
+  display: block;
+  margin-top: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: var(--font-questrial), "Questrial", sans-serif;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: right;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.72);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .quote-section {
+    min-height: 620px !important;
+    padding: 96px 0 !important;
+  }
+
+  .quote-card-wrap {
+    width: 76%;
+  }
+
+  .quote-card {
+    padding: 38px 44px;
+  }
+
+  .quote-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .quote-section {
+    min-height: 560px !important;
+    padding: 80px 0 !important;
+  }
+
+  .quote-card-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .quote-card {
+    padding: 28px 24px;
+  }
+
+  .quote-text {
+    font-size: 1.45rem;
+    line-height: 1.55;
+  }
+
+  .quote-author {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+}
+
 .hero-container,
 .projects-frame-inner,
 .skills-frame-inner,
