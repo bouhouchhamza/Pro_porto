@@ -32,7 +32,7 @@ export default function Footer() {
               <a href="mailto:bouhouchhamza075@gmail.com">
                 bouhouchhamza075@gmail.com
               </a>
-              <a href="tel:+212772247633">
+              <a href="tel:+212680413783">
                 +212 772 247 633
               </a>
               <span>Morocco</span>

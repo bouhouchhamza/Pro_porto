@@ -145,7 +145,7 @@ export const structuredData = {
       url: SITE_URL,
       image: `${SITE_URL}/byby.jpg`,
       email: "mailto:bouhouchhamza075@gmail.com",
-      telephone: "+212772247633",
+      telephone: "+212680413783",
       jobTitle: ["Full Stack Developer", "AI Automation Engineer"],
       description,
       address: {
@@ -185,7 +185,7 @@ export const structuredData = {
       image: `${SITE_URL}/byby.jpg`,
       logo: `${SITE_URL}/logo.png`,
       email: "mailto:bouhouchhamza075@gmail.com",
-      telephone: "+212772247633",
+      telephone: "+212680413783",
       priceRange: "$$",
       areaServed: [
         { "@type": "Country", name: "Morocco" },

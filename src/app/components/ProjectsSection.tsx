@@ -99,7 +99,7 @@ const projects: Project[] = [
       "Modern service website built to present construction and travaux offerings with a clean conversion-focused interface.",
     image: "/project-realestate.svg",
     techStack: ["Next.js", "React", "Vercel", "UI"],
-    liveUrl: "https://sahrwi-traveux-o06p5kumz-bouhouchhamzas-projects.vercel.app/",
+    liveUrl: "https://sahrwi-traveux.vercel.app/",
   },
   {
     title: "Serv Booking",
@@ -107,7 +107,7 @@ const projects: Project[] = [
       "Booking experience for service businesses, focused on clear scheduling, customer flow, and practical operations.",
     image: "/project-dashboard.svg",
     techStack: ["Next.js", "Booking", "SaaS", "Vercel"],
-    liveUrl: "https://serv-eta.vercel.app/booking",
+    liveUrl: "https://serv-eta.vercel.app/",
   },
   {
     title: "AI Video Automation",
@@ -126,12 +126,12 @@ const projects: Project[] = [
     sourceUrl: "https://github.com/bouhouchhamza/content_writer",
   },
   {
-    title: "Arjdal Portfolio",
+    title: "B_Plan Portfolio",
     description:
       "Premium personal portfolio website designed for clear presentation, responsive browsing, and professional branding.",
     image: "/project-ecommerce.svg",
     techStack: ["React", "Portfolio", "Vercel", "Design"],
-    liveUrl: "https://arjdal-portfolio-l3ecbptj5-bouhouchhamzas-projects.vercel.app/",
+    liveUrl: "https://arjdal-portfolio.vercel.app/",
   },
 ];
 
