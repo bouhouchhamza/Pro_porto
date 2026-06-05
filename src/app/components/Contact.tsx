@@ -17,7 +17,9 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleChange = (
@@ -54,7 +56,9 @@ export default function Contact() {
 
       if (result.status === 200) {
         setSubmitStatus("success");
-        setStatusMessage("Thank you for your message. I will get back to you soon.");
+        setStatusMessage(
+          "Thank you for your message. I will get back to you soon.",
+        );
         setFormData({ name: "", email: "", message: "" });
       } else {
         throw new Error(`Failed to send message. Status: ${result.status}`);
@@ -83,13 +87,22 @@ export default function Contact() {
           <h2>Hire a Full Stack Developer in Morocco</h2>
           <p>
             Looking for a Laravel Developer, React Developer, Next.js Developer,
-            or AI Automation Engineer in Morocco? Let&apos;s discuss your custom web
-            application, SaaS product, mobile app, n8n workflow, or AI automation
-            system. I work remotely with clients across Morocco, including Agadir,
-            Casablanca, Rabat, Marrakech, Tangier, and Nador.
+            Full Stack Developer, Shopify Developer, WordPress Developer, or AI
+            Automation Engineer? Let's discuss your custom web application, SaaS
+            platform, e-commerce store, mobile app, AI agent, or automation
+            system. I help startups, agencies, and businesses worldwide build
+            scalable web applications, SaaS products, AI-powered workflows,
+            custom CRM systems, e-commerce platforms, and business automation
+            solutions using Laravel, React, Next.js, PostgreSQL, Supabase, n8n,
+            and modern AI technologies. Available for remote projects worldwide,
+            helping companies streamline operations, automate processes, improve
+            customer experiences, and accelerate growth through custom software
+            development and AI automation.
           </p>
           <div className="contact-links">
-            <a href="mailto:bouhouchhamza075@gmail.com">bouhouchhamza075@gmail.com</a>
+            <a href="mailto:bouhouchhamza075@gmail.com">
+              bouhouchhamza075@gmail.com
+            </a>
             <span>Serving clients across Morocco</span>
             <span>Available for projects</span>
           </div>
