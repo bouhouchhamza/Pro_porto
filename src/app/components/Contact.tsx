@@ -89,21 +89,16 @@ export default function Contact() {
             Looking for a Laravel Developer, React Developer, Next.js Developer,
             Full Stack Developer, Shopify Developer, WordPress Developer, or AI
             Automation Engineer? Let's discuss your custom web application, SaaS
-            platform, e-commerce store, mobile app, AI agent, or automation
-            system. I help startups, agencies, and businesses worldwide build
-            scalable web applications, SaaS products, AI-powered workflows,
-            custom CRM systems, e-commerce platforms, and business automation
-            solutions using Laravel, React, Next.js, PostgreSQL, Supabase, n8n,
-            and modern AI technologies. Available for remote projects worldwide,
-            helping companies streamline operations, automate processes, improve
-            customer experiences, and accelerate growth through custom software
-            development and AI automation.
+            product, e-commerce platform, mobile app, n8n workflow, or AI
+            automation system. I collaborate with startups, agencies, and
+            businesses worldwide to build scalable digital products, streamline
+            operations, and create high-performance software solutions.
           </p>
           <div className="contact-links">
             <a href="mailto:bouhouchhamza075@gmail.com">
               bouhouchhamza075@gmail.com
             </a>
-            <span>Serving clients across Morocco</span>
+            <span>Serving clients across the worldwide</span>
             <span>Available for projects</span>
           </div>
         </div>
