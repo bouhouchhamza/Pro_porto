@@ -23,10 +23,20 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
+    const getMountSize = () => {
+      const rect = mountRef.current?.getBoundingClientRect();
+      return {
+        width: Math.max(1, Math.round(rect?.width || window.innerWidth)),
+        height: Math.max(1, Math.round(rect?.height || window.innerHeight)),
+      };
+    };
+
+    const mountSize = getMountSize();
+
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      mountSize.width / mountSize.height,
       0.1,
       1000
     );
@@ -39,7 +49,7 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
       alpha: true,
       premultipliedAlpha: false
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(mountSize.width, mountSize.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearColor(0x000000, 0); // Transparent to show stars
     rendererRef.current = renderer;
@@ -47,9 +57,10 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
 
     // Create physics-based flowing threads
     const threadLayers = [
-      { count: 8, radius: 15, speed: 0.001, opacity: 0.7, color: [0.9, 0.8, 1.0], width: 1.5 },   // Close - bright
-      { count: 12, radius: 22, speed: 0.0008, opacity: 0.5, color: [0.7, 0.9, 1.0], width: 1 },    // Mid - soft
-      { count: 16, radius: 30, speed: 0.0006, opacity: 0.3, color: [0.6, 0.8, 1.0], width: 0.7 },   // Far - dim
+      { count: 12, radius: 18, speed: 0.001, opacity: 0.78, color: [0.82, 0.74, 1.0], width: 1.5 },
+      { count: 18, radius: 28, speed: 0.0008, opacity: 0.58, color: [0.58, 0.78, 1.0], width: 1 },
+      { count: 24, radius: 40, speed: 0.0006, opacity: 0.38, color: [0.48, 0.66, 0.94], width: 0.7 },
+      { count: 14, radius: 52, speed: 0.00045, opacity: 0.22, color: [0.55, 0.48, 0.88], width: 0.5 },
     ];
 
     threadLayers.forEach((layer, layerIndex) => {
@@ -100,6 +111,7 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
         // Store physics animation parameters
         thread.userData = {
           layerIndex,
+          baseOpacity: layer.opacity,
           speed: layer.speed * (0.8 + Math.random() * 0.4),
           phase: Math.random() * Math.PI * 2,
           orbitRadius: layer.radius,
@@ -117,10 +129,12 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
     // Window resize handler
     const handleResize = () => {
       if (!cameraRef.current || !rendererRef.current) return;
+
+      const nextSize = getMountSize();
       
-      cameraRef.current.aspect = window.innerWidth / window.innerHeight;
+      cameraRef.current.aspect = nextSize.width / nextSize.height;
       cameraRef.current.updateProjectionMatrix();
-      rendererRef.current.setSize(window.innerWidth, window.innerHeight);
+      rendererRef.current.setSize(nextSize.width, nextSize.height);
     };
 
     // Animation loop - physics-based motion
@@ -173,7 +187,7 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
           );
           const opacityFactor = 1 - (distanceFromCenter / (orbitRadius * 2)) * 0.3;
           if (thread.material instanceof THREE.LineBasicMaterial) {
-            thread.material.opacity = Math.max(0.1, layerIndex === 0 ? 0.7 : layerIndex === 1 ? 0.5 : 0.3) * opacityFactor;
+            thread.material.opacity = Math.max(0.14, thread.userData.baseOpacity) * opacityFactor;
           }
           
           // Subtle pulsing glow
@@ -227,15 +241,6 @@ export default function PhysicsThreadQuote({ quote, author }: PhysicsThreadQuote
       <div 
         ref={mountRef} 
         className="quote-thread-canvas"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'transparent', // Transparent to show stars
-          pointerEvents: 'none'
-        }}
       />
       
       {/* Quote Card - Center of Physics System */}

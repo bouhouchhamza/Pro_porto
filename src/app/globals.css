@@ -5,7 +5,7 @@
   --foreground: #ededed;
   --font-geist-sans: 'Geist', sans-serif;
   --font-geist-mono: 'Geist Mono', monospace;
-  --section-rhythm: 80px;
+  --section-rhythm: 96px;
 }
 
 @theme inline {
@@ -1486,6 +1486,43 @@ textarea:focus {
   border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
+.contact-section,
+.contact-layout,
+.contact-form-container,
+.contact-form {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.contact-form-container {
+  min-height: fit-content;
+  padding-bottom: clamp(24px, 4vw, 40px);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form > div {
+  min-width: 0;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
+  flex-shrink: 0;
+  justify-self: stretch;
+}
+
 .portfolio-footer {
   position: relative;
   z-index: 10;
@@ -2395,13 +2432,13 @@ main > .workflow-section + .about-section {
 
 @media (max-width: 1023px) {
   :root {
-    --section-rhythm: 80px;
+    --section-rhythm: 72px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --section-rhythm: 80px;
+    --section-rhythm: 56px;
   }
 }
 
@@ -2709,9 +2746,9 @@ main > .hero-section {
   align-items: center;
   justify-content: center;
   width: 100% !important;
-  min-height: clamp(540px, 68vh, 760px) !important;
-  padding: 120px 0 !important;
-  overflow: hidden !important;
+  min-height: auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
   text-align: center;
 }
 
@@ -2726,11 +2763,14 @@ main > .hero-section {
 
 .quote-thread-canvas {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
   z-index: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(42px);
+  width: 100vw;
+  max-width: none;
+  height: 520px;
+  opacity: 0.86;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
@@ -2780,9 +2820,9 @@ main > .hero-section {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .quote-section {
-    min-height: 620px !important;
-    padding: 96px 0 !important;
+  .quote-thread-canvas {
+    width: 100vw;
+    height: 460px;
   }
 
   .quote-card-wrap {
@@ -2799,9 +2839,10 @@ main > .hero-section {
 }
 
 @media (max-width: 767px) {
-  .quote-section {
-    min-height: 560px !important;
-    padding: 80px 0 !important;
+  .quote-thread-canvas {
+    width: 100vw;
+    height: 380px;
+    opacity: 0.78;
   }
 
   .quote-card-wrap {
@@ -3045,7 +3086,7 @@ nextjs-portal {
 /* Final responsive consistency pass */
 @media (min-width: 1024px) {
   :root {
-    --section-rhythm: 80px;
+    --section-rhythm: 96px;
   }
 
   .projects-frame-inner,
@@ -3060,7 +3101,7 @@ nextjs-portal {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   :root {
-    --section-rhythm: 64px;
+    --section-rhythm: 72px;
   }
 
   .projects-frame-inner,
@@ -3459,7 +3500,7 @@ nextjs-portal {
 
 @media (max-width: 767px) {
   :root {
-    --section-rhythm: 48px;
+    --section-rhythm: 56px;
   }
 
   html,
@@ -3549,6 +3590,39 @@ nextjs-portal {
   .footer-info-col {
     align-items: center;
   }
+}
+
+.contact-section,
+.contact-layout,
+.contact-form-container,
+.contact-form {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.contact-form-container {
+  min-height: fit-content;
+  padding-bottom: clamp(24px, 4vw, 40px) !important;
+}
+
+.contact-form {
+  display: flex !important;
+  flex-direction: column;
+  gap: 18px !important;
+}
+
+.contact-form textarea {
+  min-height: 150px !important;
+  resize: vertical;
+}
+
+.contact-form button {
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  flex-shrink: 0;
+  justify-self: stretch !important;
 }
 
 /* Technologies & Tools IconCloud */

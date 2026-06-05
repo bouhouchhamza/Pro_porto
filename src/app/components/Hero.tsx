@@ -45,8 +45,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-image-container">
-          <div className="hero-image-wrapper glass-panel">
-            <div className="hero-image-glow" />
+          <div className="hero-image-wrapper">
             <div className="hero-flip-inner">
               <div className="hero-card-face hero-card-front">
                 <div className="hero-image">
