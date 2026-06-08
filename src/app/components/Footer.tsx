@@ -45,7 +45,7 @@ export default function Footer() {
 
         {/* Bottom Sub-bar */}
         <div className="footer-bottom-bar">
-          <span className="footer-designer">Designed by BP-Studios</span>
+          <span className="footer-designer">Designed by BPL-Studios</span>
           <span className="footer-copyright">2026 All Rights Reserved</span>
         </div>
       </div>
