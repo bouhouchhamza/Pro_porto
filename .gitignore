@@ -33,11 +33,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
-.env
 .env*.local
-.env.development
-.env.test
-.env.production
 !.env.example
 
 # vercel
@@ -47,3 +43,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 config.bat
+/playwright-report/
+/test-results/
