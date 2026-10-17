@@ -1,0 +1,115 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Cosmic Gradients -->
+    <linearGradient id="nm_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b1e"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#050814"/>
+    </linearGradient>
+    <linearGradient id="nm_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161f38" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0d1424" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="nm_stream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="nm_glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="600" height="340" fill="url(#nm_bg)"/>
+  <rect width="600" height="340" fill="url(#nm_glow)"/>
+
+  <!-- Subtle Network Topology Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <circle cx="150" cy="170" r="120"/>
+    <circle cx="300" cy="170" r="120"/>
+    <circle cx="450" cy="170" r="120"/>
+    <line x1="0" y1="170" x2="600" y2="170"/>
+  </g>
+
+  <!-- Central Infrastructure Canvas -->
+  <rect x="110" y="50" width="380" height="240" rx="14" fill="url(#nm_card)" stroke="rgba(99, 102, 241, 0.3)" stroke-width="1.5"/>
+
+  <!-- Top System Bar -->
+  <path d="M110 90 H490" stroke="rgba(99, 102, 241, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="70" r="4" fill="#6366f1"/>
+  <circle cx="150" cy="70" r="4" fill="#818cf8"/>
+  <circle cx="165" cy="70" r="4" fill="#38bdf8"/>
+  <rect x="360" y="65" width="105" height="10" rx="5" fill="rgba(99, 102, 241, 0.2)"/>
+
+  <!-- Mail Infrastructure & Protocol Nodes Topology -->
+  <!-- Origin Node: MX / Ingestion -->
+  <g transform="translate(150, 150)">
+    <circle cx="0" cy="0" r="24" fill="rgba(15, 23, 42, 0.9)" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="8" fill="#818cf8"/>
+    <!-- Abstract Envelope Geometry -->
+    <path d="M-10 -7 H10 V7 H-10 Z M-10 -7 L0 1 L10 -7" stroke="#ffffff" stroke-width="1.2" fill="none" opacity="0.85"/>
+    <text x="0" y="38" text-anchor="middle" fill="#c7d2fe" font-family="'Questrial', sans-serif" font-size="9" letter-spacing="0.05em">INGRESS MX</text>
+  </g>
+
+  <!-- Connection Stream 1 -->
+  <path d="M174 150 C 210 150, 210 130, 246 130" stroke="url(#nm_stream)" stroke-width="2" stroke-dasharray="4 3"/>
+  <circle cx="210" cy="140" r="3" fill="#38bdf8"/>
+
+  <!-- Connection Stream 2 -->
+  <path d="M174 150 C 210 150, 210 185, 246 185" stroke="url(#nm_stream)" stroke-width="2" stroke-dasharray="4 3"/>
+  <circle cx="210" cy="168" r="3" fill="#818cf8"/>
+
+  <!-- Center Hub: Mail Routing & Multi-Tenant Partition Core -->
+  <g transform="translate(300, 150)">
+    <rect x="-42" y="-42" width="84" height="84" rx="12" fill="rgba(10, 15, 30, 0.95)" stroke="rgba(129, 140, 248, 0.5)" stroke-width="1.5"/>
+    
+    <!-- Concentric Routing Rings -->
+    <circle cx="0" cy="0" r="28" stroke="rgba(99, 102, 241, 0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+    <circle cx="0" cy="0" r="16" fill="rgba(99, 102, 241, 0.25)" stroke="#6366f1" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="6" fill="#38bdf8"/>
+
+    <!-- Routing Vector Points -->
+    <circle cx="0" cy="-28" r="3" fill="#818cf8"/>
+    <circle cx="28" cy="0" r="3" fill="#38bdf8"/>
+    <circle cx="0" cy="28" r="3" fill="#818cf8"/>
+    <circle cx="-28" cy="0" r="3" fill="#38bdf8"/>
+
+    <text x="0" y="54" text-anchor="middle" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="600" letter-spacing="0.04em">DOCKER MAIL ENGINE</text>
+  </g>
+
+  <!-- Connection Stream 3 to Target Domain Nodes -->
+  <path d="M354 130 C 390 130, 390 140, 416 140" stroke="url(#nm_stream)" stroke-width="2"/>
+  <path d="M354 175 C 390 175, 390 170, 416 170" stroke="url(#nm_stream)" stroke-width="2"/>
+
+  <!-- Egress / Multi-Domain Topology Nodes -->
+  <g transform="translate(440, 155)">
+    <!-- Node 1 -->
+    <rect x="-18" y="-36" width="36" height="24" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="0" y="-21" text-anchor="middle" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="8" font-weight="600">SMTP</text>
+
+    <!-- Node 2 -->
+    <rect x="-18" y="6" width="36" height="24" rx="6" fill="rgba(15, 23, 42, 0.9)" stroke="#818cf8" stroke-width="1.2"/>
+    <text x="0" y="21" text-anchor="middle" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="8" font-weight="600">IMAP</text>
+  </g>
+
+  <!-- Bottom Architecture Node Badges: Express / TypeScript / Docker / Postgres -->
+  <g transform="translate(135, 252)">
+    <rect x="0" y="0" width="85" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(99, 102, 241, 0.35)" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3" fill="#6366f1"/>
+    <text x="22" y="15" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">EXPRESS</text>
+
+    <rect x="95" y="0" width="95" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <circle cx="107" cy="11" r="3" fill="#38bdf8"/>
+    <text x="117" y="15" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">TYPESCRIPT</text>
+
+    <rect x="200" y="0" width="70" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(129, 140, 248, 0.35)" stroke-width="1"/>
+    <circle cx="212" cy="11" r="3" fill="#818cf8"/>
+    <text x="222" y="15" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">DOCKER</text>
+
+    <rect x="280" y="0" width="50" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <circle cx="292" cy="11" r="3" fill="#4ade80"/>
+    <text x="302" y="15" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">TLS</text>
+  </g>
+</svg>

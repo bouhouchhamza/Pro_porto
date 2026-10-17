@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { projectsData } from "@/data/projects";
 
 export const SITE_URL = "https://bouhouch.site";
 export const SITE_NAME = "Hamza Bouhouch";
 
-const title = "Hamza Bouhouch | Full Stack Developer & AI Automation Engineer Morocco";
+const title = "Hamza Bouhouch | Full-Stack Developer | PHP, Laravel & Node.js";
 const description =
-  "I am Hamza Bouhouch, a Full Stack Developer and AI Automation Engineer in Morocco building Laravel, React, Next.js, SaaS, API, e-commerce, dashboard, and AI automation solutions.";
+  "I am Hamza Bouhouch, a Full-Stack Developer based in Morocco building reliable web applications, database-backed REST APIs, and automated workflows using Laravel, Node.js, and modern tools.";
 
 const moroccoServiceAreas = [
   "Morocco",
@@ -145,9 +146,11 @@ export const structuredData = {
       url: SITE_URL,
       image: `${SITE_URL}/byby.jpg`,
       email: "mailto:bouhouchhamza075@gmail.com",
-      telephone: "+212680413783",
-      jobTitle: ["Full Stack Developer", "AI Automation Engineer"],
-      description,
+      jobTitle: ["Full-Stack Developer", "Web Developer"],
+      alumniOf: {
+        "@type": "EducationalOrganization",
+        name: "YouCode",
+      },
       address: {
         "@type": "PostalAddress",
         addressCountry: "MA",
@@ -249,34 +252,16 @@ export const structuredData = {
       "@type": "ItemList",
       "@id": `${SITE_URL}/#portfolio-projects`,
       name: "Hamza Bouhouch Full Stack and AI Automation Projects",
-      itemListElement: [
-        {
-          "@type": "CreativeWork",
-          position: 1,
-          name: "Financial Risk Simulation Platform",
-          description:
-            "Laravel fintech platform for transaction simulation, risk scoring, fraud signals, and admin review workflows.",
-          url: "https://github.com/bouhouchhamza/Financial_Risk_Simulation_Platform",
-          creator: { "@id": `${SITE_URL}/#person` },
-        },
-        {
-          "@type": "CreativeWork",
-          position: 2,
-          name: "AI Automation Systems",
-          description:
-            "n8n and OpenAI workflow automations that connect business tools and reduce repetitive manual work.",
-          url: "https://github.com/bouhouchhamza",
-          creator: { "@id": `${SITE_URL}/#person` },
-        },
-        {
-          "@type": "CreativeWork",
-          position: 3,
-          name: "Pet Journey",
-          description: "A full-stack pet care web application with frontend and backend systems.",
-          url: "https://github.com/bouhouchhamza/petJourney",
-          creator: { "@id": `${SITE_URL}/#person` },
-        },
-      ],
+      itemListElement: projectsData.map((proj, idx) => ({
+        "@type": "CreativeWork",
+        position: idx + 1,
+        name: proj.title,
+        headline: proj.subtitle,
+        description: proj.summary,
+        url: `${SITE_URL}/projects/${proj.slug}`,
+        sameAs: proj.links.liveUrl || proj.links.sourceUrl,
+        creator: { "@id": `${SITE_URL}/#person` },
+      })),
     },
     {
       "@type": "BreadcrumbList",

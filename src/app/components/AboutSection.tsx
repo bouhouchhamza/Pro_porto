@@ -10,46 +10,54 @@ interface Token {
 
 const codeTokens: Token[] = [
   { text: "const ", className: "syntax-keyword" },
-  { text: "aboutMe ", className: "syntax-property" },
+  { text: "developer ", className: "syntax-property" },
   { text: "= ", className: "" },
   { text: "{\n", className: "syntax-bracket" },
-  
+
+  { text: "  name", className: "syntax-property" },
+  { text: ': "', className: "" },
+  { text: "Hamza Bouhouch", className: "syntax-string" },
+  { text: '",\n', className: "" },
+
   { text: "  role", className: "syntax-property" },
   { text: ': "', className: "" },
-  { text: "Full Stack & AI Automation", className: "syntax-string" },
+  { text: "Full-Stack Developer", className: "syntax-string" },
   { text: '",\n', className: "" },
-  
-  { text: "  iBuild", className: "syntax-property" },
+
+  { text: "  education", className: "syntax-property" },
+  { text: ': "', className: "" },
+  { text: "YouCode (Web Development)", className: "syntax-string" },
+  { text: '",\n', className: "" },
+
+  { text: "  backend", className: "syntax-property" },
   { text: ': [', className: "" },
-  { text: '"SaaS"', className: "syntax-string" },
+  { text: '"PHP"', className: "syntax-string" },
   { text: ", ", className: "" },
-  { text: '"AI Workflows"', className: "syntax-string" },
-  { text: ", ", className: "" },
-  { text: '"n8n"', className: "syntax-string" },
-  { text: '],\n', className: "" },
-  
-  { text: "  stack", className: "syntax-property" },
-  { text: ': [', className: "" },
   { text: '"Laravel"', className: "syntax-string" },
   { text: ", ", className: "" },
-  { text: '"React"', className: "syntax-string" },
+  { text: '"Node.js"', className: "syntax-string" },
   { text: ", ", className: "" },
-  { text: '"Next.js"', className: "syntax-string" },
+  { text: '"Express"', className: "syntax-string" },
   { text: '],\n', className: "" },
-  
-  { text: "  service", className: "syntax-property" },
-  { text: ': "', className: "" },
-  { text: "Business Systems for Clients", className: "syntax-string" },
-  { text: '"\n', className: "" },
-  
-  { text: "};", className: "syntax-bracket" }
+
+  { text: "  databases", className: "syntax-property" },
+  { text: ': [', className: "" },
+  { text: '"MySQL"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"MongoDB"', className: "syntax-string" },
+  { text: '],\n', className: "" },
+
+  { text: "  practices", className: "syntax-property" },
+  { text: ': [', className: "" },
+  { text: '"Agile/Scrum"', className: "syntax-string" },
+  { text: ", ", className: "" },
+  { text: '"Git Workflows"', className: "syntax-string" },
+  { text: ']\n', className: "" },
+
+  { text: "};", className: "syntax-bracket" },
 ];
 
-function AboutTerminalCard({
-  isVisible,
-}: {
-  isVisible: boolean;
-}) {
+function AboutTerminalCard({ isVisible }: { isVisible: boolean }) {
   const [visibleChars, setVisibleChars] = useState(0);
 
   useEffect(() => {
@@ -64,7 +72,7 @@ function AboutTerminalCard({
       if (current >= totalChars) {
         clearInterval(interval);
       }
-    }, 25);
+    }, 22);
 
     return () => clearInterval(interval);
   }, [isVisible]);
@@ -89,7 +97,7 @@ function AboutTerminalCard({
   return (
     <div
       className="about-terminal-card"
-      aria-label="About Me JavaScript terminal card"
+      aria-label="About Hamza Bouhouch terminal code card"
       style={{
         opacity: isVisible ? 1 : 0,
       }}
@@ -117,7 +125,7 @@ function AboutTerminalCard({
         <div className="about-terminal-portrait-wrap">
           <Image
             src="/terminal_image.jpeg"
-            alt="Hamza Bouhouch, Full Stack Developer and AI Automation Engineer in Morocco"
+            alt="Hamza Bouhouch, Full-Stack Developer based in Morocco"
             width={505}
             height={343}
             className="about-terminal-portrait"
@@ -152,24 +160,33 @@ export default function AboutSection() {
       id="about"
       ref={sectionRef}
       className={`portfolio-section about-section ${isVisible ? "is-visible" : ""}`}
+      aria-labelledby="about-section-heading"
     >
       <div className="about-frame-inner">
-        {/* Left column: About Me title + description */}
+        {/* Left column: About Me narrative */}
         <div
           className="about-copy"
           style={{
             opacity: isVisible ? 1 : 0,
           }}
         >
-          <h2>About Me: Hamza Bouhouch</h2>
+          <h2 id="about-section-heading">About Me: Hamza Bouhouch</h2>
           <p>
-            I&apos;m Hamza Bouhouch, a Full Stack Developer and AI Automation
-            Engineer in Morocco focused on useful, maintainable digital products.
+            I am a Full-Stack Developer trained through intensive, project-based software
+            engineering at <strong>YouCode</strong>. My journey focuses on building reliable
+            backend systems, well-structured RESTful APIs, and database-backed web applications
+            designed for practical business use.
           </p>
           <p>
-            I help businesses turn ideas into scalable digital products using
-            Laravel, React, Next.js, Node.js, Python, FastAPI, Supabase, MySQL,
-            PostgreSQL, and n8n automation.
+            My engineering foundation is built on <strong>PHP and Laravel</strong>, alongside{" "}
+            <strong>Node.js, Express, MySQL, and MongoDB</strong>. Through Agile/Scrum team
+            sprints, peer reviews, and Git feature-branch workflows, I collaborate effectively
+            to design modular architectures, secure authentication flows, and clean data schemas.
+          </p>
+          <p>
+            I am driven by SaaS product development, clean code standards, and workflow automation
+            with n8n and API integrations. When deploying applications to VPS or edge platforms, I
+            prioritize data integrity, reproducible Docker environments, and systematic debugging.
           </p>
         </div>
 

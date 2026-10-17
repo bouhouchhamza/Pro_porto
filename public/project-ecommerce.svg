@@ -1,9 +1,66 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="250" fill="#1a1a2e"/>
-  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
-  <text x="200" y="130" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="24" font-weight="bold">E-Commerce</text>
-  <circle cx="80" cy="80" r="15" fill="#0f3460"/>
-  <circle cx="320" cy="80" r="15" fill="#0f3460"/>
-  <circle cx="80" cy="170" r="15" fill="#0f3460"/>
-  <circle cx="320" cy="170" r="15" fill="#0f3460"/>
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ecom_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061214"/>
+      <stop offset="50%" stop-color="#0c2024"/>
+      <stop offset="100%" stop-color="#050e10"/>
+    </linearGradient>
+    <linearGradient id="ecom_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#112d30" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#091b1d" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#ecom_bg)"/>
+
+  <!-- Blueprint Grid -->
+  <g opacity="0.06" stroke="#2dd4bf" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <rect x="110" y="52" width="380" height="236" rx="14" fill="url(#ecom_card)" stroke="rgba(45, 212, 191, 0.3)" stroke-width="1.5"/>
+
+  <path d="M110 92 H490" stroke="rgba(45, 212, 191, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="72" r="4" fill="#2dd4bf"/>
+  <circle cx="150" cy="72" r="4" fill="#14b8a6"/>
+  <circle cx="165" cy="72" r="4" fill="#a855f7"/>
+
+  <!-- Geometric Digital Storefront Grid -->
+  <g transform="translate(150, 116)">
+    <!-- Cart / Carrier Line -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="130" height="96" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(45, 212, 191, 0.25)" stroke-width="1"/>
+      <!-- Bag Silhouette -->
+      <path d="M55 24 C 55 14, 75 14, 75 24" stroke="#2dd4bf" stroke-width="2" fill="none"/>
+      <path d="M42 24 H88 L94 72 H36 Z" fill="rgba(20, 184, 166, 0.2)" stroke="#2dd4bf" stroke-width="1.2"/>
+      <circle cx="65" cy="48" r="6" fill="#2dd4bf"/>
+      <rect x="35" y="80" width="60" height="4" rx="2" fill="rgba(255, 255, 255, 0.4)"/>
+    </g>
+
+    <!-- Product Grid Elements -->
+    <g transform="translate(150, 0)">
+      <rect x="0" y="0" width="150" height="44" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(45, 212, 191, 0.2)" stroke-width="1"/>
+      <rect x="10" y="10" width="24" height="24" rx="4" fill="rgba(45, 212, 191, 0.2)" stroke="#2dd4bf" stroke-width="0.8"/>
+      <rect x="42" y="14" width="70" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.6)"/>
+      <rect x="42" y="24" width="40" height="4" rx="2" fill="#2dd4bf"/>
+
+      <rect x="0" y="52" width="150" height="44" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(168, 85, 247, 0.2)" stroke-width="1"/>
+      <rect x="10" y="62" width="24" height="24" rx="4" fill="rgba(168, 85, 247, 0.2)" stroke="#a855f7" stroke-width="0.8"/>
+      <rect x="42" y="66" width="65" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.6)"/>
+      <rect x="42" y="76" width="50" height="4" rx="2" fill="#a855f7"/>
+    </g>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(170, 250)">
+    <rect x="0" y="0" width="80" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(45, 212, 191, 0.35)" stroke-width="1"/>
+    <text x="40" y="15" text-anchor="middle" fill="#99f6e4" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">COMMERCE</text>
+
+    <rect x="90" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1"/>
+    <text x="127" y="15" text-anchor="middle" fill="#e9d5ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">CHECKOUT</text>
+
+    <rect x="175" y="0" width="65" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <text x="207" y="15" text-anchor="middle" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">CATALOG</text>
+  </g>
 </svg>

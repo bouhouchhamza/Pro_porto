@@ -1,0 +1,788 @@
+/* ==========================================================================
+   CASE STUDY & PROJECT DETAIL PAGE STYLES (Cosmic Design System)
+   Supports Dark (Cosmic Night) and Light (Cosmic Day) themes with WCAG AA/AAA contrast.
+   ========================================================================== */
+
+.case-study-page {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 110px 1.5rem 90px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .case-study-page {
+    padding: 85px 1rem 60px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumbs Navigation
+   -------------------------------------------------------------------------- */
+.case-study-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+}
+
+.case-study-breadcrumbs a {
+  color: #a78bfa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.case-study-breadcrumbs a:hover {
+  color: #c4b5fd;
+  text-decoration: underline;
+}
+
+.case-study-breadcrumbs span.separator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.case-study-breadcrumbs span.current {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 320px;
+}
+
+/* --------------------------------------------------------------------------
+   Case Study Hero Header
+   -------------------------------------------------------------------------- */
+.case-study-hero {
+  margin-bottom: 2.75rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+.case-study-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Type Badge: Technical Case Study vs Factual Project Overview */
+.case-study-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+.case-study-badge-study {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(79, 70, 229, 0.35));
+  border: 1px solid rgba(167, 139, 250, 0.6);
+  color: #ddd6fe;
+  box-shadow: 0 0 16px rgba(124, 58, 237, 0.25);
+}
+
+.case-study-badge-overview {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #cbd5e1;
+}
+
+.case-study-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.case-study-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  color: #c4b5fd;
+  line-height: 1.45;
+  margin: 0 0 2rem;
+  max-width: 880px;
+}
+
+/* Quick Facts Bar */
+.case-study-facts-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  padding: 1.35rem 1.65rem;
+  border-radius: 16px;
+  background: rgba(18, 18, 32, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+}
+
+.case-study-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.case-study-fact-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+.case-study-fact-value {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* CTA Bar */
+.case-study-cta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Featured Media Showcase
+   -------------------------------------------------------------------------- */
+.case-study-media-wrapper {
+  position: relative;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+.case-study-media-glow {
+  position: absolute;
+  inset: -12px;
+  background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.case-study-media-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(14, 14, 26, 0.85);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  aspect-ratio: 16 / 8.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-study-media-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Narrative Content Sections
+   -------------------------------------------------------------------------- */
+.case-study-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  margin-bottom: 4rem;
+}
+
+.case-study-block {
+  padding: 2.25rem;
+  border-radius: 20px;
+  background: rgba(18, 18, 32, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 640px) {
+  .case-study-block {
+    padding: 1.5rem;
+  }
+}
+
+.case-study-block-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.case-study-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.case-study-target-box {
+  padding: 0.85rem 1.15rem;
+  border-radius: 10px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #ddd6fe;
+  font-size: 0.94rem;
+  margin-bottom: 1.25rem;
+}
+
+.case-study-target-box strong {
+  color: #ffffff;
+}
+
+.case-study-list {
+  margin: 1.15rem 0 0;
+  padding-left: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.case-study-list li {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Architecture & System Design Cards Grid
+   -------------------------------------------------------------------------- */
+.case-study-arch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1rem;
+}
+
+.case-study-arch-card {
+  padding: 1.35rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(12, 12, 22, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.case-study-arch-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(167, 139, 250, 0.45);
+}
+
+.case-study-arch-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-arch-icon {
+  font-size: 1.25rem;
+}
+
+.case-study-arch-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.case-study-arch-card-body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Implemented Capabilities Grid
+   -------------------------------------------------------------------------- */
+.case-study-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1rem;
+}
+
+.case-study-feature-card {
+  padding: 1.35rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(12, 12, 22, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-feature-tag {
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-feature-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.case-study-feature-desc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Engineering Challenges & Solutions Deep-Dive
+   -------------------------------------------------------------------------- */
+.case-study-challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.case-study-challenge-card {
+  padding: 1.6rem 1.75rem;
+  border-radius: 16px;
+  background: rgba(12, 12, 22, 0.75);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+}
+
+.case-study-challenge-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.case-study-challenge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #7C3AED, #4F46E5);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.case-study-challenge-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.case-study-challenge-section {
+  margin-top: 0.85rem;
+}
+
+.case-study-challenge-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: #f87171;
+  margin-bottom: 0.35rem;
+}
+
+.case-study-challenge-label.case-study-challenge-solution {
+  color: #34d399;
+}
+
+.case-study-challenge-text {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Results & Learnings Cards
+   -------------------------------------------------------------------------- */
+.case-study-learnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.case-study-learnings-card {
+  padding: 1.5rem 1.65rem;
+  border-radius: 14px;
+  background: rgba(12, 12, 22, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.case-study-learnings-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Technology Stack Matrix
+   -------------------------------------------------------------------------- */
+.case-study-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.case-study-tech-group {
+  padding: 1.15rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(12, 12, 22, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+}
+
+.case-study-tech-group-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #c4b5fd;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+/* --------------------------------------------------------------------------
+   Project Navigation (Prev / Next)
+   -------------------------------------------------------------------------- */
+.case-study-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2.25rem 0;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  margin-bottom: 3.5rem;
+}
+
+.case-study-nav-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  max-width: 48%;
+}
+
+.case-study-nav-dir {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.case-study-nav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.case-study-nav-btn:hover .case-study-nav-title {
+  color: #c4b5fd;
+}
+
+.case-study-nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Conversion / Contact Card
+   -------------------------------------------------------------------------- */
+.case-study-contact-card {
+  text-align: center;
+  padding: 3.25rem 2rem;
+  border-radius: 24px;
+  background: radial-gradient(circle at top, rgba(139, 92, 246, 0.18), transparent 70%),
+              linear-gradient(160deg, rgba(22, 22, 38, 0.95), rgba(12, 12, 22, 0.98));
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+}
+
+.case-study-contact-card h3 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.case-study-contact-card p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto 1.85rem;
+  line-height: 1.65;
+}
+
+.case-study-contact-actions {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   LIGHT MODE — COSMIC DAY SYSTEM ADAPTATIONS
+   Guarantees full WCAG AA/AAA contrast and premium day aesthetic.
+   ========================================================================== */
+
+[data-theme="light"] .case-study-page {
+  color: #0F172A;
+}
+
+[data-theme="light"] .case-study-breadcrumbs {
+  color: #64748B;
+}
+
+[data-theme="light"] .case-study-breadcrumbs a {
+  color: #6D28D9;
+}
+
+[data-theme="light"] .case-study-breadcrumbs a:hover {
+  color: #5B21B6;
+}
+
+[data-theme="light"] .case-study-breadcrumbs span.separator {
+  color: #94A3B8;
+}
+
+[data-theme="light"] .case-study-breadcrumbs span.current {
+  color: #1E293B;
+}
+
+[data-theme="light"] .case-study-hero {
+  border-bottom-color: rgba(139, 92, 246, 0.2);
+}
+
+[data-theme="light"] .case-study-badge-study {
+  background: rgba(238, 242, 255, 0.95);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #6D28D9;
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.12);
+}
+
+[data-theme="light"] .case-study-badge-overview {
+  background: rgba(241, 245, 249, 0.9);
+  border-color: rgba(148, 163, 184, 0.4);
+  color: #475569;
+}
+
+[data-theme="light"] .case-study-title {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .case-study-subtitle {
+  color: #6D28D9 !important;
+}
+
+[data-theme="light"] .case-study-facts-bar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 8px 28px rgba(99, 102, 241, 0.08) !important;
+}
+
+[data-theme="light"] .case-study-fact-label {
+  color: #64748B !important;
+}
+
+[data-theme="light"] .case-study-fact-value {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-media-frame {
+  background: #f1f5f9 !important;
+  border-color: rgba(139, 92, 246, 0.25) !important;
+  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12) !important;
+}
+
+[data-theme="light"] .case-study-block {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 10px 32px rgba(99, 102, 241, 0.07) !important;
+}
+
+[data-theme="light"] .case-study-block-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-text {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-target-box {
+  background: rgba(238, 242, 255, 0.9) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  color: #4338CA !important;
+}
+
+[data-theme="light"] .case-study-target-box strong {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-list li {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-arch-card {
+  background: rgba(248, 250, 252, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-arch-card:hover {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1) !important;
+}
+
+[data-theme="light"] .case-study-arch-card-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-arch-card-body {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-feature-card {
+  background: rgba(248, 250, 252, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-feature-tag {
+  background: rgba(238, 242, 255, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.35) !important;
+  color: #6D28D9 !important;
+}
+
+[data-theme="light"] .case-study-feature-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-feature-desc {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-challenge-card {
+  background: rgba(248, 250, 252, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.22) !important;
+}
+
+[data-theme="light"] .case-study-challenge-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-challenge-label {
+  color: #DC2626 !important;
+}
+
+[data-theme="light"] .case-study-challenge-label.case-study-challenge-solution {
+  color: #059669 !important;
+}
+
+[data-theme="light"] .case-study-challenge-text {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .case-study-learnings-card {
+  background: rgba(248, 250, 252, 0.95) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-learnings-title {
+  color: #0F172A !important;
+  border-bottom-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-tech-group {
+  background: rgba(248, 250, 252, 0.9) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-tech-group-title {
+  color: #6D28D9 !important;
+}
+
+[data-theme="light"] .case-study-nav-bar {
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[data-theme="light"] .case-study-nav-dir {
+  color: #6D28D9 !important;
+}
+
+[data-theme="light"] .case-study-nav-title {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-nav-btn:hover .case-study-nav-title {
+  color: #7C3AED !important;
+}
+
+[data-theme="light"] .case-study-contact-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.99)) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 16px 50px rgba(99, 102, 241, 0.12) !important;
+}
+
+[data-theme="light"] .case-study-contact-card h3 {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .case-study-contact-card p {
+  color: #334155 !important;
+}

@@ -1,0 +1,7 @@
+# Vercel Deployment Ignore Rules
+# Exclude oversized local installer binaries and temporary audit directories from deployment bundle
+
+public/pycharm-2026.1.2.exe
+public/moviebox-v-3.0.15.0513.03.apk
+scratch/
+tests/

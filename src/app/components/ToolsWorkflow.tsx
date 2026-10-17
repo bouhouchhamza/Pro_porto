@@ -69,16 +69,16 @@ export default function ToolsWorkflow() {
             transform: isVisible ? "translateY(0)" : "translateY(24px)",
           }}
         >
-          <h2>Web Development &amp; Automation Technologies</h2>
+          <h2>Development Toolkit &amp; Tech Ecosystem</h2>
           <p>
-            I use a modern full-stack toolkit to build reliable web applications,
-            SaaS platforms, mobile apps, and AI automation systems for businesses
-            in Morocco and worldwide.
+            An interactive 3D visualization of the languages, frameworks, databases,
+            and developer tooling I practice across full-stack engineering, REST API
+            development, and automated workflows.
           </p>
           <p>
-            I work with React and Next.js interfaces, Laravel and Node.js
-            backends, Python and FastAPI services, Supabase, MySQL, PostgreSQL,
-            APIs, mobile applications, and automated n8n workflows.
+            From core backend engines in PHP/Laravel and Node.js/Express to relational
+            and document databases (MySQL, MongoDB, PostgreSQL) and containerized
+            Docker workflows.
           </p>
         </div>
 

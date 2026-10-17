@@ -1,0 +1,112 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Cosmic Gradients -->
+    <linearGradient id="jb_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c1f"/>
+      <stop offset="50%" stop-color="#101938"/>
+      <stop offset="100%" stop-color="#050814"/>
+    </linearGradient>
+    <linearGradient id="jb_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182348" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0e152e" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="jb_glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="600" height="340" fill="url(#jb_bg)"/>
+  <rect width="600" height="340" fill="url(#jb_glow)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g opacity="0.07" stroke="#3b82f6" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <!-- Central Recruitment & Application Engine Frame -->
+  <rect x="110" y="52" width="380" height="236" rx="14" fill="url(#jb_card)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1.5"/>
+
+  <!-- Top System Bar -->
+  <path d="M110 92 H490" stroke="rgba(59, 130, 246, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="72" r="4" fill="#3b82f6"/>
+  <circle cx="150" cy="72" r="4" fill="#6366f1"/>
+  <circle cx="165" cy="72" r="4" fill="#818cf8"/>
+  <rect x="360" y="67" width="105" height="10" rx="5" fill="rgba(59, 130, 246, 0.2)"/>
+
+  <!-- Left: Stylized Role Dossier & Matching Index -->
+  <g transform="translate(140, 116)">
+    <!-- Role Listing Card -->
+    <rect x="0" y="0" width="145" height="100" rx="8" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1"/>
+    
+    <!-- Role Header Pill & Title Bar -->
+    <rect x="12" y="14" width="22" height="22" rx="5" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="0.8"/>
+    <!-- Briefcase Abstract Glyph -->
+    <path d="M18 22 H28 V30 H18 Z M20 22 V20 C20 19 21 18 23 18 C25 18 26 19 26 20 V22" stroke="#60a5fa" stroke-width="1" fill="none"/>
+
+    <rect x="42" y="16" width="70" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.8)"/>
+    <rect x="42" y="27" width="45" height="4" rx="2" fill="rgba(255, 255, 255, 0.4)"/>
+
+    <!-- Requirements & Skill Tokens -->
+    <rect x="12" y="48" width="38" height="12" rx="4" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="0.8"/>
+    <text x="31" y="57" text-anchor="middle" fill="#93c5fd" font-family="'Questrial', sans-serif" font-size="7.5" font-weight="600">FULL-STACK</text>
+
+    <rect x="54" y="48" width="32" height="12" rx="4" fill="rgba(99, 102, 241, 0.2)" stroke="#6366f1" stroke-width="0.8"/>
+    <text x="70" y="57" text-anchor="middle" fill="#c7d2fe" font-family="'Questrial', sans-serif" font-size="7.5" font-weight="600">REMOTE</text>
+
+    <!-- Salary / Index Meter -->
+    <rect x="12" y="72" width="120" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.1)"/>
+    <rect x="12" y="72" width="85" height="5" rx="2.5" fill="#3b82f6"/>
+
+    <text x="72" y="92" text-anchor="middle" fill="#93c5fd" font-family="'Questrial', sans-serif" font-size="9" letter-spacing="0.04em">OPPORTUNITY INDEX</text>
+  </g>
+
+  <!-- Connection Pipeline Stream -->
+  <path d="M295 166 C 315 166, 315 140, 335 140" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <path d="M295 166 C 315 166, 315 190, 335 190" stroke="#6366f1" stroke-width="1.8" stroke-dasharray="3 3"/>
+
+  <!-- Right: Candidate Pipeline & Application Tracking Status -->
+  <g transform="translate(335, 116)">
+    <!-- Stage 1: Received -->
+    <rect x="0" y="4" width="120" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1"/>
+    <circle cx="14" cy="17" r="4" fill="#3b82f6"/>
+    <rect x="26" y="15" width="55" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="90" y="12" width="22" height="10" rx="3" fill="rgba(59, 130, 246, 0.3)"/>
+    <text x="101" y="20" text-anchor="middle" fill="#93c5fd" font-family="'Questrial', sans-serif" font-size="7">NEW</text>
+
+    <!-- Stage 2: Shortlist / Review -->
+    <rect x="0" y="38" width="120" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1"/>
+    <circle cx="14" cy="51" r="4" fill="#6366f1"/>
+    <rect x="26" y="49" width="48" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="84" y="46" width="28" height="10" rx="3" fill="rgba(99, 102, 241, 0.3)"/>
+    <text x="98" y="54" text-anchor="middle" fill="#c7d2fe" font-family="'Questrial', sans-serif" font-size="7">REVIEW</text>
+
+    <!-- Stage 3: Interview / Approved -->
+    <rect x="0" y="72" width="120" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <circle cx="14" cy="85" r="4" fill="#4ade80"/>
+    <rect x="26" y="83" width="52" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="88" y="80" width="24" height="10" rx="3" fill="rgba(74, 222, 128, 0.3)"/>
+    <text x="100" y="88" text-anchor="middle" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="7">HIRED</text>
+  </g>
+
+  <!-- Bottom Architecture Node Badges: Node.js / Express / MySQL / EJS -->
+  <g transform="translate(150, 250)">
+    <rect x="0" y="0" width="70" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3" fill="#4ade80"/>
+    <text x="22" y="15" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">NODE.JS</text>
+
+    <rect x="80" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(59, 130, 246, 0.35)" stroke-width="1"/>
+    <circle cx="92" cy="11" r="3" fill="#3b82f6"/>
+    <text x="102" y="15" fill="#bfdbfe" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">EXPRESS</text>
+
+    <rect x="165" y="0" width="65" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <circle cx="177" cy="11" r="3" fill="#38bdf8"/>
+    <text x="187" y="15" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">MYSQL</text>
+
+    <rect x="240" y="0" width="45" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1"/>
+    <circle cx="252" cy="11" r="3" fill="#a855f7"/>
+    <text x="262" y="15" fill="#e9d5ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">EJS</text>
+  </g>
+</svg>

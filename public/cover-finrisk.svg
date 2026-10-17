@@ -1,0 +1,111 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Cosmic Gradients -->
+    <linearGradient id="fr_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120617"/>
+      <stop offset="50%" stop-color="#1c0a26"/>
+      <stop offset="100%" stop-color="#08020d"/>
+    </linearGradient>
+    <linearGradient id="fr_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a0f38" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#14061c" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="fr_glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fr_stream" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="600" height="340" fill="url(#fr_bg)"/>
+  <rect width="600" height="340" fill="url(#fr_glow)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g opacity="0.07" stroke="#f43f5e" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <!-- Central Risk Assessment & Simulation Canvas Frame -->
+  <rect x="110" y="52" width="380" height="236" rx="14" fill="url(#fr_card)" stroke="rgba(244, 63, 94, 0.3)" stroke-width="1.5"/>
+
+  <!-- Top System Bar -->
+  <path d="M110 92 H490" stroke="rgba(244, 63, 94, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="72" r="4" fill="#f43f5e"/>
+  <circle cx="150" cy="72" r="4" fill="#c084fc"/>
+  <circle cx="165" cy="72" r="4" fill="#fb7185"/>
+  <rect x="360" y="67" width="105" height="10" rx="5" fill="rgba(244, 63, 94, 0.2)"/>
+
+  <!-- Left: Algorithmic Simulation Velocity Engine Motif -->
+  <g transform="translate(140, 116)">
+    <!-- Generator Frame -->
+    <rect x="0" y="0" width="135" height="100" rx="8" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(192, 132, 252, 0.35)" stroke-width="1"/>
+    
+    <!-- Central Velocity Pipeline Wave Vectors -->
+    <path d="M15 50 Q 35 25, 55 50 T 95 50 T 125 50" stroke="url(#fr_stream)" stroke-width="2" fill="none"/>
+    <path d="M15 65 Q 35 45, 55 65 T 95 65 T 125 65" stroke="rgba(192, 132, 252, 0.4)" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+
+    <!-- Checkpoint Vector Nodes -->
+    <circle cx="35" cy="38" r="4" fill="#c084fc"/>
+    <circle cx="75" cy="62" r="4" fill="#f43f5e"/>
+    <circle cx="115" cy="50" r="4" fill="#fb7185"/>
+
+    <!-- Rule Filter Slugs -->
+    <rect x="15" y="14" width="45" height="10" rx="3" fill="rgba(244, 63, 94, 0.25)" stroke="#f43f5e" stroke-width="0.8"/>
+    <text x="37" y="22" text-anchor="middle" fill="#fecdd3" font-family="'Questrial', sans-serif" font-size="7" font-weight="600">RULE SET</text>
+
+    <text x="67" y="90" text-anchor="middle" fill="#fecdd3" font-family="'Questrial', sans-serif" font-size="9" letter-spacing="0.04em">VELOCITY ENGINE</text>
+  </g>
+
+  <!-- Flow Connector Vector -->
+  <path d="M285 166 C 305 166, 305 150, 325 150" stroke="#f43f5e" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <circle cx="305" cy="158" r="3" fill="#c084fc"/>
+
+  <!-- Right: Risk Evaluation & Multi-Tier Filter Pipeline -->
+  <g transform="translate(325, 116)">
+    <!-- Filter Tier 1: Low / Pass -->
+    <rect x="0" y="4" width="130" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <circle cx="14" cy="17" r="4" fill="#4ade80"/>
+    <rect x="26" y="15" width="55" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="94" y="12" width="24" height="10" rx="3" fill="rgba(74, 222, 128, 0.2)"/>
+    <text x="106" y="20" text-anchor="middle" fill="#86efac" font-family="'Questrial', sans-serif" font-size="7">NORMAL</text>
+
+    <!-- Filter Tier 2: Medium / Inspection -->
+    <rect x="0" y="38" width="130" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(251, 191, 36, 0.35)" stroke-width="1"/>
+    <circle cx="14" cy="51" r="4" fill="#fbbf24"/>
+    <rect x="26" y="49" width="48" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="92" y="46" width="28" height="10" rx="3" fill="rgba(251, 191, 36, 0.2)"/>
+    <text x="106" y="54" text-anchor="middle" fill="#fde68a" font-family="'Questrial', sans-serif" font-size="7">FLAGGED</text>
+
+    <!-- Filter Tier 3: High Risk Threshold -->
+    <rect x="0" y="72" width="130" height="26" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(244, 63, 94, 0.45)" stroke-width="1"/>
+    <circle cx="14" cy="85" r="4" fill="#f43f5e"/>
+    <rect x="26" y="83" width="50" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <rect x="90" y="80" width="32" height="10" rx="3" fill="rgba(244, 63, 94, 0.3)"/>
+    <text x="106" y="88" text-anchor="middle" fill="#fda4af" font-family="'Questrial', sans-serif" font-size="7">CRITICAL</text>
+  </g>
+
+  <!-- Bottom Architecture Node Badges: Laravel / PHP / MySQL / Eloquent -->
+  <g transform="translate(145, 250)">
+    <rect x="0" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(244, 63, 94, 0.35)" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3" fill="#f43f5e"/>
+    <text x="22" y="15" fill="#fecdd3" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">LARAVEL</text>
+
+    <rect x="85" y="0" width="50" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(192, 132, 252, 0.35)" stroke-width="1"/>
+    <circle cx="97" cy="11" r="3" fill="#c084fc"/>
+    <text x="107" y="15" fill="#f3e8ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">PHP</text>
+
+    <rect x="145" y="0" width="65" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <circle cx="157" cy="11" r="3" fill="#38bdf8"/>
+    <text x="167" y="15" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">MYSQL</text>
+
+    <rect x="220" y="0" width="80" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(251, 113, 133, 0.35)" stroke-width="1"/>
+    <circle cx="232" cy="11" r="3" fill="#fb7185"/>
+    <text x="242" y="15" fill="#ffe4e6" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">SERVICES</text>
+  </g>
+</svg>

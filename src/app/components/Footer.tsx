@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="footer-brand">
             <Image
               src="/logo.png"
-              alt="Hamza Bouhouch full stack developer portfolio logo"
+              alt="Hamza Bouhouch - Full-Stack Developer portfolio logo"
               width={180}
               height={56}
               className="footer-logo-image"
@@ -21,19 +21,20 @@ export default function Footer() {
           <div className="footer-right-cols">
             {/* Column 1: Links */}
             <div className="footer-links-col">
-              <a href="#about">About Me</a>
-              <a href="#skills">My Skills</a>
-              <a href="#projects">My Projects</a>
-              <a href="#contact">Contact Me</a>
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#skills">Skills</a>
+              <a href="#experience">Experience</a>
+              <a href="#contact">Contact</a>
             </div>
 
             {/* Column 2: Contact Info */}
             <div className="footer-info-col">
-              <a href="mailto:bouhouchhamza075@gmail.com">
+              <a href="mailto:bouhouchhamza075@gmail.com" aria-label="Send email to Hamza Bouhouch">
                 bouhouchhamza075@gmail.com
               </a>
-              <a href="tel:+212680413783">
-                +212 680413783
+              <a href="tel:+212680413783" aria-label="Call Hamza Bouhouch">
+                +212 680 413 783
               </a>
               <span>Morocco</span>
             </div>
@@ -45,8 +46,8 @@ export default function Footer() {
 
         {/* Bottom Sub-bar */}
         <div className="footer-bottom-bar">
-          <span className="footer-designer">Designed by BPL-Studios</span>
-          <span className="footer-copyright">2026 All Rights Reserved</span>
+          <span className="footer-designer">Hamza Bouhouch Portfolio</span>
+          <span className="footer-copyright">© 2026 All Rights Reserved</span>
         </div>
       </div>
     </footer>
