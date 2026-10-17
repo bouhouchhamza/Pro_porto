@@ -29,9 +29,9 @@ test.describe("Homepage — Core Architecture & Layout", () => {
 
   test("renders all main sections in approved rhythm and order", async ({ page }) => {
     const hero = page.locator("section.hero-section");
-    const featuredProjects = page.locator(".projects-showcase-section, section.featured-projects");
+    const featuredProjects = page.locator("section#projects, section.projects-section");
     const skills = page.locator("section.skills-section");
-    const toolsWorkflow = page.locator("section.tools-workflow-section");
+    const toolsWorkflow = page.locator("section#workflow, section.workflow-section");
     const about = page.locator("section#about, section.about-section");
     const experience = page.locator("section#experience, section.experience-section");
     const quote = page.locator("section.quote-section");
@@ -145,63 +145,70 @@ test.describe("All Projects Archive — /projects", () => {
   test("loads archive and displays all 22 verified published projects", async ({ page }) => {
     await expect(page).toHaveTitle(/All Engineering Projects/);
     const cards = page.locator(".bento-card, .project-card");
-    const count = await cards.count();
-    expect(count).toBe(22);
+    await expect(cards).toHaveCount(22);
   });
 
   test("filters projects in real time by title search", async ({ page }) => {
-    const searchInput = page.locator('input[placeholder*="Search by project name"]');
+    const searchInput = page.locator("#bento-project-search");
     await expect(searchInput).toBeVisible();
 
     // Search for "CorePOS"
     await searchInput.fill("CorePOS");
-    await page.waitForTimeout(200);
 
     const cards = page.locator(".bento-card");
-    const count = await cards.count();
-    expect(count).toBeGreaterThanOrEqual(1);
+    await expect(cards).toHaveCount(1);
 
-    const firstCardTitle = page.locator(".bento-title").first();
+    const firstCardTitle = page.locator(".bento-card-title").first();
     await expect(firstCardTitle).toContainText("CorePOS");
   });
 
   test("filters projects in real time by technology search", async ({ page }) => {
-    const searchInput = page.locator('input[placeholder*="Search by project name"]');
-    // Search for "Laravel"
+    const searchInput = page.locator("#bento-project-search");
+    await expect(searchInput).toBeVisible();
+
+    // Search for "Laravel" (accurately matches Financial Risk Simulation, EasyColoc, and Habit Tracker)
     await searchInput.fill("Laravel");
-    await page.waitForTimeout(200);
 
     const cards = page.locator(".bento-card");
-    const count = await cards.count();
-    expect(count).toBeGreaterThanOrEqual(3);
+    await expect(cards).toHaveCount(3);
+
+    await expect(cards.nth(0)).toContainText("Financial Risk Simulation");
+    await expect(cards.nth(1)).toContainText("EasyColoc");
+    await expect(cards.nth(2)).toContainText("Habit Tracker");
   });
 
   test("displays empty state when query matches nothing, and reset button restores grid", async ({ page }) => {
-    const searchInput = page.locator('input[placeholder*="Search by project name"]');
+    const searchInput = page.locator("#bento-project-search");
+    await expect(searchInput).toBeVisible();
+
     await searchInput.fill("xyz-nonexistent-query-12345");
-    await page.waitForTimeout(200);
+
+    // Grid should produce 0 project cards
+    const cards = page.locator(".bento-card");
+    await expect(cards).toHaveCount(0);
 
     // Empty state should appear
     const emptyState = page.locator(".bento-empty-state");
     await expect(emptyState).toBeVisible();
+    await expect(emptyState).toContainText("No projects match your search");
 
-    // Click Reset Filters
-    const resetBtn = page.locator(".bento-empty-btn");
+    // Click Reset / Clear button in empty state
+    const resetBtn = page.locator(".bento-empty-btn").first();
+    await expect(resetBtn).toBeVisible();
     await resetBtn.click();
-    await page.waitForTimeout(200);
 
-    // Grid should restore to 22
-    const cards = page.locator(".bento-card");
-    expect(await cards.count()).toBe(22);
+    // Search input should be cleared and grid restored to all 22 projects
+    await expect(searchInput).toHaveValue("");
+    await expect(cards).toHaveCount(22);
   });
 });
 
 test.describe("Project Routes — Case Studies & Overviews", () => {
   const sampleSlugs = [
-    { slug: "corepos-desktop-pos", title: "CorePOS Desktop" },
-    { slug: "nuvomailo-smtp-platform", title: "NuvoMailo" },
-    { slug: "atlas-commerce-saas", title: "Atlas Commerce" },
-    { slug: "youlearn-lms", title: "YouLearn" },
+    { slug: "corepos-desktop-pos", title: "CorePOS" },
+    { slug: "nuvomailo-email-saas", title: "Nuvomailo" },
+    { slug: "atlas-commerce-platform", title: "Atlas Commerce" },
+    { slug: "youlearn-lms-api", title: "YouLearn" },
   ];
 
   for (const { slug, title } of sampleSlugs) {
@@ -238,7 +245,6 @@ test.describe("Quote Section & Tony Stark Easter Egg", () => {
 
     // Click to activate easter egg
     await toggleBtn.click();
-    await page.waitForTimeout(200);
 
     const quoteBlock = page.locator(".quote-text");
     await expect(quoteBlock).toContainText("run before you can walk");
@@ -250,7 +256,6 @@ test.describe("Quote Section & Tony Stark Easter Egg", () => {
     const returnBtn = page.locator("button.quote-easter-egg-return");
     await expect(returnBtn).toBeVisible();
     await returnBtn.click();
-    await page.waitForTimeout(200);
 
     // Verifies returned to Thatcher
     await expect(page.locator(".quote-text")).toContainText("A man can change his stars");
