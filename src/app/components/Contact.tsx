@@ -4,9 +4,9 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_CONFIG = {
-  SERVICE_ID: "service_b2dq42j",
-  TEMPLATE_ID: "template_5instcm",
-  PUBLIC_KEY: "sc4c-b77Le4pb00RS",
+  SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_b2dq42j",
+  TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_5instcm",
+  PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "sc4c-b77Le4pb00RS",
 };
 
 export default function Contact() {
@@ -34,6 +34,26 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // Client-side email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setSubmitStatus("error");
+      setStatusMessage("Please provide a valid email address.");
+      return;
+    }
+
+    if (formData.name.trim().length < 2) {
+      setSubmitStatus("error");
+      setStatusMessage("Please enter your name.");
+      return;
+    }
+
+    if (formData.message.trim().length < 5) {
+      setSubmitStatus("error");
+      setStatusMessage("Please enter a message with at least 5 characters.");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
     setStatusMessage("");
@@ -41,9 +61,9 @@ export default function Contact() {
     try {
       const templateParams = {
         title: "New Portfolio Contact Message",
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        message: formData.message.trim(),
         time: new Date().toLocaleString(),
       };
 
@@ -57,7 +77,7 @@ export default function Contact() {
       if (result.status === 200) {
         setSubmitStatus("success");
         setStatusMessage(
-          "Thank you for your message. I will get back to you soon.",
+          "Thank you for reaching out. I have received your message and will respond promptly.",
         );
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -73,38 +93,35 @@ export default function Contact() {
             : "Unknown error";
 
       setSubmitStatus("error");
-      setStatusMessage(`Email sending failed: ${message}`);
+      setStatusMessage(`Message sending failed: ${message}`);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="portfolio-section contact-section">
+    <section id="contact" className="portfolio-section contact-section" aria-labelledby="contact-heading">
       <div className="section-shell contact-layout">
         <div className="contact-copy">
-          <span className="section-kicker">Contact</span>
-          <h2>Hire a Full Stack Developer in Morocco</h2>
+          <span className="section-kicker">Get In Touch</span>
+          <h2 id="contact-heading">Let&apos;s Build Reliable Software Together</h2>
           <p>
-            Looking for a Laravel Developer, React Developer, Next.js Developer,
-            Full Stack Developer, Shopify Developer, WordPress Developer, or AI
-            Automation Engineer? Let's discuss your custom web application, SaaS
-            product, e-commerce platform, mobile app, n8n workflow, or AI
-            automation system. I collaborate with startups, agencies, and
-            businesses worldwide to build scalable digital products, streamline
-            operations, and create high-performance software solutions.
+            Whether you need a Full-Stack Developer to build a Laravel or Node.js
+            backend, engineer a RESTful API, build a responsive web interface, or
+            automate data workflows with n8n, I am open for select engineering
+            opportunities and project collaborations.
           </p>
           <div className="contact-links">
-            <a href="mailto:bouhouchhamza075@gmail.com">
+            <a href="mailto:bouhouchhamza075@gmail.com" aria-label="Send email to Hamza Bouhouch">
               bouhouchhamza075@gmail.com
             </a>
-            <span>Serving clients across the worldwide</span>
-            <span>Available for projects</span>
+            <span>Location: Morocco · Open for Remote Collaborations</span>
+            <span>Response Time: Typically within 24 hours</span>
           </div>
         </div>
 
         <div className="contact-form-container glass-panel">
-          <form onSubmit={handleSubmit} className="contact-form">
+          <form onSubmit={handleSubmit} className="contact-form" noValidate>
             <div>
               <label htmlFor="name">Name</label>
               <input
@@ -114,6 +131,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
+                autoComplete="name"
                 required
               />
             </div>
@@ -127,6 +145,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
+                autoComplete="email"
                 required
               />
             </div>
@@ -139,7 +158,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                placeholder="Tell me what you want to build..."
+                placeholder="Describe your project, timeline, or engineering inquiry..."
                 required
               />
             </div>
@@ -149,7 +168,11 @@ export default function Contact() {
             </button>
 
             {submitStatus !== "idle" && (
-              <div className={`form-status ${submitStatus}`}>
+              <div
+                className={`form-status ${submitStatus}`}
+                role="status"
+                aria-live="polite"
+              >
                 {statusMessage}
               </div>
             )}

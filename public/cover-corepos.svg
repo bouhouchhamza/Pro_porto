@@ -1,0 +1,121 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Cosmic Gradients -->
+    <linearGradient id="cp_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0a1f"/>
+      <stop offset="50%" stop-color="#141130"/>
+      <stop offset="100%" stop-color="#090814"/>
+    </linearGradient>
+    <linearGradient id="cp_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1842" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#110d29" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="cp_accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="cp_laser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="cp_glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="600" height="340" fill="url(#cp_bg)"/>
+  <rect width="600" height="340" fill="url(#cp_glow)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <!-- Central Technical Motif: Retail Point-of-Sale & Local-First Architecture Frame -->
+  <!-- POS Terminal & Register Abstract Form -->
+  <rect x="130" y="55" width="340" height="230" rx="14" fill="url(#cp_card)" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1.5"/>
+
+  <!-- Header Bar -->
+  <path d="M130 95 H470" stroke="rgba(139, 92, 246, 0.2)" stroke-width="1"/>
+  <circle cx="155" cy="75" r="4" fill="#38bdf8"/>
+  <circle cx="170" cy="75" r="4" fill="#818cf8"/>
+  <circle cx="185" cy="75" r="4" fill="#c084fc"/>
+  <rect x="360" y="70" width="90" height="10" rx="5" fill="rgba(139, 92, 246, 0.2)"/>
+
+  <!-- Left: Stylized Barcode / Inventory Scanner Motif -->
+  <g transform="translate(160, 115)">
+    <!-- Barcode Vertical Bars -->
+    <rect x="0" y="10" width="3" height="42" fill="#818cf8" opacity="0.8"/>
+    <rect x="7" y="10" width="6" height="42" fill="#38bdf8" opacity="0.9"/>
+    <rect x="17" y="10" width="2" height="42" fill="#818cf8" opacity="0.6"/>
+    <rect x="23" y="10" width="5" height="42" fill="#c084fc" opacity="0.85"/>
+    <rect x="32" y="10" width="8" height="42" fill="#818cf8" opacity="0.9"/>
+    <rect x="44" y="10" width="2" height="42" fill="#38bdf8" opacity="0.5"/>
+    <rect x="50" y="10" width="5" height="42" fill="#c084fc" opacity="0.8"/>
+    <rect x="59" y="10" width="4" height="42" fill="#818cf8" opacity="0.7"/>
+    <rect x="67" y="10" width="7" height="42" fill="#38bdf8" opacity="0.9"/>
+    <rect x="78" y="10" width="3" height="42" fill="#818cf8" opacity="0.6"/>
+    <rect x="85" y="10" width="6" height="42" fill="#c084fc" opacity="0.85"/>
+    <rect x="95" y="10" width="2" height="42" fill="#38bdf8" opacity="0.7"/>
+    <rect x="101" y="10" width="5" height="42" fill="#818cf8" opacity="0.8"/>
+
+    <!-- Laser Scan Line -->
+    <rect x="-10" y="30" width="130" height="2" fill="url(#cp_laser)"/>
+    <circle cx="55" cy="31" r="3" fill="#38bdf8"/>
+
+    <!-- Inventory / SKU Metrics Blocks -->
+    <rect x="0" y="65" width="110" height="8" rx="4" fill="rgba(56, 189, 248, 0.25)"/>
+    <rect x="0" y="80" width="75" height="6" rx="3" fill="rgba(129, 140, 248, 0.2)"/>
+  </g>
+
+  <!-- Right: Abstract Receipt & Offline SQLite Storage Ledger -->
+  <g transform="translate(310, 115)">
+    <!-- Folded Receipt Geometric Outline -->
+    <path d="M0 0 H130 V120 L117 112 L104 120 L91 112 L78 120 L65 112 L52 120 L39 112 L26 120 L13 112 L0 120 Z" fill="rgba(15, 23, 42, 0.7)" stroke="rgba(139, 92, 246, 0.25)" stroke-width="1"/>
+    
+    <!-- Receipt Item Lines -->
+    <rect x="14" y="16" width="60" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.4)"/>
+    <rect x="86" y="16" width="30" height="5" rx="2.5" fill="rgba(56, 189, 248, 0.7)"/>
+
+    <rect x="14" y="30" width="45" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.3)"/>
+    <rect x="92" y="30" width="24" height="5" rx="2.5" fill="rgba(56, 189, 248, 0.6)"/>
+
+    <rect x="14" y="44" width="55" height="5" rx="2.5" fill="rgba(255, 255, 255, 0.3)"/>
+    <rect x="88" y="44" width="28" height="5" rx="2.5" fill="rgba(56, 189, 248, 0.6)"/>
+
+    <!-- Divider Line -->
+    <path d="M14 62 H116" stroke="rgba(139, 92, 246, 0.35)" stroke-dasharray="3 3"/>
+
+    <!-- Subtotal & Offline Status -->
+    <rect x="14" y="74" width="40" height="6" rx="3" fill="rgba(255, 255, 255, 0.4)"/>
+    <rect x="82" y="72" width="34" height="10" rx="3" fill="rgba(56, 189, 248, 0.3)"/>
+
+    <!-- Local-first / SQLite Node -->
+    <rect x="14" y="93" width="70" height="12" rx="6" fill="rgba(139, 92, 246, 0.25)" stroke="rgba(167, 139, 250, 0.4)" stroke-width="0.8"/>
+    <circle cx="22" cy="99" r="2.5" fill="#4ade80"/>
+  </g>
+
+  <!-- Bottom Architecture Node Badges: Tauri / Rust / SQLite -->
+  <g transform="translate(155, 240)">
+    <rect x="0" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3" fill="#38bdf8"/>
+    <text x="22" y="15" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">TAURI</text>
+
+    <rect x="85" y="0" width="65" height="22" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1"/>
+    <circle cx="97" cy="11" r="3" fill="#c084fc"/>
+    <text x="107" y="15" fill="#e9d5ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">RUST</text>
+
+    <rect x="160" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1"/>
+    <circle cx="172" cy="11" r="3" fill="#818cf8"/>
+    <text x="182" y="15" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">SQLITE</text>
+
+    <rect x="245" y="0" width="45" height="22" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="rgba(74, 222, 128, 0.3)" stroke-width="1"/>
+    <circle cx="257" cy="11" r="3" fill="#4ade80"/>
+    <text x="267" y="15" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">POS</text>
+  </g>
+</svg>

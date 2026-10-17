@@ -11,30 +11,41 @@ export default function Hero() {
           <div className="hero-top-content">
             <h1 id="hero-title" className="hero-title">
               <span>Hamza Bouhouch:</span>
-              <span>Full Stack Web Developer</span>
-              <span>AI Automation Engineer</span>
-              <span>in Morocco</span>
+              <span>Full-Stack Developer</span>
+              <span>PHP, Laravel &amp; Node.js</span>
+              <span className="hero-supporting-domains">
+                REST APIs · Web Applications · SaaS Platforms · AI Automation
+              </span>
             </h1>
             <p className="hero-description">
-              I&apos;m Hamza Bouhouch, a Full Stack Developer and AI Automation
-              Engineer based in Morocco. I build custom web applications, SaaS
-              dashboards, mobile apps, APIs, and automation workflows for businesses.
+              I&apos;m Hamza Bouhouch, a Full-Stack Developer based in Morocco. I build
+              reliable web applications, database-backed REST APIs, and automated
+              workflows using Laravel, Node.js, and modern frontend tools.
             </p>
           </div>
           <div className="hero-buttons">
             <a
               href="#projects"
               className="hero-button-primary"
-              aria-label="View my full stack and AI automation projects"
+              aria-label="Explore my verified engineering projects"
             >
-              View My Work
+              Explore Projects
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-button-secondary"
+              aria-label="Download Hamza Bouhouch CV (PDF)"
+            >
+              Download CV
             </a>
             <a
               href="#contact"
-              className="hero-button-secondary"
-              aria-label="Contact me for web development and AI automation"
+              className="hero-button-tertiary"
+              aria-label="Contact Hamza Bouhouch directly"
             >
-              Contact us &gt;
+              Contact Me
             </a>
           </div>
         </div>
@@ -46,7 +57,7 @@ export default function Hero() {
                 <div className="hero-image">
                   <Image
                     src="/byby.jpg"
-                    alt="Hamza Bouhouch - Full Stack Developer & AI Automation Engineer Morocco"
+                    alt="Hamza Bouhouch - Full-Stack Developer in Morocco (PHP, Laravel, Node.js)"
                     width={520}
                     height={650}
                     loading="eager"
@@ -63,24 +74,29 @@ export default function Hero() {
                     <span>Hamza Bouhouch</span>
                   </div>
                   <div className="hero-profile-middle">
-                    <p>Full Stack Developer</p>
+                    <p>Full-Stack Developer</p>
                     <dl>
                       <div>
                         <dt>Location</dt>
                         <dd>Morocco</dd>
                       </div>
                       <div>
+                        <dt>Focus</dt>
+                        <dd>PHP / Laravel &amp; Node.js</dd>
+                      </div>
+                      <div>
                         <dt>Availability</dt>
-                        <dd>Open for select projects</dd>
+                        <dd>Open for select opportunities</dd>
                       </div>
                     </dl>
                   </div>
                   <div className="hero-profile-stack">
                     <span>Laravel</span>
-                    <span>React</span>
-                    <span>Next.js</span>
-                    <span>n8n</span>
-                    <span>AI Automation</span>
+                    <span>PHP</span>
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>MySQL</span>
+                    <span>MongoDB</span>
                   </div>
                 </div>
               </div>

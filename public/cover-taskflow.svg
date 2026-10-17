@@ -1,0 +1,122 @@
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Cosmic Gradients -->
+    <linearGradient id="tf_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e21"/>
+      <stop offset="50%" stop-color="#0f1938"/>
+      <stop offset="100%" stop-color="#060914"/>
+    </linearGradient>
+    <linearGradient id="tf_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172244" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0c1329" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="tf_glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="600" height="340" fill="url(#tf_bg)"/>
+  <rect width="600" height="340" fill="url(#tf_glow)"/>
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <!-- Central Workflow Board Canvas Frame -->
+  <rect x="110" y="52" width="380" height="236" rx="14" fill="url(#tf_card)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
+
+  <!-- Top System Bar with Supabase RLS Indicator -->
+  <path d="M110 92 H490" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="72" r="4" fill="#38bdf8"/>
+  <circle cx="150" cy="72" r="4" fill="#818cf8"/>
+  <circle cx="165" cy="72" r="4" fill="#c084fc"/>
+
+  <!-- RLS Security Shield Indicator -->
+  <g transform="translate(370, 64)">
+    <rect x="0" y="0" width="105" height="16" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <!-- Tiny Shield -->
+    <path d="M12 4 L18 6 V10 C18 13 15 15 12 16 C9 15 6 13 6 10 V6 Z" fill="#38bdf8" opacity="0.8"/>
+    <text x="24" y="12" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.03em">SUPABASE RLS</text>
+  </g>
+
+  <!-- 3 Abstract Workflow Pipeline Columns / Kanban Lanes -->
+  <!-- Lane 1: Backlog / Queued -->
+  <g transform="translate(135, 110)">
+    <rect x="0" y="0" width="95" height="125" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1"/>
+    <rect x="10" y="10" width="45" height="5" rx="2.5" fill="#38bdf8" opacity="0.8"/>
+    <circle cx="82" cy="12" r="3" fill="#38bdf8" opacity="0.6"/>
+
+    <!-- Task Card 1 -->
+    <rect x="8" y="26" width="79" height="38" rx="6" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1"/>
+    <rect x="16" y="34" width="48" height="4" rx="2" fill="rgba(255, 255, 255, 0.6)"/>
+    <rect x="16" y="44" width="30" height="4" rx="2" fill="rgba(255, 255, 255, 0.35)"/>
+    <circle cx="74" cy="52" r="3" fill="#38bdf8"/>
+
+    <!-- Task Card 2 -->
+    <rect x="8" y="72" width="79" height="38" rx="6" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1"/>
+    <rect x="16" y="80" width="55" height="4" rx="2" fill="rgba(255, 255, 255, 0.5)"/>
+    <rect x="16" y="90" width="36" height="4" rx="2" fill="rgba(255, 255, 255, 0.3)"/>
+    <circle cx="74" cy="98" r="3" fill="#818cf8"/>
+  </g>
+
+  <!-- Lane 2: Active Pipeline -->
+  <g transform="translate(252, 110)">
+    <rect x="0" y="0" width="95" height="125" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(129, 140, 248, 0.25)" stroke-width="1"/>
+    <rect x="10" y="10" width="40" height="5" rx="2.5" fill="#818cf8" opacity="0.9"/>
+    <circle cx="82" cy="12" r="3" fill="#818cf8" opacity="0.6"/>
+
+    <!-- Active Task Card with Progress Gradient -->
+    <rect x="8" y="26" width="79" height="46" rx="6" fill="rgba(30, 27, 75, 0.8)" stroke="rgba(129, 140, 248, 0.45)" stroke-width="1"/>
+    <rect x="16" y="34" width="52" height="4" rx="2" fill="rgba(255, 255, 255, 0.8)"/>
+    <rect x="16" y="44" width="35" height="4" rx="2" fill="rgba(255, 255, 255, 0.4)"/>
+    <!-- Progress Bar -->
+    <rect x="16" y="56" width="60" height="4" rx="2" fill="rgba(255, 255, 255, 0.15)"/>
+    <rect x="16" y="56" width="42" height="4" rx="2" fill="#818cf8"/>
+
+    <!-- Task Card 4 -->
+    <rect x="8" y="80" width="79" height="34" rx="6" fill="rgba(30, 41, 59, 0.8)" stroke="rgba(129, 140, 248, 0.15)" stroke-width="1"/>
+    <rect x="16" y="88" width="48" height="4" rx="2" fill="rgba(255, 255, 255, 0.5)"/>
+    <rect x="16" y="98" width="28" height="4" rx="2" fill="rgba(255, 255, 255, 0.3)"/>
+  </g>
+
+  <!-- Lane 3: Completed / Verified -->
+  <g transform="translate(370, 110)">
+    <rect x="0" y="0" width="95" height="125" rx="8" fill="rgba(15, 23, 42, 0.65)" stroke="rgba(74, 222, 128, 0.25)" stroke-width="1"/>
+    <rect x="10" y="10" width="48" height="5" rx="2.5" fill="#4ade80" opacity="0.9"/>
+    <circle cx="82" cy="12" r="3" fill="#4ade80" opacity="0.6"/>
+
+    <!-- Completed Task Card -->
+    <rect x="8" y="26" width="79" height="38" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="rgba(74, 222, 128, 0.3)" stroke-width="1"/>
+    <rect x="16" y="34" width="46" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <!-- Checkmark Icon -->
+    <path d="M68 44 L72 48 L78 40" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Completed Task Card 2 -->
+    <rect x="8" y="72" width="79" height="38" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="rgba(74, 222, 128, 0.3)" stroke-width="1"/>
+    <rect x="16" y="80" width="50" height="4" rx="2" fill="rgba(255, 255, 255, 0.7)"/>
+    <path d="M68 90 L72 94 L78 86" stroke="#4ade80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Bottom Architecture Node Badges: React / Vite / Supabase / PostgreSQL -->
+  <g transform="translate(145, 250)">
+    <rect x="0" y="0" width="65" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <circle cx="12" cy="11" r="3" fill="#38bdf8"/>
+    <text x="22" y="15" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">REACT</text>
+
+    <rect x="75" y="0" width="55" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1"/>
+    <circle cx="87" cy="11" r="3" fill="#a855f7"/>
+    <text x="97" y="15" fill="#e9d5ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">VITE</text>
+
+    <rect x="140" y="0" width="85" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <circle cx="152" cy="11" r="3" fill="#4ade80"/>
+    <text x="162" y="15" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">SUPABASE</text>
+
+    <rect x="235" y="0" width="70" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(129, 140, 248, 0.35)" stroke-width="1"/>
+    <circle cx="247" cy="11" r="3" fill="#818cf8"/>
+    <text x="257" y="15" fill="#e0e7ff" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">POSTGRES</text>
+  </g>
+</svg>

@@ -1,0 +1,244 @@
+/* ==========================================================================
+   RESTORED ORIGINAL COMPACT SKILLS SECTION (Phase 8.2)
+   Clean 2-column composition: Left narrative, Right 6 compact cards (3x2)
+   ========================================================================== */
+
+.skills-section {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 !important;
+  position: relative !important;
+  width: 100%;
+  height: auto;
+  z-index: 10;
+  overflow: visible;
+  background: transparent;
+}
+
+.skills-frame-inner {
+  width: min(982px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 33rem);
+  gap: 4rem;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.skills-copy {
+  max-width: 28rem;
+}
+
+.skills-copy h2 {
+  color: #ffffff;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
+  font-size: clamp(2rem, 2.7vw, 2.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.2rem;
+  font-weight: 700;
+}
+
+.skills-copy p {
+  color: #dedede;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+  margin: 0 0 1rem;
+}
+
+.skills-copy p:last-child {
+  margin-bottom: 0;
+}
+
+/* 6-Card Compact Grid: 3 columns x 2 rows on desktop */
+.skills-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Individual Compact Skill Category Card */
+.skill-expertise-card {
+  min-height: 118px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.45rem;
+  padding: 1.1rem 0.85rem;
+  background: rgba(30, 30, 46, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.skills-section.is-visible .skill-expertise-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-expertise-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 18px 40px rgba(139, 92, 246, 0.22);
+  background: rgba(36, 36, 56, 0.9);
+}
+
+.skill-expertise-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.skill-expertise-card strong {
+  color: #ffffff;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.skill-expertise-card small {
+  color: #a1a1aa;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  display: block;
+}
+
+/* ==========================================================================
+   LIGHT MODE OVERRIDES (Cosmic Day)
+   ========================================================================== */
+
+[data-theme="light"] .skills-copy h2 {
+  color: #0f172a;
+}
+
+[data-theme="light"] .skills-copy p {
+  color: #475569;
+}
+
+[data-theme="light"] .skill-expertise-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+}
+
+[data-theme="light"] .skill-expertise-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 14px 32px rgba(124, 58, 237, 0.16);
+}
+
+[data-theme="light"] .skill-expertise-card strong {
+  color: #0f172a;
+}
+
+[data-theme="light"] .skill-expertise-card small {
+  color: #64748b;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1919px) {
+  .skills-frame-inner {
+    width: min(982px, calc(100% - 2rem));
+  }
+}
+
+@media (max-width: 1023px) {
+  .skills-section {
+    padding: 0 !important;
+  }
+
+  .skills-frame-inner {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    width: calc(100% - 64px) !important;
+    max-width: 982px;
+  }
+
+  .skills-copy {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .skills-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-section {
+    overflow-x: hidden;
+  }
+
+  .skills-frame-inner {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.75rem !important;
+  }
+
+  .skills-copy {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .skills-copy h2 {
+    margin: 0 0 14px;
+    font-size: min(28px, 8vw);
+    line-height: 1.15;
+  }
+
+  .skills-copy p {
+    max-width: 380px;
+    margin: 0 0 12px;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .skills-card-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .skill-expertise-card {
+    min-height: 100px;
+    padding: 14px 10px;
+    gap: 0.35rem;
+    border-radius: 14px;
+  }
+
+  .skill-expertise-icon {
+    font-size: 1.2rem;
+  }
+
+  .skill-expertise-card strong {
+    font-size: 0.85rem;
+  }
+
+  .skill-expertise-card small {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .skills-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

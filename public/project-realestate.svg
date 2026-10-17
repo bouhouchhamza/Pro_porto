@@ -1,17 +1,55 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="250" fill="#1a1a2e"/>
-  <rect x="50" y="50" width="300" height="150" fill="#16213e" rx="8"/>
-  <text x="200" y="130" text-anchor="middle" fill="#27ae60" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Real Estate</text>
-  <rect x="80" y="70" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="160" y="70" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="240" y="70" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="80" y="140" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="160" y="140" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="240" y="140" width="60" height="60" fill="#27ae60" rx="4"/>
-  <rect x="90" y="80" width="40" height="40" fill="#1a1a2e" rx="2"/>
-  <rect x="170" y="80" width="40" height="40" fill="#1a1a2e" rx="2"/>
-  <rect x="250" y="80" width="40" height="40" fill="#1a1a2e" rx="2"/>
-  <rect x="90" y="150" width="40" height="40" fill="#1a1a2e" rx="2"/>
-  <rect x="170" y="150" width="40" height="40" fill="#1a1a2e" rx="2"/>
-  <rect x="250" y="150" width="40" height="40" fill="#1a1a2e" rx="2"/>
+<svg width="600" height="340" viewBox="0 0 600 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="re_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06140e"/>
+      <stop offset="50%" stop-color="#0c241b"/>
+      <stop offset="100%" stop-color="#040d09"/>
+    </linearGradient>
+    <linearGradient id="re_card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#123326" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#081c15" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#re_bg)"/>
+
+  <!-- Blueprint Spatial Grid -->
+  <g opacity="0.07" stroke="#4ade80" stroke-width="1">
+    <path d="M0 60 H600 M0 120 H600 M0 180 H600 M0 240 H600 M0 300 H600"/>
+    <path d="M60 0 V340 M120 0 V340 M180 0 V340 M240 0 V340 M300 0 V340 M360 0 V340 M420 0 V340 M480 0 V340 M540 0 V340"/>
+  </g>
+
+  <rect x="110" y="52" width="380" height="236" rx="14" fill="url(#re_card)" stroke="rgba(74, 222, 128, 0.3)" stroke-width="1.5"/>
+
+  <path d="M110 92 H490" stroke="rgba(74, 222, 128, 0.2)" stroke-width="1"/>
+  <circle cx="135" cy="72" r="4" fill="#4ade80"/>
+  <circle cx="150" cy="72" r="4" fill="#2dd4bf"/>
+  <circle cx="165" cy="72" r="4" fill="#38bdf8"/>
+
+  <!-- Architectural Blueprint & Floorplan Motif -->
+  <g transform="translate(160, 116)">
+    <rect x="0" y="0" width="280" height="96" rx="8" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(74, 222, 128, 0.3)" stroke-width="1"/>
+    
+    <!-- Blueprint Rooms & Partitions -->
+    <rect x="15" y="15" width="80" height="66" fill="rgba(74, 222, 128, 0.1)" stroke="#4ade80" stroke-width="1"/>
+    <rect x="105" y="15" width="75" height="30" fill="rgba(45, 212, 191, 0.1)" stroke="#2dd4bf" stroke-width="1"/>
+    <rect x="105" y="51" width="75" height="30" fill="rgba(56, 189, 248, 0.1)" stroke="#38bdf8" stroke-width="1"/>
+    <rect x="190" y="15" width="75" height="66" fill="rgba(74, 222, 128, 0.1)" stroke="#4ade80" stroke-width="1"/>
+
+    <!-- Door Swings -->
+    <path d="M75 15 A 20 20 0 0 1 95 35" stroke="#4ade80" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+    <path d="M190 50 A 15 15 0 0 1 205 65" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(160, 250)">
+    <rect x="0" y="0" width="85" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(74, 222, 128, 0.35)" stroke-width="1"/>
+    <text x="42" y="15" text-anchor="middle" fill="#bbf7d0" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">PROPERTIES</text>
+
+    <rect x="95" y="0" width="70" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(45, 212, 191, 0.35)" stroke-width="1"/>
+    <text x="130" y="15" text-anchor="middle" fill="#99f6e4" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">BLUEPRINT</text>
+
+    <rect x="175" y="0" width="75" height="22" rx="6" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1"/>
+    <text x="212" y="15" text-anchor="middle" fill="#bae6fd" font-family="'Questrial', sans-serif" font-size="10" font-weight="500">MANAGEMENT</text>
+  </g>
 </svg>
